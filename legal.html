@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal | Ribbonside</title>
+<style>/* System fonts used for reliability */.serif{font-family:Georgia,serif;}</style>
+<style>
+:root{--pink:#D4325F;--pink-light:#FFF0F5;--pink-mid:#F9C6D8;--cream:#FDF8F5;--charcoal:#2D2020;--muted:#6B5B5B;--border:#E8E0E0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#fff;color:var(--charcoal);line-height:1.7;font-size:15px;}
+
+/* NAV */
+nav{border-bottom:1px solid var(--border);padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:100;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-dot{width:34px;height:34px;border-radius:50%;background:var(--pink);border:3px solid var(--pink);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-wordmark{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:var(--charcoal);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--charcoal);}
+.nav-links a.active{color:var(--pink);font-weight:600;}
+
+/* LEGAL NAV */
+.legal-nav{border-bottom:1px solid var(--border);padding:0 48px;background:#fff;display:flex;gap:0;overflow-x:auto;}
+.lnav-btn{padding:14px 18px;border:none;background:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:all .15s;}
+.lnav-btn:hover{color:var(--charcoal);}
+.lnav-btn.active{color:var(--pink);border-bottom-color:var(--pink);font-weight:600;}
+
+/* LAYOUT */
+.page-container{max-width:740px;margin:0 auto;padding:56px 48px 100px;}
+.doc-section{display:none;}
+.doc-section.active{display:block;}
+
+/* TYPOGRAPHY */
+.effective-date{font-size:13px;color:var(--muted);margin-bottom:36px;}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:700;color:var(--charcoal);margin-bottom:8px;line-height:1.2;}
+h2{font-size:18px;font-weight:700;color:var(--charcoal);margin:36px 0 12px;}
+h3{font-size:15px;font-weight:600;color:var(--charcoal);margin:24px 0 8px;}
+p{color:#3D2828;margin-bottom:14px;line-height:1.75;}
+ul,ol{padding-left:22px;margin-bottom:14px;}
+li{margin-bottom:6px;color:#3D2828;line-height:1.65;}
+a{color:var(--pink);text-decoration:none;}
+a:hover{text-decoration:underline;}
+strong{font-weight:600;color:var(--charcoal);}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13.5px;}
+thead th{text-align:left;padding:10px 14px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);border-bottom:1.5px solid var(--border);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:#3D2828;}
+tbody tr:last-child td{border-bottom:none;}
+
+/* CALLOUTS */
+.notice{background:var(--pink-light);border-left:3px solid var(--pink);padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0;}
+.notice p{margin:0;font-size:13.5px;color:#B02050;}
+.note{background:#F9F6F0;border-left:3px solid #D4A017;padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0;}
+.note p{margin:0;font-size:13.5px;color:#8B6914;}
+.success{background:#E5F8EE;border-left:3px solid #2EAA6E;padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0;}
+.success p{margin:0;font-size:13.5px;color:#1A7A4A;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.footer-brand .nav-wordmark{font-size:15px;}
+.footer-brand p{font-size:13px;color:var(--muted);margin-top:10px;max-width:220px;line-height:1.6;}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .15s;}
+.footer-col a:hover{color:var(--pink);}
+.footer-bottom{border-top:1px solid var(--border);padding:20px 48px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;}
+
+@media(max-width:640px){
+  nav,.legal-nav,footer,.footer-bottom,.page-container{padding-left:20px;padding-right:20px;}
+  .nav-links{display:none;}
+  footer{grid-template-columns:1fr 1fr;gap:28px;}
+  h1{font-size:26px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="ribbonside-website.html" class="nav-logo">
+    <div style="width:34px;height:34px;border-radius:50%;background:#D4325F;border:3px solid #D4325F;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🎗️</div>
+    <span class="nav-wordmark">Ribbonside</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="ribbonside-website.html">Home</a></li>
+    <li><a href="#" class="active">Legal</a></li>
+    <li><a href="mailto:support@ribbonside.com.au">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="legal-nav">
+  <button class="lnav-btn active" data-doc="privacy" onclick="showDoc('privacy')">Privacy Policy</button>
+  <button class="lnav-btn" data-doc="terms" onclick="showDoc('terms')">Terms of Use</button>
+  <button class="lnav-btn" data-doc="refund" onclick="showDoc('refund')">Refund Policy</button>
+  <button class="lnav-btn" data-doc="medical" onclick="showDoc('medical')">Medical Disclaimer</button>
+  
+  
+</div>
+
+<div class="page-container">
+
+<!-- PRIVACY POLICY -->
+<div id="privacy" class="doc-section active">
+<h1>Privacy Policy</h1>
+<p class="effective-date">Effective date: March 2026 · Last updated: May 2026· Last updated: May 2026</p>
+
+<h2>1. Introduction</h2>
+<p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853 ("Ribbonside", "we", "us", or "our"). We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>.</p>
+<p>This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our app and related services. We are committed to complying with the <em>Privacy Act 1988</em> (Cth) and the 13 Australian Privacy Principles (APPs). By using Ribbonside, you acknowledge that you have read and understood this Privacy Policy.</p>
+<p>Support: <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a><br>Privacy: <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
+
+<h2>2. Information We Collect</h2>
+
+<h3>2.1 Account Information</h3>
+<ul>
+  <li>Full name and email address</li>
+  <li>Date of account creation and plan type (free or Plus)</li>
+</ul>
+
+<h3>2.2 Health and Medical Data</h3>
+<ul>
+  <li>Cancer type, stage, grade, Ki-67 score</li>
+  <li>Receptor status (ER, PR, HER2) and associated pathology detail</li>
+  <li>Tumour size, lymph node status, and surgical history</li>
+  <li>Diagnosis date, treating hospital, and oncologist details</li>
+  <li>Medications, doses, schedules, and dose log history</li>
+  <li>Symptom logs and wellbeing check-in scores</li>
+  <li>Blood results and tumour markers you enter</li>
+</ul>
+<div class="notice"><p>All health and medical data listed above is <strong>sensitive information</strong> under the Privacy Act 1988 and is handled under the highest standard of protection available under Australian law.</p></div>
+
+<h3>2.3 Documents and Photos</h3>
+<ul>
+  <li>Photos you upload (treatment progress, skin changes, milestones)</li>
+  <li>Medical documents (pathology reports, referral letters, imaging reports)</li>
+</ul>
+
+<h3>2.4 Diary and Notes</h3>
+<ul>
+  <li>Mood entries, diary text, and tags you write in the private diary</li>
+  <li>Notes from your support circle members</li>
+</ul>
+
+<h3>2.5 Appointments and Care Network</h3>
+<ul>
+  <li>Appointment dates, times, locations, and clinician names</li>
+  <li>Healthcare team details you enter (name, hospital, phone, email)</li>
+</ul>
+
+<h3>2.6 Support Circle</h3>
+<ul>
+  <li>Names, email addresses, and access levels of people you invite</li>
+</ul>
+
+<h3>2.7 Usage Data</h3>
+<ul>
+  <li>Device type, operating system, and app version</li>
+  <li>Features used and session duration (anonymised analytics)</li>
+</ul>
+
+<h2>3. How We Use Your Information</h2>
+<ul>
+  <li><strong>Providing the app:</strong> managing your health profile, medications, appointments, diary, and results</li>
+  <li><strong>AI-powered features:</strong> processing typed questions for Ask AI explanations</li>
+  <li><strong>Reminders:</strong> sending push notifications for medication alarms and appointment reminders</li>
+  <li><strong>Support circle:</strong> enabling authorised supporters to view the data you choose to share with them</li>
+  <li><strong>App improvement:</strong> analysing anonymised usage patterns to improve performance</li>
+  <li><strong>Legal compliance:</strong> meeting our obligations under the Privacy Act 1988 and other applicable law</li>
+</ul>
+
+<h2>5. Data Storage and Security</h2>
+<ul>
+  <li><strong>Data residency:</strong> all personal and health data is stored on servers located in <strong>Australia (Sydney — AWS ap-southeast-2)</strong> via Supabase</li>
+  <li><strong>Encryption at rest:</strong> AES-256 on all data and files</li>
+  <li><strong>Encryption in transit:</strong> TLS 1.3 for all data transfers</li>
+  <li><strong>Access controls:</strong> row-level security (RLS) ensures you can only access your own data</li>
+  <li><strong>Photos and documents:</strong> stored in a private, encrypted storage bucket — not publicly accessible by URL</li>
+</ul>
+
+<h2>5. Third-Party Service Providers</h2>
+<p>We engage the following service providers. Each processes data only as necessary to deliver their services and is bound by applicable privacy obligations.</p>
+
+<table>
+  <thead>
+    <tr><th>Provider</th><th>Purpose</th><th>Data Shared</th><th>Location</th><th>Privacy Policy</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Supabase Inc.</strong></td>
+      <td>Database hosting, user authentication, and encrypted file storage</td>
+      <td>All health data, photos, documents, diary entries, appointments, results. Data stays in Australia (Sydney).</td>
+      <td>🇦🇺 Australia (Sydney — AWS ap-southeast-2)</td>
+      <td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a><br>privacy@supabase.io</td>
+    </tr>
+    <tr>
+      <td><strong>Anthropic PBC</strong></td>
+      <td>Powers the Ask AI feature</td>
+      <td>Your typed question text only. No health records or photos are sent to Anthropic.</td>
+      <td>🇺🇸 United States</td>
+      <td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a><br>privacy@anthropic.com</td>
+    </tr>
+    <tr>
+      <td><strong>Apple Inc.</strong></td>
+      <td>App Store distribution, Sign in with Apple authentication, push notification delivery, and in-app subscription billing</td>
+      <td>Apple ID (name/email), subscription status, device push token for medication and appointment reminders</td>
+      <td>🇺🇸 United States</td>
+      <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td><strong>GoDaddy Inc.</strong></td>
+      <td>Domain name registration and DNS management for ribbonside.com and ribbonside.com.au</td>
+      <td>Domain registration details (registrant name, email). No app user health data is shared with GoDaddy.</td>
+      <td>🇺🇸 United States</td>
+      <td><a href="https://www.godaddy.com/legal/agreements/privacy-policy" target="_blank">godaddy.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td><strong>Expo / EAS</strong></td>
+      <td>App build infrastructure, TestFlight distribution, and over-the-air app updates</td>
+      <td>App code bundle only — no personal health data is shared with Expo</td>
+      <td>🇺🇸 United States</td>
+      <td><a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. Automatic Data Deletion</h2>
+<div class="success"><p>You can delete all your data at any time from <strong>Settings → Delete My Account</strong>. This permanently removes every record, photo, document, diary entry, result, and health profile within 30 days. This action cannot be undone.</p></div>
+<p>We also automatically delete:</p>
+<ul>
+  <li>Push notification tokens when you uninstall the app</li>
+  <li>All personal data within 30 days of an account deletion request</li>
+  <li>Inactive free accounts after 24 months with no login (30 days email notice first)</li>
+</ul>
+
+<h2>7. Your Rights</h2>
+<p>Under the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles, you have the following rights:</p>
+<ul>
+  <li><strong>Access:</strong> request a copy of all personal information we hold about you</li>
+  <li><strong>Correction:</strong> request correction of inaccurate or incomplete data</li>
+  <li><strong>Deletion:</strong> request deletion of your personal information, subject to our legal obligations to retain certain records</li>
+  <li><strong>Complaint:</strong> lodge a complaint with us or with the OAIC at <a href="https://oaic.gov.au">oaic.gov.au</a> · 1300 363 992</li>
+</ul>
+<p>To exercise any of these rights, contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>. We will respond within 30 days.</p>
+
+<h2>8. International Transfers</h2>
+<p>Anthropic (US) processes Ask AI queries. Your typed question is transmitted securely and not retained by Anthropic. Your stored health data never leaves Australia. We have assessed this transfer against the APPs and are satisfied it does not breach your privacy protections.</p>
+
+<h2>9. Children</h2>
+<p>Ribbonside is not intended for users under 18. We do not knowingly collect information from minors.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>We may revise, update, or replace this Privacy Policy from time to time. We will notify you of any changes by posting the revised, updated, or replaced version on this website. Any changes take effect on the date the updated Privacy Policy is posted.</p>
+
+<h2>11. Contact</h2>
+<p>Ribbonside (Diesel Advocacy Pty Ltd)<br>
+ABN 82 690 643 853<br>
+Sydney, New South Wales, Australia<br>
+Privacy Officer: <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a><br>
+<a href="https://ribbonside.com.au">ribbonside.com.au</a></p>
+</div>
+
+<!-- TERMS OF SERVICE -->
+<div id="terms" class="doc-section">
+<h1>Terms of Service</h1>
+<p class="effective-date">Effective date: March 2026 · Last updated: May 2026· Last updated: May 2026</p>
+
+<h2>1. Agreement to Terms</h2>
+<p>By downloading or using Ribbonside, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the app. The Service is operated by <strong>Ribbonside</strong> (ACN 690 643 853) (ABN 82 690 643 853), trading as Ribbonside, a company registered in New South Wales, Australia.</p>
+
+<h2>2. Description of Service</h2>
+<p>Ribbonside is a personal health tracking and information application designed for people going through breast cancer treatment. The Service provides tools including:</p>
+<ul>
+  <li>Personal diagnosis profile and pathology record storage</li>
+  <li>Medication tracking and dose logging</li>
+  <li>Appointment management and calendar reminders</li>
+  <li>Private diary, symptom logs, and wellbeing check-ins</li>
+  <li>Photo journal and document storage</li>
+  <li>Blood results and pathology results tracking</li>
+  <li>AI-powered explanations of medical terminology (Ask AI)</li>
+  <li>Support circle access for family and carers</li>
+  <li>Healthcare team directory</li>
+</ul>
+<div class="notice"><p><strong>Ribbonside is not a medical device.</strong> Nothing in the Service constitutes medical advice, diagnosis, or treatment recommendation. Always consult your oncologist or qualified healthcare professional before making any health decision.</p></div>
+
+<h2>3. Account Registration</h2>
+<p>To use the Service, you must create an account. By registering, you confirm that you are at least 18 years of age, all information you provide is accurate, and you are responsible for all activity that occurs under your account. Notify us immediately at <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> of any unauthorised use.</p>
+
+<h2>4. Subscription and Billing</h2>
+
+<h3>4.1 Plans</h3>
+<ul>
+  <li><strong>Free:</strong> 3 AI queries per month, basic tracking features</li>
+  <li><strong>Ribbonside Plus ($14.99 AUD/month):</strong> 7-day free trial, then billed monthly through the Apple App Store. Unlimited AI queries and all features.</li>
+</ul>
+
+<h3>4.2 Billing</h3>
+<p>Subscriptions are billed through the Apple App Store and governed by Apple's billing terms. Prices are quoted in Australian Dollars (AUD) inclusive of GST.</p>
+
+<h3>4.3 Trial Period</h3>
+<p>The 7-day free trial begins on the date of subscription. No charge is incurred if you cancel before the trial ends.</p>
+
+<h2>5. Acceptable Use</h2>
+<p>You must not use the Service to: provide false health information with intent to harm; attempt to access another user's data; reverse-engineer the app; or use the app in a medical emergency (call 000).</p>
+
+<h2>6. Your Data</h2>
+<p>You retain full ownership of all data, photos, documents, and content you provide to the Service. Ribbonside does not claim any ownership rights over your health data. By using the Service, you grant Ribbonside a limited licence to store and process your data solely to provide the Service to you. This licence terminates when you delete your data or close your account.</p>
+
+<h2>7. AI Features</h2>
+<p>The Service uses AI to power Ask AI explanations. All AI-generated outputs are suggestions only. They do not constitute medical advice. You are solely responsible for reviewing and verifying all AI outputs before relying on them. Ribbonside does not guarantee the accuracy of AI outputs and disclaims all liability arising from reliance on them.</p>
+
+<h2>8. Intellectual Property</h2>
+<p>The Service, including all software, design, content, trademarks (including "Ribbonside"), and materials, is owned by or licensed to Ribbonside. You may not reproduce, distribute, or create derivative works without written permission.</p>
+
+<h2>9. Australian Consumer Law (ACL) — Consumer Guarantees</h2>
+<div class="success"><p>Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy you have under the <strong>Australian Consumer Law</strong> (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) or any other applicable law that cannot be excluded by agreement. If the Service fails to meet a consumer guarantee, you may be entitled to a remedy including a refund, repair, or compensation. Contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> or NSW Fair Trading on 13 32 20 to exercise your ACL rights.</p></div>
+
+<h2>10. Limitation of Liability</h2>
+<p>Subject to your non-excludable ACL rights, to the maximum extent permitted by law, Ribbonside is not liable for any health outcome, loss, or damage arising from use of the app. Our total aggregate liability for all claims shall not exceed the total fees paid by you to Ribbonside in the 12 months preceding the event giving rise to the claim.</p>
+
+<h2>11. Termination</h2>
+
+<h3>11.1 Cancellation by You</h3>
+<p>You may cancel your subscription at any time through your account settings or by contacting us at <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>. Upon cancellation, your subscription will remain active until the end of your current billing period. No refunds will be issued for partial billing periods unless required by law or approved by Ribbonside at its discretion.</p>
+
+<h3>11.2 Suspension or Termination by Ribbonside</h3>
+<p>We reserve the right to suspend or terminate your account at any time, with or without notice, if we reasonably believe that:</p>
+<ul>
+  <li>You have violated any provision of these Terms</li>
+  <li>Your use of the Service poses a security risk to the platform or other users</li>
+  <li>Your account has been inactive for an extended period</li>
+  <li>Continued provision of the Service to you is no longer commercially viable</li>
+</ul>
+
+<h3>11.3 Effect of Termination</h3>
+<p>Upon termination of your account, your right to access the Service will cease immediately. Your data will be retained in accordance with our Privacy Policy and applicable law. After termination, we may delete your data in accordance with our retention schedule, subject to any legal obligations to retain certain information.</p>
+
+<h2>12. Governing Law and Disputes</h2>
+<p>These Terms are governed by the laws of New South Wales, Australia. Disputes are subject to the exclusive jurisdiction of NSW courts. Consumer complaints: NSW Fair Trading 13 32 20 · ACCC 1300 302 502 · OAIC 1300 363 992.</p>
+
+<h2>13. Changes to Terms</h2>
+<p>We may update these Terms from time to time. We will notify you of any changes by posting the revised, updated, or replaced version on this website. Any changes take effect on the date the updated Terms are posted. Continued use after the effective date constitutes acceptance.</p>
+
+<h2>14. Contact</h2>
+<p>Ribbonside (Ribbonside)<br>
+Sydney, New South Wales, Australia<br>
+Email: <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
+</div>
+
+<!-- REFUND -->
+<div id="refund" class="doc-section">
+<h1>Refund &amp; Cancellation Policy</h1>
+<p class="effective-date">Effective date: March 2026 · Last updated: May 2026</p>
+
+<h2>1. Free Trial</h2>
+<p>Ribbonside Plus includes a <strong>7-day free trial</strong>. No charge is incurred during the trial period. Cancel before the trial ends and you pay nothing.</p>
+
+<h2>2. How to Cancel</h2>
+<p>On iPhone: <strong>Settings → Your Name → Subscriptions → Ribbonside → Cancel Subscription.</strong> Cancellation takes effect at the end of the current billing period. You retain Plus access until that date.</p>
+
+<h2>3. Australian Consumer Law Rights</h2>
+<div class="success"><p>Nothing in this policy limits your non-excludable rights under the <strong>Australian Consumer Law</strong>. If our Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact NSW Fair Trading on 13 32 20 or the ACCC on 1300 302 502.</p></div>
+
+<h2>4. Contact</h2>
+<p><a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
+</div>
+
+<!-- MEDICAL DISCLAIMER -->
+<div id="medical" class="doc-section">
+<h1>Medical Disclaimer</h1>
+<p class="effective-date">Displayed at first launch. Users must tap "I understand" to proceed.</p>
+
+<div class="notice"><p><strong>Ribbonside is NOT a medical device</strong> and is not registered with the Therapeutic Goods Administration (TGA). It does not diagnose, treat, or provide medical advice.</p></div>
+
+<h2>1. What Ribbonside Is</h2>
+<p>Ribbonside is a personal health tracking and information application. All content — including AI-generated explanations, medication information, cancer type descriptions, symptom logs, and wellbeing check-ins — is provided for <strong>general informational and personal tracking purposes only.</strong></p>
+
+<h2>2. You Must Always</h2>
+<ul>
+  <li>Consult a registered medical practitioner, oncologist, or qualified healthcare professional before making any health, treatment, or medication decision</li>
+  <li>Not disregard, delay, or discontinue professional medical advice because of anything in Ribbonside</li>
+  <li>Not use Ribbonside in a medical emergency — call <strong>000</strong> immediately</li>
+  <li>Tell your oncologist and pharmacist everything you are taking, including supplements tracked in Ribbonside</li>
+</ul>
+
+<h2>3. AI-Generated Content</h2>
+<p>Ask AI provides general educational explanations generated by Anthropic's Claude AI. These explanations are not personalised to your medical situation, not reviewed by medical professionals, and may not reflect current Australian clinical guidelines. Always discuss your specific case with your oncologist.</p>
+
+<h2>4. Emergency</h2>
+<div class="note"><p>Severe or sudden symptoms — call <strong>000</strong> immediately. Cancer Council NSW support: <strong>13 11 20</strong>. Lifeline: <strong>13 11 14</strong>. Beyond Blue: <strong>1300 22 4636</strong>.</p></div>
+
+<p>Ribbonside accepts no liability for health outcomes arising from use of or reliance upon Ribbonside.</p>
+</div>
+
+<!-- HEALTH DATA STATEMENT -->
+<div id="health" class="doc-section">
+<h1>Health Data Statement</h1>
+<p class="effective-date">Complete inventory of every health data type we collect, store, share, and delete.</p>
+
+<h2>1. What We Collect and Why</h2>
+<table>
+  <thead><tr><th>Data Type</th><th>How Collected</th><th>Provider / Storage</th><th>Shared With</th><th>Deleted When</th></tr></thead>
+  <tbody>
+    <tr><td>Cancer type, stage, grade, Ki-67, pathology fields</td><td>You enter it</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>ER/PR/HER2 receptor status and detail</td><td>You enter it</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Medications and dose logs</td><td>You enter and tap to log</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Appointments</td><td>You enter them</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Photos</td><td>Camera or photo library</td><td>Supabase Storage — Sydney (private, encrypted)</td><td>Nobody</td><td>On deletion or account deletion</td></tr>
+    <tr><td>Documents</td><td>Camera or photo library</td><td>Supabase Storage — Sydney (private, encrypted)</td><td>Nobody</td><td>On deletion or account deletion</td></tr>
+    <tr><td>Blood results and tumour markers</td><td>You enter them</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Diary entries</td><td>You write them</td><td>Supabase — Sydney</td><td>Nobody unless Full Access circle permission</td><td>Account deletion</td></tr>
+    <tr><td>Symptom logs and wellbeing check-ins</td><td>You complete them</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Support circle and notes</td><td>You invite members</td><td>Supabase — Sydney</td><td>Invited members only</td><td>Account deletion</td></tr>
+    <tr><td>Care network / healthcare team</td><td>You enter clinician details</td><td>Supabase — Sydney</td><td>Nobody</td><td>Account deletion</td></tr>
+    <tr><td>Ask AI query text</td><td>You type it</td><td>Sent to Anthropic PBC — not stored permanently, not linked to your identity</td><td>Anthropic (not retained)</td><td>Not retained by Anthropic</td></tr>
+  </tbody>
+</table>
+
+<h2>2. What We Never Do</h2>
+<ul>
+  <li>Never sell your health data</li>
+  <li>Never use your data for advertising</li>
+  <li>Never share with pharmaceutical companies, insurers, employers, or government agencies except where legally required</li>
+  <li>Never use your photos, documents, or diary entries to train AI models</li>
+  <li>Never access your diary without your explicit circle sharing permission</li>
+</ul>
+
+<h2>3. Deletion</h2>
+<div class="success"><p>Settings → Delete My Account → all data permanently deleted within 30 days including photos, documents, results, diary, diagnosis profile, medications, and circle data.</p></div>
+</div>
+
+<!-- TGA & ACL -->
+<div id="tga" class="doc-section">
+<h1>TGA Compliance &amp; ACL Statement</h1>
+<p class="effective-date">Therapeutic Goods Administration · Australian Consumer Law · Annual Review Required</p>
+
+<h2>1. TGA Position — Software as a Medical Device</h2>
+<p>Ribbonside has been assessed against the TGA's guidance on <em>Software as a Medical Device (SaMD)</em> under the <em>Therapeutic Goods Act 1989</em> (Cth).</p>
+<p><strong>Our position:</strong> Ribbonside does not meet the statutory definition of a medical device and is not required to be entered on the Australian Register of Therapeutic Goods (ARTG).</p>
+
+<h2>2. Why Ribbonside Is Not a Medical Device</h2>
+<p>A medical device must be <em>intended</em> to diagnose, prevent, monitor, treat, or alleviate a disease or condition. Ribbonside does not do any of these things:</p>
+<ul>
+  <li>It does not diagnose any medical condition</li>
+  <li>It does not recommend specific treatments or medications for a user's individual condition</li>
+  <li>It does not interpret clinical data to make individualised clinical decisions</li>
+  <li>Ask AI explains general medical terminology — it does not assess individual patients</li>
+  <li>Blood results tracking shows values the user enters — it does not advise whether those values require clinical action</li>
+</ul>
+
+<h2>3. Lines We Do Not Cross</h2>
+<div class="notice"><p>If Ribbonside were to say "based on your Ki-67 you should consider X treatment" or "your blood results suggest you call your oncologist now" — that would constitute a medical device function. All features are explicitly designed to avoid this. The app tracks and informs. It never advises or decides.</p></div>
+
+<h2>4. TGA Advertising Compliance</h2>
+<p>Under the <em>Therapeutic Goods Advertising Code</em>, all Ribbonside marketing must:</p>
+<ul>
+  <li>Use words like "track", "log", "record", "store", "view" ✅</li>
+  <li><strong>Not</strong> use "treat", "manage", "improve", "heal", "alleviate", "diagnose" ❌</li>
+  <li>Not claim therapeutic benefit</li>
+  <li>Not imply the app replaces professional medical care</li>
+  <li>Include the medical disclaimer prominently in the App Store listing</li>
+</ul>
+<p><strong>Correct:</strong> "Track your medications and log your appointments"<br>
+<strong>Incorrect:</strong> "Manage your breast cancer treatment and improve your outcomes"</p>
+
+<h2>5. Australian Consumer Law — Consumer Guarantees</h2>
+<p>The Australian Consumer Law (Schedule 2 of the <em>Competition and Consumer Act 2010</em> (Cth)) provides automatic consumer guarantees that cannot be excluded by contract. For Ribbonside users, these guarantees mean:</p>
+<ul>
+  <li><strong>Due care and skill:</strong> the app will be maintained to function as described and issues addressed within a reasonable timeframe</li>
+  <li><strong>Fit for disclosed purpose:</strong> the app will perform the tracking, storage, and AI explanation functions described in the App Store listing</li>
+  <li><strong>Reasonable time:</strong> service outages will be addressed promptly</li>
+  <li><strong>Refund rights:</strong> where the Service fails a consumer guarantee, users may be entitled to a remedy — see the Refund &amp; Cancellation tab</li>
+</ul>
+<div class="success"><p>Nothing in our Terms of Service or any other Ribbonside document excludes or limits these non-excludable ACL rights. Contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>, NSW Fair Trading on 13 32 20, or the ACCC on 1300 302 502 to exercise your ACL rights.</p></div>
+
+<h2>6. Annual Review</h2>
+<p>This compliance position must be reviewed annually and whenever any new feature is added that could constitute clinical decision support. Last reviewed: [Date]. Next review: [Date + 1 year].</p>
+</div>
+
+</div><!-- end page-container -->
+
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo" style="margin-bottom:10px;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#D4325F;border:3px solid #D4325F;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🎗️</div>
+      <span class="nav-wordmark" style="margin-left:8px;">Ribbonside</span>
+    </div>
+    <p>Breast cancer care built by someone who's been there. Sydney, Australia.</p>
+  </div>
+  <div class="footer-col">
+    <h4>App</h4>
+    <a href="ribbonside-website.html">Home</a>
+    <a href="ribbonside-website.html#features">Features</a>
+    <a href="ribbonside-website.html#pricing">Pricing</a>
+    <a href="ribbonside-website.html#waitlist">Join Waitlist</a>
+  </div>
+  <div class="footer-col">
+    <h4>Legal</h4>
+    <a href="#" onclick="showDoc('privacy');return false;" data-doc="privacy">Privacy Policy</a>
+    <a href="#" onclick="showDoc('terms');return false;" data-doc="terms">Terms of Service</a>
+    <a href="#" onclick="showDoc('refund');return false;" data-doc="refund">Refund Policy</a>
+    <a href="#" onclick="showDoc('medical');return false;" data-doc="medical">Medical Disclaimer</a>
+    <a href="#" onclick="showDoc('tga');return false;" data-doc="tga">TGA &amp; ACL</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
+    <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
+    <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
+    <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · ribbonside.com.au · ribbonside.com</span>
+  <span>NSW, Australia 🇦🇺</span>
+</div>
+
+<script>
+function showDoc(d){
+  var ss=document.querySelectorAll('.doc-section');
+  for(var i=0;i<ss.length;i++)ss[i].style.display='none';
+  var bs=document.querySelectorAll('.lnav-btn');
+  for(var i=0;i<bs.length;i++)bs[i].classList.remove('active');
+  var el=document.getElementById(d);
+  if(el)el.style.display='block';
+  var ab=document.querySelector('[data-doc="'+d+'"]');
+  if(ab)ab.classList.add('active');
+}
+</script>
+</body>
+</html>
