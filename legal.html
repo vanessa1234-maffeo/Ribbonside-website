@@ -289,7 +289,7 @@
     <table>
       <tr><th>Provider</th><th>Purpose</th><th>Location</th><th>Privacy Policy</th></tr>
       <tr><td><strong>Supabase Inc.</strong></td><td>Database, authentication and file storage</td><td>🇦🇺 Sydney (AWS ap-southeast-2)</td><td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></td></tr>
-      <tr><td><strong>Anthropic PBC</strong></td><td>Ask AI feature (question text only — no health records sent)</td><td>🇺🇸 United States</td><td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></td></tr>
+      <tr><td><strong>Anthropic PBC</strong></td><td>Ask AI feature (typed questions) AND pathology-report extraction when you upload a report from the Diagnosis screen (PDF/photo of the report is processed to extract diagnosis fields)</td><td>🇺🇸 United States</td><td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></td></tr>
       <tr><td><strong>Apple Inc.</strong></td><td>App Store, Sign in with Apple, notifications, billing</td><td>🇺🇸 United States</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td></tr>
       <tr><td><strong>GoDaddy Inc.</strong></td><td>Domain registration for ribbonside.com and ribbonside.com.au</td><td>🇺🇸 United States</td><td><a href="https://www.godaddy.com/legal/agreements/privacy-policy" target="_blank">godaddy.com/legal/privacy</a></td></tr>
       <tr><td><strong>Expo / EAS</strong></td><td>App build infrastructure — no personal health data shared</td><td>🇺🇸 United States</td><td><a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></td></tr>
@@ -314,14 +314,15 @@
       <li><strong>Complaint:</strong> contact support@ribbonside.com.au · escalate to OAIC at <a href="https://oaic.gov.au">oaic.gov.au</a> · 1300 363 992</li>
     </ul>
 
-    <h2>7. International Transfers</h2>
-    <p>Anthropic (US) processes Ask AI queries. Your typed question is transmitted securely and not retained by Anthropic. Your stored health data never leaves Australia.</p>
+    <h2>7. AI-Assisted Report Extraction</h2>
+    <p>When you choose to upload a pathology or imaging report from the Diagnosis screen, the document is sent to <strong>Anthropic's Claude API</strong> so the app can read it and pre-fill your diagnosis fields. By Anthropic's <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">commercial terms</a>, the data is <strong>not used for model training</strong> and is deleted from Anthropic's systems within 30 days of processing.</p>
+    <p>The original file is stored in your private, encrypted Supabase Storage bucket in Sydney; you can delete it any time. We require your explicit consent the first time you upload, and you can decline at any time and continue entering diagnosis details manually.</p>
 
-    <h2>8. Children</h2>
+    <h2>8. International Transfers</h2>
+    <p>Anthropic (US) processes Ask AI queries and uploaded report extractions as described above. All other stored health data remains in Australia.</p>
+
+    <h2>9. Children</h2>
     <p>Ribbonside is not intended for users under 18.</p>
-
-    <h2>9. International Transfers</h2>
-    <p>Anthropic (US) processes Ask AI queries. Your typed question is transmitted securely and not retained. Your stored health data never leaves Australia.</p>
 
     <h2>10. Changes to This Policy</h2>
     <p>We may revise, update, or replace this Privacy Policy from time to time. We will notify you of any changes by posting the revised version on this website. Any changes take effect on the date posted.</p>
@@ -445,6 +446,7 @@
       <tr><td>Support circle members and notes</td><td>You invite them</td><td>Supabase — Sydney</td><td>Account deletion</td></tr>
       <tr><td>Healthcare team details</td><td>You enter them</td><td>Supabase — Sydney</td><td>Account deletion</td></tr>
       <tr><td>Ask AI query text</td><td>You type it</td><td>Sent to Anthropic — not stored permanently</td><td>Not retained by Anthropic</td></tr>
+      <tr><td>Uploaded pathology/imaging reports</td><td>You upload from Diagnosis screen</td><td>Stored privately in Supabase (Sydney); sent to Anthropic for one-off extraction</td><td>On your delete, or account deletion · Anthropic deletes within 30 days of processing</td></tr>
     </table>
 
     <h2>What We Never Do</h2>
