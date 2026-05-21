@@ -267,7 +267,7 @@
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="doc active">
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: May 2026</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 22 May 2026</p>
 
     <h2>1. Who We Are</h2>
     <p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853. We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>. We are bound by the <em>Privacy Act 1988</em> (Cth) and the 13 Australian Privacy Principles (APPs).</p>
@@ -452,8 +452,21 @@
       <tr><td>Uploaded pathology/imaging reports</td><td>You upload from Diagnosis screen</td><td>Stored privately in Supabase (Sydney); sent to Anthropic for one-off extraction</td><td>On your delete, or account deletion · Anthropic deletes within 30 days of processing</td></tr>
     </table>
 
-    <h2>Apple Health</h2>
-    <p>Exercise and activity data may be read from Apple Health with your explicit permission. This data is stored on your device and is not transmitted to Ribbonside servers unless you explicitly choose to share it.</p>
+    <h2>Health Data (Apple Health / HealthKit)</h2>
+    <p>Ribbonside may request access to Apple Health data including activity, heart rate and workout information. This data is read from your device only and is not transmitted to our servers. You may revoke this access at any time through your iPhone settings. Ribbonside does not use health data for any purpose other than displaying it to you within the app.</p>
+    <table>
+      <tr><th>Data Type Read</th><th>HealthKit Identifier</th><th>Where It Stays</th></tr>
+      <tr><td>Daily step count</td><td><code>HKQuantityTypeIdentifierStepCount</code></td><td>On your device only</td></tr>
+      <tr><td>Resting heart rate</td><td><code>HKQuantityTypeIdentifierRestingHeartRate</code></td><td>On your device only</td></tr>
+      <tr><td>Workouts</td><td><code>HKWorkoutTypeIdentifier</code></td><td>On your device only</td></tr>
+    </table>
+    <ul>
+      <li><strong>Read-only.</strong> Ribbonside never writes to Apple Health.</li>
+      <li><strong>No backend transmission.</strong> Apple Health values are not sent to our servers, to Supabase, to Anthropic, or to any third party.</li>
+      <li><strong>Foreground only.</strong> We do not run background queries against Apple Health.</li>
+      <li><strong>Not used for advertising or research.</strong> The data is shown only inside the app, to you.</li>
+      <li><strong>Revocable any time.</strong> iPhone Settings → Privacy &amp; Security → Health → Ribbonside → toggle off any category.</li>
+    </ul>
 
     <h2>What We Never Do</h2>
     <ul>
