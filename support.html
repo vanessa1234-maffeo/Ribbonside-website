@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Ribbonside</title>
+<meta name="description" content="Ribbonside support information, contact details, subscription cancellation steps, privacy help, and emergency guidance.">
+<link rel="canonical" href="https://ribbonside.com.au/support.html">
+<link rel="icon" type="image/png" href="pink-ribbon.png">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDFAF8;
+  --pink:#EB94AE;
+  --pink-strong:#C84F7F;
+  --pink-light:#FFF0F5;
+  --pink-mid:#F2C4D4;
+  --ink:#1E1414;
+  --muted:#7A6060;
+  --border:#EAE0E0;
+  --green:#DCEFE5;
+  --green-text:#326547;
+  --warn:#FFF8E0;
+  --warn-text:#7A5610;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+nav{
+  height:60px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:absolute;
+  z-index:50;
+  inset:0 0 auto;
+  background:linear-gradient(180deg,rgba(30,20,20,.62),rgba(30,20,20,0));
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:white;
+}
+.brand-mark{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.brand-mark img{width:100%;height:100%;object-fit:contain}
+.brand-name{font-family:"Lora",serif;font-size:18px;font-weight:600;color:white}
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(30,20,20,.22);
+  backdrop-filter:blur(6px);
+}
+.nav-links a{font-size:13px;color:rgba(255,255,255,.9);text-decoration:none;text-shadow:0 1px 8px rgba(30,20,20,.55)}
+.nav-links a:hover{color:white}
+.page-hero{
+  min-height:370px;
+  display:flex;
+  align-items:flex-end;
+  padding:112px 6% 58px;
+  color:white;
+  background-image:
+    linear-gradient(90deg,rgba(30,20,20,.88) 0%,rgba(30,20,20,.62) 55%,rgba(30,20,20,.18) 100%),
+    linear-gradient(180deg,rgba(30,20,20,.08),rgba(30,20,20,.32)),
+    url("founder-hero-no-ribbon.png");
+  background-size:cover;
+  background-position:center;
+}
+.page-hero-inner{
+  width:min(880px,100%);
+  margin:0 auto;
+}
+main{
+  max-width:880px;
+  margin:0 auto;
+  padding:46px 24px 72px;
+}
+.hero{
+  margin:0;
+}
+.eyebrow{
+  color:var(--pink);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+h1{
+  font-family:"Lora",serif;
+  font-size:clamp(42px,7vw,78px);
+  line-height:.98;
+  letter-spacing:0;
+  color:white;
+  text-shadow:0 12px 32px rgba(30,20,20,.26);
+}
+.lead{
+  margin-top:18px;
+  max-width:680px;
+  color:rgba(255,255,255,.88);
+  font-size:clamp(17px,2vw,22px);
+  font-weight:500;
+}
+.support-box{
+  background:white;
+  border:1px solid var(--pink-mid);
+  border-radius:8px;
+  padding:22px;
+  margin:24px 0;
+}
+.support-box strong{
+  display:block;
+  font-size:13px;
+  color:var(--pink);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.email{
+  font-size:clamp(22px,4vw,32px);
+  font-weight:800;
+  color:var(--ink);
+  text-decoration:none;
+  word-break:break-word;
+}
+.contact-note{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+.note,.warning{
+  border-radius:8px;
+  padding:15px 17px;
+  margin:18px 0;
+  font-size:14px;
+}
+.note{background:var(--green);color:var(--green-text)}
+.warning{background:var(--warn);color:var(--warn-text)}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:24px;
+}
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:18px;
+}
+.card h2{
+  font-size:15px;
+  margin-bottom:8px;
+}
+.card p,.card li{
+  color:var(--muted);
+  font-size:14px;
+}
+ul{padding-left:18px}
+a{color:var(--pink-strong);text-decoration:none}
+a:hover{text-decoration:underline}
+.footer{
+  margin-top:34px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:13px;
+}
+@media(max-width:720px){
+  nav{padding:0 20px}
+  .nav-links{gap:12px}
+  .nav-links a:first-child{display:none}
+  .page-hero{min-height:330px;padding:92px 20px 42px}
+  main{padding:44px 20px 58px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html" aria-label="Ribbonside home">
+    <span class="brand-mark"><img src="pink-ribbon.png" alt=""></span>
+    <span class="brand-name">Ribbonside</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="legal.html#privacy">Privacy</a>
+    <a href="legal.html#terms">Terms</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <section class="hero page-hero-inner">
+    <div class="eyebrow">Support</div>
+    <h1>Help with Ribbonside</h1>
+    <p class="lead">Use this page for account help, subscription questions, privacy requests, or app support. You can also report a problem from inside the app.</p>
+  </section>
+</header>
+
+<main>
+  <section class="support-box">
+    <strong>Contact</strong>
+    <a class="email" href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
+    <p class="contact-note">We aim to reply within two business days. This inbox is not monitored 24/7.</p>
+  </section>
+
+  <div class="warning">
+    Ribbonside is a private organiser, not an emergency or medical support service. If you need urgent help in Australia, call <strong>Triple Zero (000)</strong>, or contact your care team or hospital about treatment concerns.
+  </div>
+
+  <section class="grid" aria-label="Support topics">
+    <article class="card">
+      <h2>Sign-in, PIN, and Face ID</h2>
+      <p>If a sign-in code is delayed, use the newest code only. If PIN or Face ID is not working as expected, contact support with your device model and app version.</p>
+    </article>
+
+    <article class="card">
+      <h2>Subscriptions and refunds</h2>
+      <p>Ribbonside Plus is billed through Apple. To cancel: iPhone Settings - Apple ID - Subscriptions - Ribbonside - Cancel Subscription. Refund requests are handled by Apple through <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+    </article>
+
+    <article class="card">
+      <h2>Account deletion and data</h2>
+      <p>You can delete your account or erase the local health vault from the app's Account area. Deleting the app or account does not automatically cancel an Apple subscription.</p>
+    </article>
+
+    <article class="card">
+      <h2>Privacy and security requests</h2>
+      <p>For privacy questions, access requests, correction requests, or security concerns, email support and include enough detail for us to identify your account.</p>
+    </article>
+
+    <article class="card">
+      <h2>Apple Health</h2>
+      <p>Ribbonside reads Apple Health data only if you allow it. You can change access in iPhone Settings - Privacy &amp; Security - Health - Ribbonside.</p>
+    </article>
+
+    <article class="card">
+      <h2>Ask AI</h2>
+      <p>Ask AI is optional and gives general plain-English explanations. Do not enter names, Medicare numbers, medical record numbers, or full clinical reports.</p>
+    </article>
+  </section>
+
+  <div class="note">
+    Ribbonside is a personal organiser and general information tool. It does not diagnose, treat, monitor, predict, provide medical advice, or support clinical decision-making.
+  </div>
+
+  <section class="footer">
+    <p>Ribbonside is operated by Diesel Advocacy Pty Ltd, ABN 82 690 643 853, New South Wales, Australia.</p>
+    <p><a href="legal.html#privacy">Privacy Policy</a> · <a href="legal.html#security">Security Practices</a> · <a href="legal.html#terms">Terms of Use</a> · <a href="legal.html#refund">Refund Policy</a></p>
+  </section>
+</main>
+</body>
+</html>
