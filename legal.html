@@ -333,12 +333,13 @@
     <button class="tab" onclick="show('medical')">Medical Disclaimer</button>
     <button class="tab" onclick="show('health')">Health Data</button>
     <button class="tab" onclick="show('tga')">Regulatory &amp; ACL</button>
+    <button class="tab" onclick="show('accessibility')">Accessibility</button>
   </div>
 
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="doc active">
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 7 June 2026</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 14 June 2026</p>
 
     <h2>1. Who We Are</h2>
     <p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853. We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>. We handle personal information and health information in line with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).</p>
@@ -350,6 +351,7 @@
       <li><strong>Health and life-admin content you choose to add:</strong> diagnosis details, medications, appointments, symptoms, wellbeing logs, diary entries, photos, documents, test results, exercise, care notes, and care-team details. This content is stored in an encrypted local vault on your device.</li>
       <li><strong>Optional integrations:</strong> Apple Health activity data if you connect it, notification preferences, and subscription entitlement status from Apple or RevenueCat.</li>
       <li><strong>Support and security records:</strong> support tickets, messages you send us, device/app diagnostics, admin actions, and security/audit logs needed to help you and protect the service.</li>
+      <li><strong>Website records:</strong> ordinary website and hosting logs, such as IP address, browser/device details, pages requested, referrers, timestamps, and security events. The website may also request fonts and assets from third-party providers such as Google Fonts.</li>
     </ul>
     <div class="note">Health information is sensitive information under Australian privacy law. We collect it only where needed to provide the app features you choose to use.</div>
 
@@ -365,14 +367,19 @@
       <tr><th>Provider</th><th>Purpose</th><th>Location</th><th>Privacy Policy</th></tr>
       <tr><td><strong>Supabase Inc.</strong></td><td>Authentication, consent history, support and security records, subscription entitlement, AI usage limits, and limited online records needed to operate the service</td><td>Australia - Sydney (AWS ap-southeast-2)</td><td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></td></tr>
       <tr><td><strong>Anthropic PBC</strong></td><td>Optional Ask AI plain-English explanations only when you choose to type and send a question</td><td>United States</td><td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></td></tr>
-      <tr><td><strong>Apple Inc.</strong></td><td>App Store, Sign in with Apple, Apple Health, notifications, billing, subscriptions, and refunds</td><td>United States / global</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td></tr>
-      <tr><td><strong>RevenueCat Inc.</strong></td><td>Subscription entitlement status and in-app purchase management</td><td>United States / global</td><td><a href="https://www.revenuecat.com/privacy/" target="_blank">revenuecat.com/privacy</a></td></tr>
-      <tr><td><strong>Expo / EAS</strong></td><td>App build infrastructure - no personal health data intentionally shared</td><td>United States</td><td><a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></td></tr>
+      <tr><td><strong>Apple Inc.</strong></td><td>App Store, Sign in with Apple, Apple Health permission controls, notifications, billing, subscriptions, and refunds</td><td>United States / global</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td></tr>
+      <tr><td><strong>RevenueCat Inc.</strong></td><td>Subscription entitlement status, purchase history, product identifiers, App Store transaction details, RevenueCat app user ID, and technical device/app identifiers needed to manage in-app purchases</td><td>United States / global</td><td><a href="https://www.revenuecat.com/privacy/" target="_blank">revenuecat.com/privacy</a></td></tr>
+      <tr><td><strong>Expo / EAS</strong></td><td>App build and update delivery infrastructure. Expo/EAS is not used by Ribbonside to store user-entered health vault content.</td><td>United States</td><td><a href="https://expo.dev/privacy" target="_blank">expo.dev/privacy</a></td></tr>
+      <tr><td><strong>Resend</strong></td><td>Email delivery for support notifications and service messages. Support alert emails are designed not to include the private message body.</td><td>United States / global</td><td><a href="https://resend.com/legal/privacy-policy" target="_blank">resend.com/legal/privacy-policy</a></td></tr>
     </table>
     <p>We choose service providers that support appropriate privacy and security protections for the type of information they handle. Where a provider processes personal information for Ribbonside, we expect them to use it only for the agreed service purpose and not for their own advertising or unrelated purposes.</p>
+    <p>Where a provider is listed as global, processing may occur in the country named and in other countries where that provider or its subprocessors operate, support the service, or meet legal/security obligations.</p>
 
     <h2>6. No Sale, Advertising, Or Tracking Use</h2>
     <p>Ribbonside does not sell personal information or health information. Ribbonside does not use health information for advertising, profiling, insurance, employment, pharmaceutical marketing, or data-broker purposes. Ribbonside does not share Apple Health data with third parties.</p>
+
+    <h2>6A. Website Cookies, Analytics, And Tracking</h2>
+    <p>Ribbonside does not currently use advertising cookies, tracking pixels, behavioural advertising tools, or web analytics on ribbonside.com.au. If this changes, we will update this policy and describe the provider, purpose, and choices available to visitors. Basic server and security logs may still be created when you visit the website.</p>
 
     <h2>7. Local Storage And Overseas Processing</h2>
     <p>Your core health records, documents, photos, notes, appointments, medications, symptoms, and diary entries are stored in Ribbonside's encrypted local vault on your device. Ribbonside does not use Supabase as the primary storage location for those records in this launch version.</p>
@@ -399,21 +406,30 @@
       <li><strong>Deletion or de-identification:</strong> request deletion of your personal information, subject to limited legal, security, billing, or backup retention needs</li>
       <li><strong>Complaint:</strong> contact support@ribbonside.com.au. We aim to acknowledge privacy complaints within 5 business days and respond within 30 days where reasonably possible. If unresolved, you may contact the OAIC at <a href="https://oaic.gov.au">oaic.gov.au</a> · 1300 363 992</li>
     </ul>
+    <p>Privacy requests can be sent to the Privacy Officer at <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>. Please include enough information for us to identify your account. We may need to verify your identity before providing access, correcting information, or deleting online account records.</p>
 
     <h2>11. AI-Assisted Features</h2>
     <p>If you choose to use Ask AI, the text you type is sent securely to <strong>Anthropic's Claude API</strong> for processing. Ask AI is designed for short plain-English explanations and is opt-in. Do not include your name, date of birth, Medicare number, medical record number, or full clinical reports. You can decline Ask AI and continue using manual entry.</p>
+    <p>Anthropic's API retention depends on the API feature, model, account setting, and contract terms. Ribbonside uses Ask AI only for short typed questions, does not use Claude consumer accounts, and does not ask users to include identifying health information. Anthropic states that retained API data is not used for model training without express permission. Data may be retained longer where required for a service setting, Usage Policy enforcement, legal obligations, or abuse prevention.</p>
     <p>Ribbonside logs limited AI usage metadata for security, limits, and cost monitoring, but does not store your AI prompt text in Supabase. Ribbonside does not offer AI report upload or report-reading in this launch version.</p>
 
     <h2>12. Automated Decisions</h2>
     <p>Ribbonside does not use automated decision-making to make decisions that have a legal, financial, health treatment, insurance, employment, or similarly significant effect on you. Ask AI explanations are general information only and must not be used as medical advice.</p>
 
     <h2>13. International Transfers</h2>
-    <p>Anthropic, Apple, RevenueCat, Expo, and other trusted processors may handle limited data outside Australia where needed for the purposes described above. Core health records and files are stored in the local vault on your device. Limited online account, consent, support, security, subscription, and AI usage-limit records are stored in Australia via Supabase.</p>
+    <p>Anthropic, Apple, RevenueCat, Expo, Resend, and other trusted processors may handle limited data outside Australia where needed for the purposes described above. Core health records and files are stored in the local vault on your device. Limited online account, consent, support, security, subscription, and AI usage-limit records are stored in Australia via Supabase.</p>
+    <p>Where personal information is processed overseas by trusted providers, Ribbonside relies on contractual commitments and those providers' published privacy and data processing terms to support appropriate protections for the information they handle.</p>
 
     <h2>14. Children</h2>
     <p>Ribbonside is not intended for users under 18.</p>
+    <p>If we become aware that an under-18 user has created an account, we may suspend or delete the account and associated online records, subject to any legal, security, billing, or backup retention needs. A parent or guardian can contact support if they believe a child has provided personal information to Ribbonside.</p>
 
-    <h2>15. Changes to This Policy</h2>
+    <h2>15. Policy Version And Changes</h2>
+    <p>Current policy version: <strong>1.9</strong>. Last reviewed: <strong>14 June 2026</strong>.</p>
+    <ul>
+      <li><strong>Version 1.9 - 14 June 2026:</strong> clarified website logs, cookies/analytics, AI retention, overseas processors, RevenueCat, Resend, support-message sensitivity, under-18 handling, accessibility, and Terms wording.</li>
+      <li><strong>Version 1.8 - 7 June 2026:</strong> launch privacy, local-vault, security, HealthKit, TGA, refund, and ACL wording.</li>
+    </ul>
     <p>We may revise, update, or replace this Privacy Policy from time to time. We will notify you of any changes by posting the revised version on this website. Any changes take effect on the date posted.</p>
 
     <h2>16. Contact</h2>
@@ -424,7 +440,7 @@
   <!-- SECURITY PRACTICES -->
   <div id="security" class="doc">
     <h1 class="doc-title">Security Practices</h1>
-    <p class="doc-meta">Last updated: 7 June 2026 · Safeguards and incident response</p>
+    <p class="doc-meta">Last updated: 14 June 2026 · Safeguards and incident response</p>
 
     <h2>1. What This Covers</h2>
     <p>This page summarises how Ribbonside protects personal information and health information. The <a href="#privacy" onclick="show('privacy')">Privacy Policy</a> explains what information we collect, use, disclose, and delete. The <a href="#health" onclick="show('health')">Health Data Statement</a> lists the health data categories handled by the app.</p>
@@ -440,7 +456,7 @@
     </ul>
 
     <h2>3. Support Access</h2>
-    <p>Support tickets may include account details, app diagnostics, and any details you choose to send us. Support access is used only to investigate tickets, security issues, billing or account problems, suspected misuse, or legal obligations.</p>
+    <p>Support tickets may include account details, app diagnostics, and any details you choose to send us. Do not send Medicare numbers, medical record numbers, full reports, or highly identifying health details unless they are genuinely needed for the support issue. Support access is used only to investigate tickets, security issues, billing or account problems, suspected misuse, or legal obligations.</p>
 
     <h2>4. User Controls</h2>
     <ul>
@@ -465,7 +481,7 @@
   <!-- TERMS OF USE -->
   <div id="terms" class="doc">
     <h1 class="doc-title">Terms of Use</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 7 June 2026 · Governing law: New South Wales, Australia</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 14 June 2026 · Governing law: New South Wales, Australia</p>
 
     <h2>1. Agreement</h2>
     <p>By using Ribbonside you agree to these Terms. Governed by the laws of New South Wales, Australia.</p>
@@ -501,6 +517,7 @@
 
     <h2>8. Your Data</h2>
     <p>You retain full ownership of all data, photos and content you provide. Ribbonside does not claim ownership of your health data. In this launch version, core records and uploaded files are stored in the local vault on your device, while limited online account, consent, support, subscription, legal/security, and AI usage-limit records are stored online as described in the Privacy Policy.</p>
+    <p>You give Ribbonside a limited permission to process your content only as needed to provide the app, keep local records available on your device, create exports you request, provide support, operate subscriptions and security controls, and process optional Ask AI text you choose to send.</p>
 
     <h2>9. Service Availability, Local Storage, And Backups</h2>
     <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Because core records are stored locally on your device in the launch version, Ribbonside may not be able to recover records if you delete the app, erase the vault, lose the device, forget access details, or do not maintain your own backups or exports.</p>
@@ -515,7 +532,7 @@
     <h3>12.1 Cancellation by You</h3>
     <p>You may cancel your subscription at any time through Apple App Store. Upon cancellation, your subscription will remain active until the end of your current billing period unless Apple or applicable law provides otherwise. Refund requests should be made through Apple. Nothing in these Terms limits your Australian Consumer Law rights.</p>
     <h3>12.2 Suspension or Termination by Ribbonside</h3>
-    <p>We reserve the right to suspend or terminate your account if you have violated these Terms, your use poses a security risk, your account has been inactive for an extended period, or continued provision is no longer commercially viable.</p>
+    <p>We reserve the right to suspend or terminate your account if you have violated these Terms, your use poses a security risk, your account has been inactive for an extended period, or continued provision is no longer commercially viable. Where reasonable, we will give notice and an opportunity to export available data before termination.</p>
     <h3>12.3 Effect of Termination</h3>
     <p>Upon termination, your right to access the Service will cease immediately. Online account records will be handled in accordance with our Privacy Policy and deleted or de-identified within 30 days of account closure, unless limited records must be retained for legal, security, billing, or backup reasons. Local vault records remain on your device until you erase the vault, delete the app, or remove them yourself. Account deletion does not automatically cancel an Apple App Store subscription.</p>
 
@@ -535,7 +552,7 @@
   <!-- REFUND POLICY -->
   <div id="refund" class="doc">
     <h1 class="doc-title">Refund Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 7 June 2026</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 14 June 2026</p>
 
     <h2>1. Free Trial</h2>
     <p>If an Apple App Store trial or introductory offer is available to you, Apple will show the offer details, first charge date, renewal price, and cancellation options before you confirm purchase.</p>
@@ -557,7 +574,7 @@
   <!-- MEDICAL DISCLAIMER -->
   <div id="medical" class="doc">
     <h1 class="doc-title">Medical Disclaimer</h1>
-    <p class="doc-meta">Last updated: 7 June 2026 · Displayed at first launch · Users must acknowledge before proceeding</p>
+    <p class="doc-meta">Last updated: 14 June 2026 · Displayed at first launch · Users must acknowledge before proceeding</p>
 
     <div class="warn"><strong>Ribbonside is a personal organiser and general information tool.</strong> It is not registered as a medical device with the TGA. It does not diagnose, treat, monitor, predict, provide medical advice, or support clinical decision-making.</div>
 
@@ -584,7 +601,7 @@
   <!-- HEALTH DATA STATEMENT -->
   <div id="health" class="doc">
     <h1 class="doc-title">Health Data Statement</h1>
-    <p class="doc-meta">Last updated: 7 June 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
+    <p class="doc-meta">Last updated: 14 June 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
 
     <div class="note">In this launch version, user-entered health records, documents, photos, appointments, medications, diary entries, symptoms, results, and care notes are stored in the encrypted local vault on your device. Supabase is used for limited online account, consent, support, subscription, security, and AI usage-limit records.</div>
 
@@ -639,7 +656,7 @@
   <!-- TGA & ACL -->
   <div id="tga" class="doc">
     <h1 class="doc-title">Regulatory Position &amp; ACL Statement</h1>
-    <p class="doc-meta">Last updated: 7 June 2026 · Conservative launch wording · Australian Consumer Law</p>
+    <p class="doc-meta">Last updated: 14 June 2026 · Conservative launch wording · Australian Consumer Law</p>
 
     <h2>1. TGA Position</h2>
     <p>Ribbonside is intended as a personal organiser and general information tool. It is not registered as a medical device with the TGA. It is not designed for diagnosis, treatment, monitoring, prediction, prognosis, or care decisions. This position should be read as launch-facing product wording, not legal or regulatory advice.</p>
@@ -662,13 +679,28 @@
     <p><a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
 
     <h2>6. Annual Review</h2>
-    <p>This compliance position statement is reviewed annually. Last reviewed: May 2026.</p>
+    <p>This compliance position statement is reviewed annually. Last reviewed: June 2026.</p>
+  </div>
+
+  <!-- ACCESSIBILITY -->
+  <div id="accessibility" class="doc">
+    <h1 class="doc-title">Accessibility Statement</h1>
+    <p class="doc-meta">Last updated: 14 June 2026 · Accessibility and support</p>
+
+    <h2>1. Our Aim</h2>
+    <p>Ribbonside aims to be usable by people navigating breast cancer treatment and recovery, including people who may be tired, stressed, visually strained, or using assistive technologies.</p>
+
+    <h2>2. Current Approach</h2>
+    <p>We aim to use clear language, readable contrast, predictable navigation, scalable text where supported by the platform, and plain support pathways. Ribbonside is a small product and accessibility improvements are reviewed as part of ongoing app and website updates.</p>
+
+    <h2>3. Feedback</h2>
+    <p>If any part of the app or website is difficult to use, email <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> with the device, browser, assistive technology if relevant, and the issue you encountered. We aim to respond within two business days.</p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · ribbonside.com.au · <a href="support.html">Support</a> · support@ribbonside.com.au<br>
+  © 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · ribbonside.com.au · <a href="support.html">Support</a> · <a href="#tga" onclick="show('tga')">Regulatory &amp; ACL</a> · <a href="#accessibility" onclick="show('accessibility')">Accessibility</a> · support@ribbonside.com.au<br>
   <span style="font-size:11px;opacity:0.7;">The Ribbonside pink ribbon mark is original brand artwork inspired by the general awareness-ribbon tradition. Ribbonside is not affiliated with or endorsed by any breast cancer charity or foundation.</span>
 </footer>
 
