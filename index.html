@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ribbonside - Private support organiser</title>
-<meta name="description" content="A private support organiser for the practical side of breast cancer.">
+<title>Ribbonside - Private organiser</title>
+<meta name="description" content="A private organiser for the practical side of breast cancer.">
 <link rel="canonical" href="https://ribbonside.com.au/">
 <link rel="icon" type="image/png" href="pink-ribbon.png">
-<meta property="og:title" content="Ribbonside - Private support organiser">
-<meta property="og:description" content="A private support organiser for the practical side of breast cancer.">
+<meta property="og:title" content="Ribbonside - Private organiser">
+<meta property="og:description" content="A private organiser for the practical side of breast cancer.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ribbonside.com.au/">
 <meta property="og:image" content="https://ribbonside.com.au/founder-hero-no-ribbon.jpg">
@@ -191,6 +191,51 @@ nav{
 }
 .card strong{display:block;margin-bottom:6px}
 .card p{font-size:14px;color:var(--muted)}
+.founder-story{
+  align-items:center;
+  grid-template-columns:320px 1fr;
+}
+.founder-photo{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:18px;
+  border:1px solid var(--border);
+  box-shadow:0 18px 48px rgba(30,20,20,.12);
+}
+.story-card{
+  padding:26px;
+}
+.story-card .eyebrow{
+  color:var(--pink);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.story-card p{
+  color:var(--ink);
+  font-size:16px;
+  margin-top:12px;
+}
+.story-card .signature{
+  color:var(--muted);
+  font-weight:700;
+}
+.story-card .story-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  margin-top:16px;
+  padding:0 18px;
+  border-radius:10px;
+  background:var(--ink);
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
 .download-card{
   display:grid;
   grid-template-columns:minmax(0,1fr) 190px;
@@ -241,6 +286,7 @@ footer a{color:var(--muted)}
   .grid{grid-template-columns:1fr}
   .download-card{grid-template-columns:1fr;text-align:center}
   .nav-links{gap:12px}
+  .founder-story{grid-template-columns:1fr;gap:22px}
 }
 @media(max-width:520px){
   nav{padding:0 20px}
@@ -279,18 +325,33 @@ footer a{color:var(--muted)}
           <h1>Ribbonside</h1>
         </div>
         <div class="brand-divider"></div>
-        <div class="kicker">Built by someone who needed it.</div>
-        <p class="lead">A private support organiser for the practical side of breast cancer.</p>
+        <div class="kicker">The calm place for the practical side of breast cancer.</div>
+        <p class="lead">Keep appointments, medications, notes, photos and documents together.</p>
       </div>
       <div class="hero-footer-wrap">
-        <div class="hero-footer">Private support organiser</div>
+        <div class="hero-footer">Built by someone who needed it</div>
         <div class="footer-divider"></div>
       </div>
     </div>
   </section>
 
+  <section class="section founder-story">
+    <div>
+      <img class="founder-photo" src="vanessa-chemo-founder-story.jpg" alt="Vanessa during chemotherapy treatment">
+    </div>
+    <div class="card story-card">
+      <div class="eyebrow">Why I built Ribbonside</div>
+      <h2>Built from lived experience.</h2>
+      <p>I was diagnosed with breast cancer in September 2025. What followed was multiple surgeries, chemotherapy, radiation, and now hormone blockers.</p>
+      <p>During treatment, I felt completely overwhelmed by the practical side: appointments, medications, questions, results, photos and documents everywhere.</p>
+      <p>I ended up building something for myself called Ribbonside, just to help keep that side of breast cancer in one place.</p>
+      <p class="signature">I hope you find it as useful as I did.</p>
+      <a class="story-link" href="https://apps.apple.com/au/app/ribbonside/id6773605047">Download Ribbonside on the App Store</a>
+    </div>
+  </section>
+
   <section class="section">
-    <h2>Built for practical support.</h2>
+    <h2>Built for practical organisation.</h2>
     <div class="grid">
       <div class="card"><strong>Private by design</strong><p>Core records stay in the on-device vault. Limited online records support sign-in, consent, support, subscriptions, and AI usage limits.</p></div>
       <div class="card"><strong>Plain-English help</strong><p>Optional What does this mean? is limited to short typed questions and general explanations. It is not a personalised medical assistant.</p></div>
@@ -304,7 +365,7 @@ footer a{color:var(--muted)}
       <div>
         <strong>Free on the App Store</strong>
         <p class="available">Ribbonside is now available in Australia.</p>
-        <p>Download the free app on your iPhone or iPad. Optional Ribbonside Plus features are available through Apple subscriptions.</p>
+        <p>Download Ribbonside on your iPhone or iPad. Optional Plus features are available through Apple subscriptions.</p>
         <a class="app-store-link" href="https://apps.apple.com/au/app/ribbonside/id6773605047">View on the App Store</a>
       </div>
       <div class="qr-wrap">
