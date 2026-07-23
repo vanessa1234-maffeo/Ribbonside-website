@@ -1,6 +1,6 @@
-Contact: mailto:support@ribbonside.com
-Contact: mailto:admin@ribbonside.com
+Contact: mailto:support@ribbonside.com.au
+Contact: mailto:admin@ribbonside.com.au
 Preferred-Languages: en
 Canonical: https://ribbonside.com.au/.well-known/security.txt
 Policy: https://ribbonside.com.au/legal.html#security
-Expires: 2027-06-14T00:00:00Z
+Expires: 2027-07-23T00:00:00Z

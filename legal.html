@@ -3,322 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1E1414">
 <title>Privacy, Security & Terms — Ribbonside</title>
 <meta name="description" content="Ribbonside privacy policy, security practices, and terms of service. How local-first storage, optional AI features, and online account records are handled." />
 <link rel="canonical" href="https://ribbonside.com.au/legal.html" />
-<link rel="icon" type="image/png" href="pink-ribbon.png" />
+<link rel="icon" type="image/png" href="ribbonside-ribbon-logo.png">
 <meta property="og:title" content="Privacy, Security & Terms - Ribbonside" />
 <meta property="og:description" content="Ribbonside privacy, security, terms, refunds, HealthKit, accessibility, and regulatory information." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ribbonside.com.au/legal.html" />
-<meta property="og:image" content="https://ribbonside.com.au/founder-hero-no-ribbon.jpg" />
+<meta property="og:image" content="https://ribbonside.com.au/ribbonside-founder-hero.jpg">
 <meta name="twitter:card" content="summary_large_image" />
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --pink: #EB94AE;
-    --pink-light: #FFF0F5;
-    --pink-mid: #F2C4D4;
-    --pink-strong: #C84F7F;
-    --cream: #FDFAF8;
-    --charcoal: #1E1414;
-    --muted: #7A6060;
-    --border: #EAE0E0;
-  }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--charcoal);
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-
-  /* ── NAV ── */
-  nav {
-    background: linear-gradient(180deg, rgba(30,20,20,.62), rgba(30,20,20,0));
-    border-bottom: 0;
-    padding: 0 6%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .brand-logo {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
-
-  .brand-name {
-    font-family: 'Lora', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-  }
-
-  .nav-back {
-    font-size: 13px;
-    color: rgba(255,255,255,.82);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 999px;
-    background: rgba(30,20,20,.22);
-    backdrop-filter: blur(6px);
-    text-shadow: 0 1px 8px rgba(30,20,20,.55);
-    transition: color 0.15s;
-  }
-
-  .nav-back:hover { color: white; }
-
-  .page-hero {
-    min-height: 370px;
-    display: flex;
-    align-items: flex-end;
-    padding: 112px 6% 58px;
-    color: white;
-    background-image:
-      linear-gradient(90deg, rgba(30,20,20,.88) 0%, rgba(30,20,20,.62) 55%, rgba(30,20,20,.18) 100%),
-      linear-gradient(180deg, rgba(30,20,20,.08), rgba(30,20,20,.32)),
-      url("founder-hero-no-ribbon.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .page-hero-inner {
-    width: min(880px, 100%);
-    margin: 0 auto;
-  }
-
-  .page-label {
-    color: var(--pink);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .page-hero h1 {
-    font-family: 'Lora', serif;
-    font-size: clamp(42px, 7vw, 78px);
-    line-height: .98;
-    margin-bottom: 18px;
-    text-shadow: 0 12px 32px rgba(30,20,20,.26);
-  }
-
-  .page-hero p {
-    max-width: 680px;
-    color: rgba(255,255,255,.88);
-    font-size: clamp(17px, 2vw, 22px);
-    line-height: 1.45;
-    font-weight: 500;
-    margin: 0;
-  }
-
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 46px 24px 82px;
-  }
-
-  /* ── PAGE HEADER ── */
-  .page-header {
-    margin-bottom: 34px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .page-header h1 {
-    font-family: 'Lora', serif;
-    font-size: clamp(36px, 6vw, 58px);
-    line-height: 1.05;
-    color: var(--charcoal);
-    margin-bottom: 12px;
-  }
-
-  .page-header p {
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  /* ── DOC TABS ── */
-  .tab-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 38px;
-  }
-
-  .tab {
-    min-height: 38px;
-    padding: 0 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .tab:hover { border-color: var(--pink-mid); color: var(--charcoal); }
-
-  .tab.active {
-    background: var(--pink);
-    border-color: var(--pink);
-    color: white;
-    font-weight: 600;
-  }
-
-  /* ── DOC SECTIONS ── */
-  .doc { display: none; }
-  .doc.active { display: block; }
-
-  .doc-title {
-    font-family: 'Lora', serif;
-    font-size: clamp(26px, 4vw, 36px);
-    line-height: 1.15;
-    color: var(--charcoal);
-    margin-bottom: 4px;
-  }
-
-  .doc-meta {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 32px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  h2 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--charcoal);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin: 28px 0 10px;
-    padding-left: 10px;
-    border-left: 3px solid var(--pink);
-  }
-
-  h3 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin: 20px 0 8px;
-  }
-
-  p {
-    font-size: 14px;
-    color: #3A2828;
-    margin-bottom: 12px;
-    line-height: 1.75;
-  }
-
-  ul { padding-left: 20px; margin-bottom: 14px; }
-  ul li { font-size: 14px; color: #3A2828; margin-bottom: 5px; line-height: 1.65; }
-
-  a { color: var(--pink-strong); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  strong { font-weight: 600; color: var(--charcoal); }
-
-  /* ── CALLOUTS ── */
-  .note {
-    background: var(--pink-light);
-    border-left: 3px solid var(--pink);
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 14px 0;
-    font-size: 13px;
-    color: #9E3158;
-  }
-
-  .warn {
-    background: #FFF8E0;
-    border-left: 3px solid #D4A017;
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 14px 0;
-    font-size: 13px;
-    color: #8B6914;
-  }
-
-  .good {
-    background: #E5F8EE;
-    border-left: 3px solid #2EAA6E;
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 14px 0;
-    font-size: 13px;
-    color: #1A7A4A;
-  }
-
-  /* ── TABLE ── */
-  table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 13px; }
-  th { text-align: left; padding: 9px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--pink); border-bottom: 1.5px solid var(--border); }
-  td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: #3A2828; vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  tr:nth-child(even) td { background: #FDFAFA; }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px 32px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-    background: white;
-  }
-
-  @media(max-width:720px){
-    nav{padding:0 20px}
-    .page-hero{min-height:330px;padding:92px 20px 42px}
-    .container{padding:44px 20px 62px}
-    .nav-back{font-size:12px}
-    table{
-      display:block;
-      overflow-x:auto;
-      white-space:nowrap;
-    }
-  }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ribbonside-info.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <a href="index.html" class="brand">
-    <div class="brand-logo"><img src="pink-ribbon.png" alt="Pink ribbon" /></div>
-    <span class="brand-name">Ribbonside</span>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="brand" href="index.html" aria-label="Ribbonside home">
+    <img src="ribbonside-ribbon-logo.png" width="256" height="256" alt="">
+    <span class="brand-text"><strong>Ribbonside</strong><small>Breast cancer organiser</small></span>
   </a>
-  <a href="index.html" class="nav-back">← Back to site</a>
+  <div class="nav-links" aria-label="Page sections">
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#who-its-for">Who It's For</a>
+    <a href="index.html#my-story">My Story</a>
+    <a href="support.html">Contact</a>
+  </div>
+  <a class="nav-cta" href="app/">Get app</a>
 </nav>
 
 <header class="page-hero">
@@ -329,7 +44,7 @@
   </div>
 </header>
 
-<div class="container">
+<main id="main" class="container">
 
   <div class="tab-strip">
     <button class="tab active" onclick="show('privacy')">Privacy Policy</button>
@@ -345,17 +60,17 @@
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="doc active">
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 9 July 2026</p>
-    <p class="doc-meta">Policy version 2.0 · Last reviewed 9 July 2026 · See "Policy Version And Changes" below.</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 23 July 2026</p>
+    <p class="doc-meta">Policy version 2.1 · Last reviewed 23 July 2026 · See "Policy Version And Changes" below.</p>
 
     <h2>1. Who We Are</h2>
     <p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853. We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>. We handle personal information and health information in line with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).</p>
-    <p>Privacy contact: <a href="mailto:support@ribbonside.com">support@ribbonside.com</a></p>
+    <p>Privacy contact: <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
 
     <h2>2. What We Collect And Why</h2>
     <ul>
-      <li><strong>Account information:</strong> name and email address, so you can sign in and get support.</li>
-      <li><strong>Health and life-admin content you choose to add:</strong> diagnosis details, medications, appointments, symptoms, wellbeing logs, diary entries, photos, documents, test results, exercise, care notes, and care-team details. This content is stored in an encrypted local vault on your device.</li>
+      <li><strong>Account information:</strong> your Sign in with Apple identifier and, if Apple provides it, an Apple private-relay email address, so you can sign in and get support.</li>
+      <li><strong>Health and life-admin content you choose to add:</strong> diagnosis details, medications, appointments, symptoms, wellbeing logs, notes, doctor questions, photos, documents, test results, exercise, care notes, and care-team details. This content is stored in an encrypted local vault on your device.</li>
       <li><strong>Optional integrations:</strong> Apple Health activity data if you connect it, notification preferences, and subscription entitlement status from Apple or RevenueCat.</li>
       <li><strong>Support and security records:</strong> support tickets, messages you send us, device/app diagnostics, admin actions, and security/audit logs needed to help you and protect the service.</li>
       <li><strong>Privacy-safe app activity analytics:</strong> limited feature events such as app opens, screen views, purchase/restore steps, support-ticket submission status, and whether a saved item used optional settings such as notes or reminders. These events help us understand what is working, find errors, manage AI usage limits, and improve Ribbonside.</li>
@@ -389,10 +104,10 @@
 
     <h2>6A. Website Cookies, Analytics, And Tracking</h2>
     <p>Ribbonside does not currently use advertising cookies, tracking pixels, behavioural advertising tools, or web analytics on ribbonside.com.au. If this changes, we will update this policy and describe the provider, purpose, and choices available to visitors. Basic server and security logs may still be created when you visit the website.</p>
-    <p>Ribbonside may use privacy-safe in-app activity analytics for product quality, support, security, subscription-flow checks, AI usage limits, and error investigation. These app activity events are designed not to include your diagnosis text, medication names, appointment details, journal notes, documents, photos, AI question text, care-team contact details, or other private record content.</p>
+    <p>Ribbonside may use privacy-safe in-app activity analytics for product quality, support, security, subscription-flow checks, AI usage limits, and error investigation. These app activity events are designed not to include your diagnosis text, medication names, appointment details, notes, doctor questions, documents, photos, AI question text, care-team contact details, or other private record content.</p>
 
     <h2>7. Local Storage And Overseas Processing</h2>
-    <p>Your core health records, documents, photos, notes, appointments, medications, symptoms, and diary entries are stored in Ribbonside's encrypted local vault on your device. Ribbonside does not use Supabase as the primary storage location for those records in this launch version.</p>
+    <p>Your core health records, documents, photos, notes, doctor questions, appointments, medications, and symptoms are stored in Ribbonside's encrypted local vault on your device. Ribbonside does not use Supabase as the primary storage location for those records in this launch version.</p>
     <p>Supabase stores limited online records needed for account sign-in, consent history, support, subscription entitlement, legal/security operations, and AI usage limits in <strong>Australia - Sydney (AWS ap-southeast-2)</strong>. Trusted providers may process limited data where needed for billing, subscriptions, support, optional AI features, website hosting, or legal and security purposes.</p>
     <div class="warn">Because the health vault is local to your device, Ribbonside may not be able to recover your records if you delete the app, erase the vault, lose the phone, or cannot restore from your own backup or export.</div>
     <p>Depending on your device settings, iPhone/iCloud backups, screenshots, exports, or files you share outside Ribbonside may be controlled by Apple, your cloud account, email provider, or another storage provider rather than by Ribbonside. Keep exports and backups secure.</p>
@@ -401,15 +116,15 @@
     <h2>8. Retention</h2>
     <ul>
       <li><strong>Local vault records:</strong> kept on your device until you delete the item, erase the vault, delete the app, delete your account on that device, or restore/replace the device.</li>
-      <li><strong>Online account and consent records:</strong> kept while your account is active, then deleted or de-identified within 30 days after account deletion unless limited retention is required.</li>
-      <li><strong>Support tickets:</strong> usually kept for up to 24 months after the issue is closed, unless longer retention is reasonably needed for legal, security, billing, dispute, or audit purposes.</li>
+      <li><strong>Online account and consent records:</strong> kept while your account is active. If you delete your account, Ribbonside removes or de-identifies Ribbonside-controlled online records where reasonably possible, unless limited retention is needed for legal, security, billing, dispute, backup, audit, or service-integrity reasons.</li>
+      <li><strong>Support tickets:</strong> usually kept for up to 12 months after the issue is closed, unless longer retention is reasonably needed for legal, billing, dispute, security, abuse-prevention, or service-integrity reasons.</li>
       <li><strong>Security, audit, and rate-limit logs:</strong> usually kept for up to 12 months, unless longer retention is needed to investigate misuse, fraud, security incidents, legal obligations, or service integrity.</li>
-      <li><strong>Privacy-safe app activity analytics:</strong> usually kept for up to 24 months unless earlier deletion, de-identification, or longer retention is reasonably needed for security, legal, support, billing, abuse-prevention, or service-integrity reasons.</li>
+      <li><strong>Privacy-safe app activity analytics:</strong> usually kept for up to 12 months, then deleted or de-identified unless longer retention is reasonably needed for security, support, billing, abuse-prevention, or service-integrity reasons.</li>
       <li><strong>Backups and provider logs:</strong> may persist until the relevant backup or log cycle expires. They are not used for ordinary active service.</li>
     </ul>
 
     <h2>9. Account Deletion</h2>
-    <div class="good">You can delete your Ribbonside account from <strong>Account - Delete My Account</strong>. When deletion succeeds, the app erases the local health vault on that device. Online account, consent, support, subscription, security, and AI usage-limit records will be deleted or de-identified within 30 days, unless limited records must be retained for legal, security, billing, or backup reasons. You can also erase only the local health vault from <strong>Account - Privacy &amp; Your Data - Erase Health Vault</strong>. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store subscription; subscriptions must be cancelled through Apple.</div>
+    <div class="good">You can delete your Ribbonside account from <strong>Account - Delete account</strong>. When deletion succeeds, the app erases the local health vault on that device and removes Ribbonside-controlled online account records where reasonably possible. Limited online, support, subscription, security, AI usage-limit, backup, or provider log records may remain where needed for legal, security, billing, dispute, audit, or service-integrity reasons. You can also erase only the local health vault from <strong>Account - Privacy &amp; Your Data - Erase Health Vault</strong>. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store subscription; subscriptions must be cancelled through Apple.</div>
 
     <h2>10. Your Rights</h2>
     <ul>
@@ -417,9 +132,9 @@
       <li><strong>Correction:</strong> request correction of inaccurate or incomplete data</li>
       <li><strong>Export:</strong> export your app data from the Account screen where available</li>
       <li><strong>Deletion or de-identification:</strong> request deletion of your personal information, subject to limited legal, security, billing, or backup retention needs</li>
-      <li><strong>Complaint:</strong> contact support@ribbonside.com. We aim to acknowledge privacy complaints within 5 business days and respond within 30 days where reasonably possible. If unresolved, you may contact the OAIC at <a href="https://oaic.gov.au">oaic.gov.au</a> · 1300 363 992</li>
+      <li><strong>Complaint:</strong> contact support@ribbonside.com.au. We aim to acknowledge privacy complaints within 5 business days and respond within 30 days where reasonably possible. If unresolved, you may contact the OAIC at <a href="https://oaic.gov.au">oaic.gov.au</a> · 1300 363 992</li>
     </ul>
-    <p>Privacy requests can be sent to the Privacy Officer at <a href="mailto:support@ribbonside.com">support@ribbonside.com</a>. Please include enough information for us to identify your account. We may need to verify your identity before providing access, correcting information, or deleting online account records.</p>
+    <p>Privacy requests can be sent to the Privacy Officer at <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>. Please include enough information for us to identify your account. We may need to verify your identity before providing access, correcting information, or deleting online account records.</p>
 
     <h2>11. AI-Assisted Features</h2>
     <p>If you choose to use What does this mean?, the text you type is sent securely to <strong>Anthropic's Claude API</strong> for processing. What does this mean? is designed for short plain-English explanations and is opt-in. Do not include your name, date of birth, Medicare number, medical record number, or full clinical reports. You can decline What does this mean? and continue using manual entry.</p>
@@ -438,8 +153,9 @@
     <p>If we become aware that an under-18 user has created an account, we may suspend or delete the account and associated online records, subject to any legal, security, billing, or backup retention needs. A parent or guardian can contact support if they believe a child has provided personal information to Ribbonside.</p>
 
     <h2>15. Policy Version And Changes</h2>
-    <p>Current policy version: <strong>2.0</strong>. Last reviewed: <strong>9 July 2026</strong>.</p>
+    <p>Current policy version: <strong>2.1</strong>. Last reviewed: <strong>23 July 2026</strong>.</p>
     <ul>
+      <li><strong>Version 2.1 - 23 July 2026:</strong> updated Sign in with Apple, device security, support wording, and retention wording so the website matches the current app and operational cleanup plan.</li>
       <li><strong>Version 2.0 - 9 July 2026:</strong> added privacy-safe app activity analytics wording, clarified what is never included in app analytics, and updated subscription/AI limit wording for the trial/introductory-offer and paid Plus model.</li>
       <li><strong>Version 1.9 - 14 June 2026:</strong> clarified website logs, cookies/analytics, AI retention, overseas processors, RevenueCat, Resend, support-message sensitivity, under-18 handling, accessibility, and Terms wording.</li>
       <li><strong>Version 1.8 - 7 June 2026:</strong> launch privacy, local-vault, security, HealthKit, TGA, refund, and ACL wording.</li>
@@ -448,24 +164,24 @@
 
     <h2>16. Contact</h2>
     <p>Ribbonside (Diesel Advocacy Pty Ltd) · ABN 82 690 643 853 · New South Wales, Australia<br>
-    <a href="mailto:support@ribbonside.com">support@ribbonside.com</a> · <a href="support.html">Support page</a> · <a href="https://ribbonside.com.au">ribbonside.com.au</a></p>
+    <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> · <a href="support.html">Support page</a> · <a href="https://ribbonside.com.au">ribbonside.com.au</a></p>
   </div>
 
   <!-- SECURITY PRACTICES -->
   <div id="security" class="doc">
     <h1 class="doc-title">Security Practices</h1>
-    <p class="doc-meta">Last updated: 14 June 2026 · Safeguards and incident response</p>
+    <p class="doc-meta">Last updated: 23 July 2026 · Safeguards and incident response</p>
 
     <h2>1. What This Covers</h2>
     <p>This page summarises how Ribbonside protects personal information and health information. The <a href="#privacy" onclick="show('privacy')">Privacy Policy</a> explains what information we collect, use, disclose, and delete. The <a href="#health" onclick="show('health')">Health Data Statement</a> lists the health data categories handled by the app.</p>
 
     <h2>2. Safeguards</h2>
     <ul>
-      <li>Core health records, documents, photos, notes, appointments, medications, symptoms, and diary entries are stored in an encrypted local vault on your device.</li>
+      <li>Core health records, documents, photos, notes, doctor questions, appointments, medications, and symptoms are stored in an encrypted local vault on your device.</li>
       <li>Limited online account, consent, support, security, subscription, and AI usage-limit records are stored in Supabase in <strong>Australia - Sydney (AWS ap-southeast-2)</strong>.</li>
       <li>Data is encrypted in transit. Local vault data is encrypted on device in native builds, and online records are protected by Supabase security controls.</li>
       <li>Supabase Row Level Security restricts online account data to the signed-in user and authorised service/admin access where needed for support, billing, legal, security, or abuse-prevention purposes.</li>
-      <li>The app requires a PIN, with optional Face ID or Touch ID where supported by the device.</li>
+      <li>The app requires a PIN, with optional Face ID or device passcode access where supported by your device settings.</li>
       <li>Admin and support access is limited to support, security, billing, legal, or abuse-prevention needs.</li>
     </ul>
 
@@ -477,25 +193,25 @@
       <li>Export your app data from the Account screen where available and keep exports secure.</li>
       <li>Erase the local health vault on this device from the Account screen.</li>
       <li>Request correction of inaccurate information by contacting support.</li>
-      <li>Delete your account and have online account records deleted or de-identified within 30 days, subject to limited legal, security, billing, or backup retention needs.</li>
+      <li>Delete your account and have Ribbonside-controlled online account records removed or de-identified where reasonably possible, subject to limited legal, security, billing, dispute, backup, audit, or service-integrity retention needs.</li>
       <li>Revoke Apple Health access in iOS Settings at any time.</li>
-      <li>Delete photos, documents, reports, diary entries, and other local app items you no longer want to keep.</li>
+      <li>Delete photos, documents, reports, notes, questions, and other local app items you no longer want to keep.</li>
     </ul>
 
     <h2>5. Data Breach Response</h2>
     <p>Ribbonside maintains an internal data breach response plan. If we suspect an eligible data breach, we will contain the incident, preserve evidence, assess the risk, and take reasonable and expeditious steps to complete the assessment within 30 calendar days. If a breach is likely to cause serious harm, we will notify affected users and the OAIC as soon as practicable, including what happened, what information was involved, and recommended steps. If direct contact is not practicable, we may publish a notice on this website and take reasonable steps to publicise it.</p>
 
     <h2>6. Vulnerability Or Privacy Issue Reporting</h2>
-    <p>If you believe you have found a privacy or security issue, email <a href="mailto:support@ribbonside.com">support@ribbonside.com</a> with "Security report" in the subject and enough detail for us to investigate. Administrative security notices may also be sent to <a href="mailto:admin@ribbonside.com">admin@ribbonside.com</a>. Please do not access, copy, change, delete, or disclose anyone else's information while reporting an issue.</p>
+    <p>If you believe you have found a privacy or security issue, email <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> with "Security report" in the subject and enough detail for us to investigate. Administrative security notices may also be sent to <a href="mailto:admin@ribbonside.com.au">admin@ribbonside.com.au</a>. Please do not access, copy, change, delete, or disclose anyone else's information while reporting an issue.</p>
 
     <h2>7. Limits And Reporting</h2>
-    <p>No app, device, or online service can guarantee perfect security. A stolen, unlocked, jailbroken, rooted, or compromised device may still expose local records. If you suspect a privacy or security issue involving Ribbonside, contact <a href="mailto:support@ribbonside.com">support@ribbonside.com</a>.</p>
+    <p>No app, device, or online service can guarantee perfect security. A stolen, unlocked, jailbroken, rooted, or compromised device may still expose local records. If you suspect a privacy or security issue involving Ribbonside, contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>.</p>
   </div>
 
   <!-- TERMS OF USE -->
   <div id="terms" class="doc">
     <h1 class="doc-title">Terms of Use</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 9 July 2026 · Governing law: New South Wales, Australia</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 23 July 2026 · Governing law: New South Wales, Australia</p>
 
     <h2>1. Agreement</h2>
     <p>By using Ribbonside you agree to these Terms. Governed by the laws of New South Wales, Australia.</p>
@@ -516,7 +232,7 @@
     <ul>
       <li>Keep your device, app PIN, Apple ID, email account, and backups secure.</li>
       <li>Enter information carefully and check it before relying on it for reminders, records, or conversations with your care team.</li>
-      <li>Do not share your PIN, sign-in code, or device access with anyone you do not trust.</li>
+      <li>Do not share your app PIN, Apple ID access, email account access, or device access with anyone you do not trust.</li>
       <li>Do not use Ribbonside to upload unlawful, abusive, misleading, or third-party information you do not have permission to store.</li>
       <li>Use exports carefully, because exported files may no longer be protected by the app's local vault.</li>
     </ul>
@@ -538,7 +254,7 @@
     <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Because core records are stored locally on your device in the launch version, Ribbonside may not be able to recover records if you delete the app, erase the vault, lose the device, forget access details, or do not maintain your own backups or exports.</p>
 
     <h2>10. Australian Consumer Law Guarantees</h2>
-    <div class="good">Nothing in these Terms excludes your non-excludable rights under the <strong>Australian Consumer Law</strong> (Competition and Consumer Act 2010 (Cth)). If the Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com or NSW Fair Trading on 13 32 20.</div>
+    <div class="good">Nothing in these Terms excludes your non-excludable rights under the <strong>Australian Consumer Law</strong> (Competition and Consumer Act 2010 (Cth)). If the Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com.au or NSW Fair Trading on 13 32 20.</div>
 
     <h2>11. Limitation of Liability</h2>
     <p>Subject to your non-excludable ACL rights, Ribbonside is not liable for health outcomes, treatment decisions, missed appointments, medication errors, data loss caused by local device loss or deletion, or loss or damage arising from use of the app beyond the remedies required by law.</p>
@@ -549,7 +265,7 @@
     <h3>12.2 Suspension or Termination by Ribbonside</h3>
     <p>We reserve the right to suspend or terminate your account if you have violated these Terms, your use poses a security risk, your account has been inactive for an extended period, or continued provision is no longer commercially viable. Where reasonable, we will give notice and an opportunity to export available data before termination.</p>
     <h3>12.3 Effect of Termination</h3>
-    <p>Upon termination, your right to access the Service will cease immediately. Online account records will be handled in accordance with our Privacy Policy and deleted or de-identified within 30 days of account closure, unless limited records must be retained for legal, security, billing, or backup reasons. Local vault records remain on your device until you erase the vault, delete the app, or remove them yourself. Account deletion does not automatically cancel an Apple App Store subscription.</p>
+    <p>Upon termination, your right to access the Service will cease immediately. Online account records will be handled in accordance with our Privacy Policy and removed or de-identified where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. Local vault records remain on your device until you erase the vault, delete the app, or remove them yourself. Account deletion does not automatically cancel an Apple App Store subscription.</p>
 
     <h2>13. Intellectual Property</h2>
     <p>The Ribbonside name, app, design and content belong to Diesel Advocacy Pty Ltd. You may not reproduce or distribute without written permission.</p>
@@ -561,15 +277,15 @@
     <p>We may update these Terms from time to time. We will notify you of any changes by posting the revised version on this website. Any changes take effect on the date posted. Continued use after the effective date constitutes acceptance.</p>
 
     <h2>16. Contact</h2>
-    <p><a href="mailto:support@ribbonside.com">support@ribbonside.com</a></p>
+    <p><a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
   </div>
 
   <!-- REFUND POLICY -->
   <div id="refund" class="doc">
     <h1 class="doc-title">Refund Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 14 June 2026</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 23 July 2026</p>
 
-    <h2>1. Free Trial</h2>
+    <h2>1. Trial or Introductory Offer</h2>
     <p>If an Apple App Store trial or introductory offer is available to you, Apple will show the offer details, first charge date, renewal price, and cancellation options before you confirm purchase.</p>
 
     <h2>2. How To Cancel</h2>
@@ -580,16 +296,16 @@
     <p>Refund requests for in-app purchases should be made through Apple App Store. Refund decisions and processing times are handled by Apple.</p>
 
     <h2>4. Australian Consumer Law Rights</h2>
-    <div class="good">Nothing in this policy limits your non-excludable rights under the <strong>Australian Consumer Law</strong>. If our Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com, NSW Fair Trading on 13 32 20, or the ACCC on 1300 302 502.</div>
+    <div class="good">Nothing in this policy limits your non-excludable rights under the <strong>Australian Consumer Law</strong>. If our Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com.au, NSW Fair Trading on 13 32 20, or the ACCC on 1300 302 502.</div>
 
     <h2>5. Contact</h2>
-    <p><a href="mailto:support@ribbonside.com">support@ribbonside.com</a></p>
+    <p><a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
   </div>
 
   <!-- MEDICAL DISCLAIMER -->
   <div id="medical" class="doc">
     <h1 class="doc-title">Medical Disclaimer</h1>
-    <p class="doc-meta">Last updated: 14 June 2026 · Displayed at first launch · Users must acknowledge before proceeding</p>
+    <p class="doc-meta">Last updated: 23 July 2026 · Displayed at first launch · Users must acknowledge before proceeding</p>
 
     <div class="warn"><strong>Ribbonside is a personal organiser and general information tool.</strong> It is not registered as a medical device with the TGA. It does not diagnose, treat, monitor, predict, provide medical advice, or support clinical decision-making.</div>
 
@@ -616,9 +332,9 @@
   <!-- HEALTH DATA STATEMENT -->
   <div id="health" class="doc">
     <h1 class="doc-title">Health Data Statement</h1>
-    <p class="doc-meta">Last updated: 14 June 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
+    <p class="doc-meta">Last updated: 23 July 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
 
-    <div class="note">In this launch version, user-entered health records, documents, photos, appointments, medications, diary entries, symptoms, results, and care notes are stored in the encrypted local vault on your device. Supabase is used for limited online account, consent, support, subscription, security, and AI usage-limit records.</div>
+    <div class="note">In this launch version, user-entered health records, documents, photos, appointments, medications, notes, questions, symptoms, results, and care notes are stored in the encrypted local vault on your device. Supabase is used for limited online account, consent, support, subscription, security, and AI usage-limit records.</div>
 
     <h2>What We Collect and Why</h2>
     <table>
@@ -628,11 +344,11 @@
       <tr><td>Medications and dose logs</td><td>You enter and tap to log</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
       <tr><td>Appointments</td><td>You enter them</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
       <tr><td>Photos and documents</td><td>Camera, photo library, document picker, or manual entry</td><td>App-private local vault storage on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
-      <tr><td>Diary entries</td><td>You write them</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
+      <tr><td>Notes and doctor questions</td><td>You write them</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
       <tr><td>Symptom logs and wellbeing check-ins</td><td>You complete them</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
       <tr><td>Healthcare team details</td><td>You enter them</td><td>Encrypted local vault on your device</td><td>When you delete the item, erase the vault, or delete the app</td></tr>
       <tr><td>What does this mean? query text</td><td>You type it and choose to send it</td><td>Sent to Anthropic for processing; not stored in Supabase by Ribbonside</td><td>Handled under Anthropic API retention terms; Ribbonside logs limited usage metadata only</td></tr>
-      <tr><td>Account, consent, support, subscription, security, and AI usage-limit records</td><td>Created when you sign in, accept legal notices, contact support, subscribe, or use AI limits</td><td>Supabase - Sydney</td><td>Deleted or de-identified within 30 days of account deletion unless retention is required</td></tr>
+      <tr><td>Account, consent, support, subscription, security, and AI usage-limit records</td><td>Created when you sign in, accept legal notices, contact support, subscribe, or use AI limits</td><td>Supabase - Sydney</td><td>Removed or de-identified where reasonably possible after account deletion unless limited retention is required</td></tr>
     </table>
 
     <h2>Health Data (Apple Health / HealthKit)</h2>
@@ -660,18 +376,18 @@
       <li>Never sell your health data</li>
       <li>Never use your data for advertising</li>
       <li>Never share with pharmaceutical companies, insurers, employers, or government agencies (except where legally required)</li>
-      <li>Never use your photos or diary entries to train AI models</li>
-      <li>Never access your diary except where you choose to send content to support, use an optional feature, or where access is required for legal, security, or safety reasons</li>
+      <li>Never use your photos, notes, or questions to train AI models</li>
+      <li>Never access your notes except where you choose to send content to support, use an optional feature, or where access is required for legal, security, or safety reasons</li>
     </ul>
 
     <h2>Deletion</h2>
-    <div class="good">Account - Privacy &amp; Your Data - Erase Health Vault removes local records from this device only. Account - Delete My Account erases the local vault on that device and deletes or de-identifies online account records within 30 days, unless limited records must be retained for legal, security, billing, or backup reasons. Deleting the online account or app does not automatically cancel an Apple App Store subscription; subscriptions must be cancelled through Apple.</div>
+    <div class="good">Account - Privacy &amp; Your Data - Erase Health Vault removes local records from this device only. Account - Delete account erases the local vault on that device and removes Ribbonside-controlled online account records where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. Deleting the online account or app does not automatically cancel an Apple App Store subscription; subscriptions must be cancelled through Apple.</div>
   </div>
 
   <!-- TGA & ACL -->
   <div id="tga" class="doc">
     <h1 class="doc-title">Regulatory Position &amp; ACL Statement</h1>
-    <p class="doc-meta">Last updated: 14 June 2026 · Conservative launch wording · Australian Consumer Law</p>
+    <p class="doc-meta">Last updated: 23 July 2026 · Conservative launch wording · Australian Consumer Law</p>
 
     <h2>1. TGA Position</h2>
     <p>Ribbonside is intended as a personal organiser and general information tool. It is not registered as a medical device with the TGA. It is not designed for diagnosis, treatment, monitoring, prediction, prognosis, or care decisions. This position should be read as launch-facing product wording, not legal or regulatory advice.</p>
@@ -688,19 +404,19 @@
     <p>Ribbonside marketing should stay in conservative personal-organiser language such as "track", "log", "record", "store", "organise", and "remind". It must not claim to diagnose, treat, monitor, prevent, cure, improve, or manage a disease or treatment pathway, and it must not make therapeutic benefit claims.</p>
 
     <h2>4. Australian Consumer Law Guarantees</h2>
-    <div class="good">The Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) provides automatic consumer guarantees that cannot be excluded by contract. Nothing in our Terms excludes these non-excludable rights. Contact support@ribbonside.com or NSW Fair Trading on 13 32 20.</div>
+    <div class="good">The Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) provides automatic consumer guarantees that cannot be excluded by contract. Nothing in our Terms excludes these non-excludable rights. Contact support@ribbonside.com.au or NSW Fair Trading on 13 32 20.</div>
 
     <h2>5. Contact</h2>
-    <p><a href="mailto:support@ribbonside.com">support@ribbonside.com</a></p>
+    <p><a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a></p>
 
     <h2>6. Annual Review</h2>
-    <p>This compliance position statement is reviewed annually. Last reviewed: June 2026.</p>
+    <p>This compliance position statement is reviewed annually. Last reviewed: July 2026.</p>
   </div>
 
   <!-- ACCESSIBILITY -->
   <div id="accessibility" class="doc">
     <h1 class="doc-title">Accessibility Statement</h1>
-    <p class="doc-meta">Last updated: 14 June 2026 · Accessibility and support</p>
+    <p class="doc-meta">Last updated: 23 July 2026 · Accessibility and support</p>
 
     <h2>1. Our Aim</h2>
     <p>Ribbonside aims to be usable by people navigating breast cancer treatment and recovery, including people who may be tired, stressed, visually strained, or using assistive technologies.</p>
@@ -709,13 +425,13 @@
     <p>We aim to use clear language, readable contrast, predictable navigation, scalable text where supported by the platform, and plain support pathways. We aim to align with WCAG 2.2 AA where practical, while continuing to test and improve the app and website over time. This statement is not a claim of full certification.</p>
 
     <h2>3. Feedback</h2>
-    <p>If any part of the app or website is difficult to use, email <a href="mailto:support@ribbonside.com">support@ribbonside.com</a> with the device, browser, assistive technology if relevant, and the issue you encountered. We aim to respond within two business days.</p>
+    <p>If any part of the app or website is difficult to use, email <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a> with the device, browser, assistive technology if relevant, and the issue you encountered. We aim to respond within two business days.</p>
   </div>
 
-</div>
+</main>
 
 <footer>
-  © 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · ribbonside.com.au · <a href="support.html">Support</a> · <a href="#tga" onclick="show('tga')">Regulatory &amp; ACL</a> · <a href="#accessibility" onclick="show('accessibility')">Accessibility</a> · support@ribbonside.com<br>
+  © 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · ribbonside.com.au · <a href="support.html">Support</a> · <a href="#tga" onclick="show('tga')">Regulatory &amp; ACL</a> · <a href="#accessibility" onclick="show('accessibility')">Accessibility</a> · support@ribbonside.com.au<br>
   <span style="font-size:11px;opacity:0.7;">The Ribbonside pink ribbon mark is original brand artwork inspired by the general awareness-ribbon tradition. Ribbonside is not affiliated with or endorsed by any breast cancer charity or foundation.</span>
 </footer>
 
