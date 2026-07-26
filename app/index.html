@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opening Ribbonside on the App Store</title>
+<title>Get Ribbonside</title>
 <meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://apps.apple.com/au/app/ribbonside/id6773605047">
-<meta http-equiv="refresh" content="0; url=https://apps.apple.com/au/app/ribbonside/id6773605047">
-<script>
-  window.location.replace("https://apps.apple.com/au/app/ribbonside/id6773605047");
-</script>
+<link rel="canonical" href="https://ribbonside.com.au/app/">
 <style>
 :root{
   --cream:#FDFAF8;
   --ink:#1E1414;
   --muted:#7A6060;
+  --line:#EAE0E0;
+  --pink:#EB94AE;
+  --pink-soft:#FFF0F5;
 }
 *{box-sizing:border-box}
 body{
@@ -26,30 +25,93 @@ body{
   background:var(--cream);
   color:var(--ink);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+main{
+  width:min(720px,100%);
   text-align:center;
 }
-main{max-width:420px}
-h1{margin:0 0 12px;font-size:28px;line-height:1.15}
-p{margin:0 0 22px;color:var(--muted);line-height:1.5}
-a{
-  display:inline-flex;
+.logo{
+  width:58px;
+  height:58px;
+  margin:0 auto 18px;
+  border-radius:999px;
+}
+h1{margin:0 0 12px;font-size:34px;line-height:1.08}
+.lead{margin:0 auto 26px;max-width:560px;color:var(--muted);line-height:1.55}
+.store-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.store-card{
+  min-height:178px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:16px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:white;
+  text-align:left;
+}
+.store-card h2{margin:0;font-size:20px}
+.store-card p{margin:8px 0 0;color:var(--muted);line-height:1.45}
+.store-card a,
+.store-card span[aria-disabled="true"]{
   min-height:48px;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0 20px;
+  padding:0 18px;
   border-radius:999px;
   background:var(--ink);
   color:white;
   font-weight:800;
   text-decoration:none;
 }
+.store-card span[aria-disabled="true"]{
+  background:var(--pink-soft);
+  color:var(--muted);
+}
+.note{
+  margin:24px auto 0;
+  max-width:560px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.note a{color:var(--ink);font-weight:800}
+@media(max-width:640px){
+  body{padding:22px}
+  .store-grid{grid-template-columns:1fr}
+  h1{font-size:30px}
+}
 </style>
 </head>
 <body>
 <main>
-  <h1>Opening the App Store...</h1>
-  <p>If it does not open automatically, use the button below.</p>
-  <a href="https://apps.apple.com/au/app/ribbonside/id6773605047">Open Ribbonside on the App Store</a>
+  <img class="logo" src="../ribbonside-ribbon-logo.png" width="256" height="256" alt="">
+  <h1>Get Ribbonside</h1>
+  <p class="lead">Choose the store for your phone. Ribbonside is live on the App Store now; Android is being prepared before Google Play release.</p>
+  <div class="store-grid" aria-label="Store options">
+    <section class="store-card">
+      <div>
+        <h2>iPhone</h2>
+        <p>Download Ribbonside from the App Store.</p>
+      </div>
+      <a href="https://apps.apple.com/au/app/ribbonside/id6773605047">Open App Store</a>
+    </section>
+    <section class="store-card">
+      <div>
+        <h2>Android</h2>
+        <p>Google Play closed testing and store setup are being prepared.</p>
+      </div>
+      <span aria-disabled="true">Google Play coming later</span>
+    </section>
+  </div>
+  <p class="note">Need help? Contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>.</p>
 </main>
 </body>
 </html>
