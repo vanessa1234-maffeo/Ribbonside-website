@@ -352,6 +352,36 @@ tr:last-child td{border-bottom:0}
   color:var(--muted);
   font-size:14px;
 }
+.data-deletion-box{
+  margin:0 0 24px;
+  padding:26px;
+  border:1px solid var(--pink-mid);
+  border-left:4px solid var(--pink);
+  border-radius:8px;
+  background:var(--pink-soft);
+}
+.data-deletion-box h2{
+  margin:0 0 14px;
+  padding:0;
+  border:0;
+  color:var(--ink);
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(30px,5vw,42px);
+  font-weight:400;
+  letter-spacing:0;
+  line-height:1.05;
+  text-transform:none;
+}
+.data-deletion-box ol{
+  margin:0 0 18px;
+  padding-left:22px;
+}
+.data-deletion-box p,
+.data-deletion-box li{
+  color:#3A2828;
+  font-size:15px;
+}
+.data-deletion-box p:last-child{margin-bottom:0}
 .grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));

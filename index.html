@@ -227,11 +227,40 @@ h1{
   border-color:rgba(255,255,255,.36);
   background:rgba(255,255,255,.1);
 }
-.hero-note{
+.hero-availability{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  flex-wrap:wrap;
   margin:26px auto 0;
+}
+.hero-note{
+  margin:0;
   color:rgba(255,255,255,.72);
   font-size:13px;
   font-weight:700;
+}
+.android-status{
+  min-height:26px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:0 10px;
+  border:1px solid rgba(235,148,174,.5);
+  border-radius:999px;
+  background:rgba(30,20,20,.42);
+  color:var(--pink-mid);
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.android-status::before{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--pink);
+  content:"";
 }
 .intro-strip{
   border-bottom:1px solid var(--line);
@@ -639,7 +668,9 @@ footer a:hover{text-decoration:underline}
   min-height:auto;
   padding:92px 22px 30px;
   color:var(--paper);
-  background:var(--ink);
+  background:
+    linear-gradient(180deg,rgba(30,20,20,.84),rgba(30,20,20,.76)),
+    url("ribbonside-founder-hero.jpg") center / cover no-repeat;
 }
 .hero .eyebrow{
   display:inline-flex;
@@ -804,7 +835,6 @@ footer a:hover{text-decoration:underline}
   .phone-showcase,.card-grid{grid-template-columns:1fr}
   .phone-showcase{width:min(260px,100%)}
   .phone-frame img{height:350px}
-  .phone-card:nth-child(3){display:none}
   .section-inner{padding-top:58px;padding-bottom:58px}
   .section-copy h2,.founder-copy h2,.social-header h2,.cta-inner h2,.audience-header h2{font-size:42px}
   .intro-title{font-size:12px}
@@ -843,14 +873,15 @@ footer a:hover{text-decoration:underline}
 <main id="main">
   <section class="hero" aria-label="Ribbonside introduction">
     <div class="hero-inner">
-      <p class="eyebrow">Built through treatment</p>
       <h1>Ribbonside, for the practical side of breast cancer.</h1>
       <p class="hero-lead">A private phone organiser for appointments, medications, questions, photos, documents and treatment information that is too important to lose.</p>
       <div class="hero-actions">
-        <a class="button primary" href="app/">Get Ribbonside</a>
-        <a class="button secondary" href="#how-it-works">See how it works</a>
+        <a class="button primary" href="#how-it-works">See how it works</a>
       </div>
-      <p class="hero-note">Created from lived experience. Available now on the App Store; Android release preparation is underway.</p>
+      <div class="hero-availability">
+        <p class="hero-note">Created from lived experience. Available now on the App Store.</p>
+        <span class="android-status">Android - in testing</span>
+      </div>
     </div>
   </section>
 
@@ -1082,12 +1113,11 @@ footer a:hover{text-decoration:underline}
   <section class="cta-section" id="contact">
     <div class="cta-inner">
       <div>
-        <h2>Get Ribbonside.</h2>
-        <p>Available in Australia on the App Store. Android release preparation is underway before a Google Play release.</p>
+        <h2>Support and contact.</h2>
+        <p>For app support, privacy, subscriptions or general Ribbonside questions.</p>
         <a class="cta-email" href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>
         <div class="cta-actions">
-          <a class="button primary" href="app/">Get app</a>
-          <a class="button secondary" href="support.html">Contact support</a>
+          <a class="button primary" href="support.html">Visit support</a>
         </div>
       </div>
     </div>
@@ -1097,7 +1127,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <div class="footer-inner">
     <div>&copy; 2026 Diesel Advocacy Pty Ltd · ABN 82 690 643 853 · Ribbonside</div>
-    <div><a href="support.html">Support</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
+    <div><a href="support.html">Support</a> · <a href="account-deletion.html">Delete account or data</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
   </div>
 </footer>
 </body>
