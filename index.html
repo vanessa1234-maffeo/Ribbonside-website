@@ -395,6 +395,20 @@ h1{
   font-size:14px;
   line-height:1.55;
 }
+.plus-disclosure{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--surface);
+}
+.plus-disclosure p{
+  width:min(1180px,100%);
+  margin:0 auto;
+  padding:18px 22px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+  text-align:center;
+}
 .founder-section{
   border-top:1px solid var(--line);
   background:var(--surface);
@@ -867,7 +881,7 @@ footer a:hover{text-decoration:underline}
         <a class="button primary" href="#how-it-works">See how it works</a>
       </div>
       <div class="hero-availability">
-        <p class="hero-note">Created from lived experience. Available now on the App Store. Organiser tools require Ribbonside Plus.</p>
+        <p class="hero-note">Created from lived experience. Available now on the App Store.</p>
         <span class="android-status">Android - in testing</span>
       </div>
     </div>
@@ -1031,6 +1045,10 @@ footer a:hover{text-decoration:underline}
       </div>
     </div>
   </section>
+
+  <aside class="plus-disclosure" aria-label="Ribbonside Plus subscription information">
+    <p>Ribbonside Plus subscription required for organiser tools. App Store pricing is shown before purchase.</p>
+  </aside>
 
   <section class="founder-section" id="my-story">
     <div class="founder-inner">
