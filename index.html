@@ -797,8 +797,27 @@ footer a:hover{text-decoration:underline}
   font-size:15px;
 }
 @media(max-width:960px){
-  .site-nav{grid-template-columns:1fr auto;width:min(100% - 32px,1180px);top:10px;margin-top:10px}
-  .nav-links{display:none}
+  .site-nav{
+    grid-template-columns:1fr auto;
+    grid-template-areas:"brand cta" "links links";
+    width:min(100% - 32px,1180px);
+    top:10px;
+    margin-top:10px;
+  }
+  .brand{grid-area:brand}
+  .nav-links{
+    grid-area:links;
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    width:100%;
+  }
+  .nav-links a{
+    justify-content:center;
+    padding:0 8px;
+    white-space:nowrap;
+  }
+  .nav-cta{grid-area:cta}
   h1{font-size:72px}
   .intro-inner,.section-inner,.founder-inner{
     grid-template-columns:1fr;
@@ -824,6 +843,8 @@ footer a:hover{text-decoration:underline}
   .brand-text small{display:none}
   .brand img{width:34px;height:34px}
   .nav-cta{min-height:38px;padding:0 14px}
+  .nav-links{gap:2px;padding:4px}
+  .nav-links a{min-height:32px;padding:0 4px;font-size:11px}
   .hero{
     padding:58px 18px 34px;
   }
@@ -869,7 +890,7 @@ footer a:hover{text-decoration:underline}
     <a href="#my-story">My Story</a>
     <a href="#contact">Contact</a>
   </div>
-  <a class="nav-cta" href="app/">Get app</a>
+  <a class="nav-cta" href="https://apps.apple.com/au/app/ribbonside/id6773605047">Get app</a>
 </nav>
 
 <main id="main">
