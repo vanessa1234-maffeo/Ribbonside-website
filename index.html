@@ -19,9 +19,12 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Ribbonside",
-  "operatingSystem": "iOS",
+  "operatingSystem": "iOS, Android",
   "url": "https://ribbonside.com.au/",
-  "downloadUrl": "https://apps.apple.com/au/app/ribbonside/id6773605047",
+  "downloadUrl": [
+    "https://apps.apple.com/au/app/ribbonside/id6773605047",
+    "https://play.google.com/store/apps/details?id=com.ribbonside.app"
+  ],
   "description": "A private organiser for the practical side of breast cancer.",
   "publisher": {
     "@type": "Organization",
@@ -218,11 +221,10 @@ h1{
   background:rgba(255,255,255,.1);
 }
 .hero-availability{
-  display:flex;
+  display:grid;
   align-items:center;
   justify-content:center;
-  gap:9px;
-  flex-wrap:wrap;
+  gap:12px;
   margin:26px auto 0;
 }
 .hero-note{
@@ -231,26 +233,29 @@ h1{
   font-size:13px;
   font-weight:700;
 }
-.android-status{
-  min-height:26px;
+.store-badges{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.store-badge{
   display:inline-flex;
   align-items:center;
-  gap:7px;
-  padding:0 10px;
-  border:1px solid rgba(235,148,174,.5);
-  border-radius:999px;
-  background:rgba(30,20,20,.42);
-  color:var(--pink-mid);
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
+  justify-content:center;
+  text-decoration:none;
 }
-.android-status::before{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--pink);
-  content:"";
+.store-badge img{
+  display:block;
+  width:auto;
+  object-fit:contain;
+}
+.store-badge.apple img{height:40px}
+.store-badge.google img{height:58px}
+.store-badge:focus-visible{
+  outline:3px solid var(--pink);
+  outline-offset:4px;
 }
 .intro-strip{
   border-bottom:1px solid var(--line);
@@ -890,7 +895,6 @@ footer a:hover{text-decoration:underline}
     <a href="#my-story">My Story</a>
     <a href="#contact">Contact</a>
   </div>
-  <a class="nav-cta" href="https://apps.apple.com/au/app/ribbonside/id6773605047">Get app</a>
 </nav>
 
 <main id="main">
@@ -902,16 +906,19 @@ footer a:hover{text-decoration:underline}
         <a class="button primary" href="#how-it-works">See how it works</a>
       </div>
       <div class="hero-availability">
-        <p class="hero-note">Created from lived experience. Available now on the App Store.</p>
-        <span class="android-status">Android - in testing</span>
+        <p class="hero-note">Created from lived experience. Available on the App Store and Google Play.</p>
+        <div class="store-badges" aria-label="Download Ribbonside">
+          <a class="store-badge apple" href="https://apps.apple.com/au/app/ribbonside/id6773605047" aria-label="Download Ribbonside on the App Store"><img src="app-store-badge.svg" alt="Download on the App Store"></a>
+          <a class="store-badge google" href="https://play.google.com/store/apps/details?id=com.ribbonside.app" aria-label="Get Ribbonside on Google Play"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="intro-strip" id="how-it-works">
     <div class="intro-inner">
-      <h2 class="intro-title">What Ribbonside helps with</h2>
-      <p class="intro-copy">Breast cancer brings more than treatment. It brings protocols, medication times, questions to remember, changes to photograph and the anxiety of missing something important. Ribbonside was built to give those loose pieces a clearer home.</p>
+      <h2 class="intro-title">Your private records, kept together in one place.</h2>
+      <p class="intro-copy">Appointments, reminders and medications. Care team, treatments and surgeries. Notes, questions, photos and documents. Practical details together when you need them.</p>
     </div>
   </section>
 
@@ -926,8 +933,8 @@ footer a:hover{text-decoration:underline}
       <p class="phone-caption"><strong>Records in plain sections</strong><span>Find treatment history, appointments and contacts later.</span></p>
     </article>
     <article class="phone-card">
-      <div class="phone-frame"><img src="ribbonside-app-surgery-recovery-screen.jpg" width="600" height="1243" alt="Ribbonside Surgery and Recovery screen for hospital stays, drains, wound checks and recovery notes"></div>
-      <p class="phone-caption"><strong>Surgery &amp; recovery</strong><span>Track hospital stays, drains, wound checks and recovery notes.</span></p>
+      <div class="phone-frame"><img src="ribbonside-app-surgery-recovery-screen-2026-08-23.jpg" width="600" height="1239" alt="Ribbonside Surgery and Recovery screen showing surgery details, pre-op questions, drain tracking and recovery milestones"></div>
+      <p class="phone-caption"><strong>Surgery &amp; recovery</strong><span>Keep surgery details, pre-op questions, drain updates and recovery milestones together.</span></p>
     </article>
   </section>
 
@@ -1056,12 +1063,12 @@ footer a:hover{text-decoration:underline}
       <div class="section-copy">
         <p class="eyebrow">Settings</p>
         <h2>Clear controls, no mystery.</h2>
-        <p>Privacy, subscriptions, local vault controls, Apple Health or Health Connect access, and account deletion are surfaced in the app so you can make changes when you need to.</p>
+        <p>Privacy, subscriptions, local vault controls, optional Apple Health access on iPhone, and account deletion are surfaced in the app so you can make changes when you need to.</p>
       </div>
       <div class="card-grid">
         <article class="feature-card"><span class="feature-icon">01</span><div><h3>Local vault</h3><p>Core health records, photos and documents are stored on your device.</p></div></article>
         <article class="feature-card"><span class="feature-icon">02</span><div><h3>Privacy and consent</h3><p>Review legal notices, consent choices, exports and deletion controls.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Health access</h3><p>Connect optional read-only activity signals, then revoke access any time in iPhone or Android settings.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Apple Health on iPhone</h3><p>Connect optional read-only Apple Health activity signals on iPhone, then revoke access at any time in iPhone settings.</p></div></article>
         <article class="feature-card"><span class="feature-icon">04</span><div><h3>Store subscriptions</h3><p>Manage paid access, cancellations and refunds through the store where you subscribed.</p></div></article>
       </div>
     </div>
@@ -1089,7 +1096,7 @@ footer a:hover{text-decoration:underline}
     <div class="trust-inner">
       <div class="trust-item"><strong>Private by design</strong><p>Core records stay in the on-device vault. Limited online records support sign-in, consent, support, subscriptions and AI usage limits.</p></div>
       <div class="trust-item"><strong>Plain-English help</strong><p>What does this mean? is limited to short typed questions and general explanations. It is not personalised medical advice.</p></div>
-      <div class="trust-item"><strong>Clear user control</strong><p>Delete local records, export your data, manage subscriptions through your app store, and revoke Apple Health or Health Connect access any time.</p></div>
+      <div class="trust-item"><strong>Clear user control</strong><p>Delete local records, export your data, manage subscriptions through your app store, and revoke Apple Health access on iPhone at any time.</p></div>
     </div>
   </section>
 
@@ -1107,7 +1114,7 @@ footer a:hover{text-decoration:underline}
             <span class="social-status">Ribbonside</span>
           </div>
           <ul class="social-list">
-            <li>Official Ribbonside page updates for App Store availability and product news.</li>
+            <li>Official Ribbonside page updates for App Store and Google Play availability and product news.</li>
             <li>Founder posts about why the app was built and how it fits into real treatment life.</li>
             <li>Plain-English posts people can save, revisit or send on if useful.</li>
           </ul>
@@ -1154,7 +1161,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <div class="footer-inner">
     <div>&copy; 2026 Diesel Advocacy Pty Ltd. Ribbonside&trade;. All rights reserved.</div>
-    <div><a href="support.html">Support</a> · <a href="account-deletion.html">Delete account or data</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
+    <div><a href="support.html">Support</a> · <a href="security-briefing.html">Security briefing</a> · <a href="account-deletion.html">Delete account or data</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
   </div>
 </footer>
 </body>

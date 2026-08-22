@@ -61,47 +61,21 @@ h1{margin:0 0 12px;font-size:34px;line-height:1.08}
 }
 .store-card h2{margin:0;font-size:20px}
 .store-card p{margin:8px 0 0;color:var(--muted);line-height:1.45}
-.store-card a,
-.store-card span[aria-disabled="true"]{
-  min-height:48px;
+.store-badge{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0 18px;
-  border-radius:999px;
-  background:var(--ink);
-  color:white;
-  font-weight:800;
   text-decoration:none;
+  align-self:center;
 }
-.store-card span[aria-disabled="true"]{
-  background:var(--pink-soft);
-  color:var(--muted);
+.store-badge img{
+  display:block;
+  width:auto;
+  object-fit:contain;
 }
-.android-test-status{
-  width:max-content;
-  max-width:100%;
-  min-height:32px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  margin:2px auto 0;
-  padding:6px 12px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:white;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-}
-.android-test-status::before{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--pink);
-  content:"";
-}
+.store-badge.apple img{height:40px}
+.store-badge.google img{height:58px}
+.store-badge:focus-visible{outline:3px solid var(--pink);outline-offset:4px}
 .note{
   margin:24px auto 0;
   max-width:560px;
@@ -121,16 +95,22 @@ h1{margin:0 0 12px;font-size:34px;line-height:1.08}
 <main>
   <img class="logo" src="../ribbonside-ribbon-logo.png" width="256" height="256" alt="">
   <h1>Get Ribbonside</h1>
-  <p class="lead">Download Ribbonside for iPhone from the App Store.</p>
+  <p class="lead">Available on the App Store and Google Play.</p>
   <div class="store-grid" aria-label="Store options">
     <section class="store-card">
       <div>
         <h2>iPhone</h2>
         <p>Download Ribbonside from the App Store.</p>
       </div>
-      <a href="https://apps.apple.com/au/app/ribbonside/id6773605047">Open App Store</a>
+      <a class="store-badge apple" href="https://apps.apple.com/au/app/ribbonside/id6773605047" aria-label="Download Ribbonside on the App Store"><img src="../app-store-badge.svg" alt="Download on the App Store"></a>
     </section>
-    <div class="android-test-status">Android - currently in testing</div>
+    <section class="store-card">
+      <div>
+        <h2>Android</h2>
+        <p>Download Ribbonside from Google Play.</p>
+      </div>
+      <a class="store-badge google" href="https://play.google.com/store/apps/details?id=com.ribbonside.app" aria-label="Get Ribbonside on Google Play"><img src="../google-play-badge.png" alt="Get it on Google Play"></a>
+    </section>
   </div>
   <p class="note">Ribbonside Plus subscription required for organiser tools. Your app store shows pricing before purchase.</p>
   <p class="note">Need help? Contact <a href="mailto:support@ribbonside.com.au">support@ribbonside.com.au</a>.</p>

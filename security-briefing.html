@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1E1414">
+<title>Privacy &amp; Security Overview — Ribbonside</title>
+<meta name="description" content="A plain-language public overview of how Ribbonside handles information, what stays on the device, and what is used for account services.">
+<link rel="canonical" href="https://ribbonside.com.au/security-briefing.html">
+<link rel="icon" type="image/png" href="ribbonside-ribbon-logo.png">
+<meta property="og:title" content="Privacy &amp; Security Overview - Ribbonside">
+<meta property="og:description" content="How Ribbonside handles health records, account services, AI requests, and user controls.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ribbonside.com.au/security-briefing.html">
+<meta property="og:image" content="https://ribbonside.com.au/ribbonside-founder-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ribbonside-info.css">
+<style>
+.brief-intro{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:18px;
+  margin:0 0 26px;
+}
+.brief-stat{
+  min-height:140px;
+  padding:24px;
+  border:1px solid var(--pink-mid);
+  border-radius:8px;
+  background:linear-gradient(180deg,var(--surface),var(--pink-soft));
+}
+.brief-stat strong{
+  display:block;
+  margin:0 0 8px;
+  color:var(--pink-strong);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.brief-stat span{
+  display:block;
+  color:var(--ink);
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(34px,5vw,52px);
+  line-height:1;
+}
+.brief-stat p{margin:12px 0 0;color:var(--muted)}
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 0;
+}
+.pill-row span{
+  min-height:30px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 12px;
+  border:1px solid var(--pink-mid);
+  border-radius:999px;
+  background:var(--pink-soft);
+  color:#8A3D58;
+  font-size:12px;
+  font-weight:800;
+}
+.answer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:22px 0 28px;
+}
+.answer-card{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--surface);
+}
+.answer-card b{
+  display:block;
+  margin:0 0 8px;
+  color:var(--ink);
+  font-size:16px;
+}
+.answer-card p{margin:0;color:var(--muted);font-size:14px}
+.section-lead{
+  width:min(760px,100%);
+  color:var(--muted);
+}
+.question-list{
+  display:grid;
+  gap:12px;
+  margin:18px 0 0;
+}
+.qa{
+  padding:18px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--pink);
+  border-radius:8px;
+  background:var(--surface);
+}
+.qa strong{display:block;margin:0 0 6px}
+.qa p{margin:0;color:var(--muted)}
+.footer-links{margin-top:18px}
+@media(max-width:900px){
+  .brief-intro,
+  .answer-grid{grid-template-columns:1fr}
+}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  body{background:white}
+  .site-nav{display:none}
+  .page-label,
+  footer{display:none}
+  .container{width:100%;padding:14px 0 0}
+  .page-hero{margin-top:0;padding:76px 20px 38px}
+  .page-hero h1{font-size:54px;line-height:1.06}
+  .page-hero p{font-size:16px}
+  .brief-intro{grid-template-columns:1fr;gap:12px}
+  .brief-stat{min-height:auto;padding:18px}
+  .brief-stat > span{font-size:32px}
+  .pill-row span{
+    width:auto;
+    min-height:24px;
+    padding:0 8px;
+    font-size:11px;
+    line-height:1.1;
+  }
+  .doc.active{padding:22px 18px}
+  .answer-grid{grid-template-columns:1fr;gap:10px}
+  table{
+    display:table !important;
+    table-layout:fixed;
+    white-space:normal !important;
+    font-size:11px;
+  }
+  th,
+  td{
+    padding:8px;
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .qa,
+  .answer-card,
+  .brief-stat{
+    break-inside:avoid;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="brand" href="index.html" aria-label="Ribbonside home">
+    <img src="ribbonside-ribbon-logo.png" width="256" height="256" alt="">
+    <span class="brand-text"><strong>Ribbonside</strong><small>Breast cancer organiser</small></span>
+  </a>
+  <div class="nav-links" aria-label="Page sections">
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#who-its-for">Who It's For</a>
+    <a href="legal.html#security">Security</a>
+    <a href="support.html">Contact</a>
+    <a href="account-deletion.html">Delete account or data</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-label">Privacy and security</div>
+    <h1>How Ribbonside handles information.</h1>
+    <p>A plain-language public overview of what stays on the device, what is used for account services, and how users stay in control.</p>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <section class="brief-intro" aria-label="Ribbonside storage summary">
+    <div class="brief-stat">
+      <strong>Storage model</strong>
+      <span>Local-first health vault.</span>
+      <p>Core health records are stored on the person's phone rather than in a central Ribbonside health-record database.</p>
+      <div class="pill-row" aria-label="Key safeguards">
+        <span>On-device vault</span>
+        <span>PIN lock</span>
+        <span>Biometric unlock where supported</span>
+        <span>No advertising trackers</span>
+      </div>
+    </div>
+    <div class="brief-stat">
+      <strong>Online records</strong>
+      <span>Limited account data.</span>
+      <p>Supabase-hosted account services store account, consent, support, subscription, AI usage-limit, and security records needed to run the service.</p>
+      <div class="pill-row" aria-label="Online safeguards">
+        <span>Supabase account services</span>
+        <span>Row Level Security</span>
+        <span>Service keys kept server-side</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc active">
+    <h1 class="doc-title">Privacy and security overview</h1>
+    <p class="doc-meta">Public website overview · Last updated 23 August 2026</p>
+
+    <div class="note">
+      Ribbonside is a private organiser and optional plain-English information tool. It is not a hospital system, electronic medical record, emergency service, diagnostic tool, or substitute for professional medical advice.
+    </div>
+
+    <h2>Short answer</h2>
+    <p>Ribbonside is designed as a local-first private organiser for people managing the practical side of breast cancer care. The core health records a person enters into the app are stored on their own phone. The online backend is used for limited operational records such as sign-in, consent, support, subscriptions, AI usage limits, and security records.</p>
+    <p>Ribbonside does not sell health data, does not use advertising trackers, and does not give other people or Ribbonside support staff routine access to the user's private health vault.</p>
+
+    <div class="answer-grid" aria-label="Main privacy answers">
+      <article class="answer-card">
+        <b>Can staff see patient records?</b>
+        <p>Not from the on-phone vault. The person chooses what to show, export, or send.</p>
+      </article>
+      <article class="answer-card">
+        <b>Is it all cloud storage?</b>
+        <p>No. Core health records are stored locally on the device. Limited account and service records are online.</p>
+      </article>
+      <article class="answer-card">
+        <b>Is it medical advice?</b>
+        <p>No. Ribbonside is a personal organiser and general information tool.</p>
+      </article>
+    </div>
+
+    <h2>What stays on the person's phone</h2>
+    <p class="section-lead">These records are stored in the local Ribbonside vault on the device when the user chooses to add them.</p>
+    <table>
+      <tr><th>Data type</th><th>Storage location</th><th>Notes</th></tr>
+      <tr><td>Diagnosis details</td><td>Phone local vault</td><td>Patient-entered cancer type, stage, receptor details, hospital or clinician notes if entered.</td></tr>
+      <tr><td>Appointments and appointment notes</td><td>Phone local vault</td><td>Used for the user's own organisation and reminders.</td></tr>
+      <tr><td>Medications and reminder settings</td><td>Phone local vault</td><td>Notification popups are intentionally generic and do not show medication names.</td></tr>
+      <tr><td>Daily check-ins, symptom tags, exercise, and recovery entries</td><td>Phone local vault</td><td>Patient-entered or app-created private records.</td></tr>
+      <tr><td>Test result notes</td><td>Phone local vault</td><td>Patient-entered values, not a clinician-authored report.</td></tr>
+      <tr><td>Care team contacts</td><td>Phone local vault</td><td>Doctors, nurses, clinics, and support contacts added by the user.</td></tr>
+      <tr><td>Photos and documents</td><td>Phone app-private file vault</td><td>Files selected by the user are saved in app-private storage.</td></tr>
+      <tr><td>Apple Health values on iPhone</td><td>On-device display only</td><td>If the user grants permission on iPhone, Ribbonside reads selected activity values for display. Current verified app behaviour does not send HealthKit values to Ribbonside's backend or third parties.</td></tr>
+    </table>
+
+    <h2>What is stored online</h2>
+    <p class="section-lead">Ribbonside still needs limited online records to operate accounts, consent, support, subscriptions, and optional AI features.</p>
+    <table>
+      <tr><th>Data type</th><th>Where</th><th>Why</th></tr>
+      <tr><td>Account sign-in</td><td>Supabase Auth</td><td>To let the user sign in and maintain a secure session.</td></tr>
+      <tr><td>Profile basics</td><td>Supabase-hosted account service</td><td>User ID, name or email where supplied, plan, and terms acceptance.</td></tr>
+      <tr><td>Consent history</td><td>Supabase-hosted account service</td><td>Audit trail for privacy, health data, AI, subscriptions, and terms consent.</td></tr>
+      <tr><td>Support tickets</td><td>Supabase-hosted account service</td><td>Only when the user contacts support. May include health information if the user chooses to type it into the message.</td></tr>
+      <tr><td>Subscription entitlement</td><td>App store provider, RevenueCat, and Ribbonside account records</td><td>To confirm Plus status, purchases, renewals, and restore-purchase state.</td></tr>
+      <tr><td>AI usage limits</td><td>Supabase-hosted account service</td><td>Daily and monthly counts and technical usage metadata. Ribbonside does not store the user's AI prompt text in Supabase.</td></tr>
+      <tr><td>Security and admin records</td><td>Supabase-hosted account service</td><td>Audit, rate-limit, service-integrity, and incident-response records.</td></tr>
+    </table>
+
+    <h2>Other providers</h2>
+    <table>
+      <tr><th>Provider</th><th>What may be sent</th><th>When</th></tr>
+      <tr><td>Apple / Google platform services</td><td>Sign in with Apple on iPhone or Google sign-in on Android, app store account, subscriptions, refunds, OS notifications, and platform permission controls.</td><td>Platform operation.</td></tr>
+      <tr><td>RevenueCat</td><td>Ribbonside user ID, subscription product, entitlement and purchase status.</td><td>Subscriptions and restore-purchase checks.</td></tr>
+      <tr><td>Anthropic Claude API</td><td>Text the user types into What does this mean?.</td><td>Only after point-of-use consent. The app warns users not to enter names, dates of birth, Medicare numbers, medical record numbers, addresses, phone numbers, email addresses, or full clinical reports.</td></tr>
+      <tr><td>Resend</td><td>Transactional support or service email delivery metadata and limited alert content.</td><td>Support notification emails are designed not to include the private support message body.</td></tr>
+      <tr><td>Expo / EAS</td><td>Build and app update infrastructure metadata.</td><td>Build and distribution operations, not runtime storage of the user's health vault.</td></tr>
+      <tr><td>GitHub Pages</td><td>Public website request logs.</td><td>Website hosting only, not app health vault processing.</td></tr>
+    </table>
+
+    <h2>Security scaffolding</h2>
+    <ul>
+      <li>Local-first design keeps core health records out of the central backend.</li>
+      <li>The app requires sign-in before use.</li>
+      <li>The app requires a PIN and can use biometric or device unlock where supported.</li>
+      <li>The app locks when it backgrounds or the phone locks.</li>
+      <li>Local records are scoped to the current signed-in user.</li>
+      <li>Supabase tables use Row Level Security so normal users can access only their own permitted online records.</li>
+      <li>Private runtime tables are not directly available to normal app users.</li>
+      <li>Service-role access is kept inside Supabase Edge Functions, not inside the mobile app.</li>
+      <li>Family, Circle, or carer sharing is not part of the current local-first launch.</li>
+      <li>Ask AI goes through a Supabase Edge Function. The Anthropic API key is not in the app.</li>
+      <li>AI requests are sign-in verified, size-limited, rate-limited, Plus-gated, and checked for obvious high-risk identifiers before sending.</li>
+      <li>Support email alerts are minimal and do not include the private support ticket message body.</li>
+    </ul>
+
+    <h2>Can someone else see patient records?</h2>
+    <p>Not by default. Ribbonside support staff cannot log into Supabase and view the user's on-phone health vault. The person can choose to show the app on their phone, export a patient-entered records PDF or JSON file, or send selected details through support or What does this mean?.</p>
+    <div class="good">
+      For any care conversation, the safest workflow is simple: let the person open Ribbonside on their own phone, choose what to show, and treat any export as patient-entered information rather than a hospital record or clinician-authored summary.
+    </div>
+
+    <h2>If the phone is lost or replaced</h2>
+    <p>Because the current app is local-first, Ribbonside may not be able to recover the local health vault from the backend if the user deletes the app, erases the vault, loses the phone, or moves phones without their own backup or export.</p>
+    <div class="warn">This is the main privacy tradeoff: less central health-data exposure, but less cloud recovery. Users should export anything they need to keep outside the app.</div>
+
+    <h2>Account deletion and vault erase</h2>
+    <ul>
+      <li><strong>Erase Health Vault:</strong> deletes health records stored by Ribbonside on this phone only. It does not delete the online account, consent, support, billing, or subscription records.</li>
+      <li><strong>Delete Account:</strong> deletes the authenticated user where possible, removes or de-identifies Ribbonside-controlled online records where reasonably possible, cleans legacy storage paths, erases the local vault, and signs the user out.</li>
+    </ul>
+    <p>Some limited records may be retained only where needed for legal, security, billing, dispute, backup, audit, or service-integrity reasons.</p>
+
+    <h2>Likely questions</h2>
+    <div class="question-list">
+      <div class="qa"><strong>Is patient health information stored in a cloud data centre?</strong><p>Core health records are stored on the person's phone in the local vault. Supabase-hosted account services store limited online account, consent, support, subscription, security, and AI usage-limit records.</p></div>
+      <div class="qa"><strong>Is this an end-to-end encrypted clinical system?</strong><p>No. Safer wording is that Ribbonside uses a local device vault for core health records and limited cloud/account services for app operation.</p></div>
+      <div class="qa"><strong>Can family or carers see records?</strong><p>Not in the current local-first launch. Sharing is not active.</p></div>
+      <div class="qa"><strong>Does Ribbonside sell data or use ads?</strong><p>No. Ribbonside says it does not sell health data, use advertising trackers, or share data with advertisers or data brokers.</p></div>
+      <div class="qa"><strong>Does What does this mean? send information overseas?</strong><p>Yes, if the user chooses to use it. The text they type is sent to Anthropic's Claude API for processing after point-of-use consent.</p></div>
+      <div class="qa"><strong>Does Apple Health data leave the device?</strong><p>Current verified app behaviour reads HealthKit values on-device on iPhone for display only and does not send them to Supabase, RevenueCat, Anthropic, support/admin tools, or analytics providers.</p></div>
+      <div class="qa"><strong>What happens if there is a data breach?</strong><p>Ribbonside maintains a data breach response plan and states that suspected eligible breaches will be assessed within 30 days, with notification to affected users and the OAIC where required.</p></div>
+    </div>
+
+    <h2>Important limits</h2>
+    <ul>
+      <li>Ribbonside is not a medical service and does not replace a treating team.</li>
+      <li>A user may still type sensitive information into support or What does this mean?, even though the app warns against it.</li>
+      <li>A stolen, unlocked, rooted, jailbroken, or compromised device can still create risk.</li>
+      <li>Local-first storage means users need their own export or backup practices if they want recovery or transfer.</li>
+      <li>Independent mobile security review and Supabase access-control review remain sensible before any healthcare-partner rollout.</li>
+    </ul>
+
+    <div class="footer-links">
+      <p><a href="legal.html#privacy">Privacy Policy</a> · <a href="legal.html#security">Security Practices</a> · <a href="support.html">Support</a> · <a href="account-deletion.html">Delete account or data</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Diesel Advocacy Pty Ltd. Ribbonside&trade;. All rights reserved.<br>
+  ABN 82 690 643 853 · ribbonside.com.au · <a href="support.html">Support</a> · <a href="legal.html#privacy">Privacy</a> · <a href="legal.html#security">Security</a> · <a href="account-deletion.html">Delete account or data</a> · support@ribbonside.com.au<br>
+  <span style="font-size:11px;opacity:0.7;">The Ribbonside pink ribbon mark is original brand artwork inspired by the general awareness-ribbon tradition. Ribbonside is not affiliated with or endorsed by any breast cancer charity or foundation.</span>
+</footer>
+</body>
+</html>
