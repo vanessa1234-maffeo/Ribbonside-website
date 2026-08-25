@@ -60,8 +60,8 @@
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="doc active">
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 23 August 2026</p>
-    <p class="doc-meta">Policy version 2.7 · Last reviewed 23 August 2026 · See "Policy Version And Changes" below.</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 25 August 2026</p>
+    <p class="doc-meta">Policy version 2.8 · Last reviewed 25 August 2026 · See "Policy Version And Changes" below.</p>
 
     <h2>1. Who We Are</h2>
     <p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853. We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>. We handle personal information and health information in line with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).</p>
@@ -110,13 +110,14 @@
     <h2>7. Local Storage And Overseas Processing</h2>
     <p>Your core health records, documents, photos, notes, doctor questions, appointments, medications, and symptoms are stored in Ribbonside's encrypted local vault on your device. Ribbonside does not use Supabase as the primary storage location for those records in this launch version.</p>
     <p>Supabase stores limited online records needed for account sign-in, consent history, support, subscription entitlement, legal/security operations, and AI usage limits in <strong>Australia - Sydney (AWS ap-southeast-2)</strong>. Trusted providers may process limited data where needed for billing, subscriptions, support, optional AI features, website hosting, or legal and security purposes.</p>
-    <div class="warn">Because the health vault is local to your device, Ribbonside may not be able to recover your records if you delete the app, erase the vault, lose the phone, or cannot restore from your own backup or export.</div>
-    <p>Depending on your device settings, phone or cloud backups, screenshots, exports, or files you share outside Ribbonside may be controlled by Apple, Google, your cloud account, email provider, or another storage provider rather than by Ribbonside. Keep exports and backups secure.</p>
+    <div class="warn">Ribbonside does not currently provide automatic backup or restore. Signing back into Ribbonside restores account and subscription access, but it does not restore health records stored in the local vault. Before changing, resetting or replacing your phone, export your records and save them securely somewhere outside your phone.</div>
+    <p>Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save exports securely outside your phone. Neither format can currently be imported back into Ribbonside.</p>
+    <p>Depending on your device settings, screenshots, exports, or files you share outside Ribbonside may be controlled by Apple, Google, your cloud account, email provider, or another storage provider rather than by Ribbonside.</p>
     <p>For safeguards, support access, app lock, and incident response, see <a href="#security" onclick="show('security')">Security Practices</a>.</p>
 
     <h2>8. Retention</h2>
     <ul>
-      <li><strong>Local vault records:</strong> kept on your device until you delete the item, erase the vault, delete the app, delete your account on that device, or restore/replace the device.</li>
+      <li><strong>Local vault records:</strong> kept on your device until you delete the item, erase the vault, delete the app, or delete your account on that device. Signing in again or changing devices does not restore them.</li>
       <li><strong>Online account and consent records:</strong> kept while your account is active. If you delete your account, Ribbonside removes or de-identifies Ribbonside-controlled online records where reasonably possible, unless limited retention is needed for legal, security, billing, dispute, backup, audit, or service-integrity reasons.</li>
       <li><strong>Support tickets:</strong> usually kept for up to 12 months after the issue is closed, unless longer retention is reasonably needed for legal, billing, dispute, security, abuse-prevention, or service-integrity reasons.</li>
       <li><strong>Security, audit, and rate-limit logs:</strong> usually kept for up to 12 months, unless longer retention is needed to investigate misuse, fraud, security incidents, legal obligations, or service integrity.</li>
@@ -125,7 +126,7 @@
     </ul>
 
     <h2>9. Account Deletion</h2>
-    <div class="good">You can delete your Ribbonside account from <strong>Account - Delete account</strong>. When deletion succeeds, the app erases the local health vault on that device and removes Ribbonside-controlled online account records where reasonably possible. If you no longer have access to the app, you can request deletion from <a href="account-deletion.html">the account deletion page</a>. Limited online, support, subscription, security, AI usage-limit, backup, or provider log records may remain where needed for legal, security, billing, dispute, audit, or service-integrity reasons. You can also erase only the local health vault from <strong>Account - Privacy &amp; Your Data - Erase Health Vault</strong>. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
+    <div class="good">You can delete your Ribbonside account by opening <strong>Account</strong>, then <strong>Delete account</strong>. When deletion succeeds, the app erases the local health vault on that device and removes Ribbonside-controlled online account records where reasonably possible. If you no longer have access to the app, you can request deletion from <a href="account-deletion.html">the account deletion page</a>. Limited online, support, subscription, security, AI usage-limit, backup, or provider log records may remain where needed for legal, security, billing, dispute, audit, or service-integrity reasons. To erase only the local health vault, open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, then <strong>Erase Health Vault</strong>. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
 
     <h2>10. Your Rights</h2>
     <ul>
@@ -140,7 +141,7 @@
     <h2>11. AI-Assisted Features</h2>
     <p>If you choose to use What does this mean?, the text you type is sent securely to <strong>Anthropic's Claude API</strong> for processing. What does this mean? is designed for short plain-English explanations and is opt-in. Do not include your name, date of birth, Medicare number, medical record number, or full clinical reports. You can decline What does this mean? and continue using manual entry.</p>
     <p>Anthropic's API retention depends on the API feature, model, account setting, and contract terms. Ribbonside uses What does this mean? only for short typed questions, does not use Claude consumer accounts, and does not ask users to include identifying health information. Anthropic may retain API inputs and outputs for up to 30 days for trust, safety, legal, service, and abuse-prevention purposes under its usage policies, and states that retained API data is not used for model training without express permission. Data may be retained longer where required for a service setting, Usage Policy enforcement, legal obligations, or abuse prevention.</p>
-    <p>Ribbonside logs limited AI usage metadata for security, limits, abuse prevention, and cost monitoring. This may include your user ID, feature name, timestamp, model, token counts, estimated cost, request ID, message count, rate-limit or quota events, and technical error status. Ribbonside does not store your AI prompt text in Supabase. What does this mean? includes up to 3 AI explanations per day and up to 10 per month with Ribbonside Plus. Ribbonside does not offer AI report upload or report-reading in this launch version.</p>
+    <p>Ribbonside logs limited AI usage metadata for security, limits, abuse prevention, and cost monitoring. This may include your user ID, feature name, timestamp, model, token counts, estimated cost, request ID, message count, rate-limit or quota events, and technical error status. Ribbonside does not store your AI prompt text in Supabase. Your Ribbonside subscription includes up to 3 What does this mean? explanations per day, capped at 10 explanations per month. Ribbonside does not offer AI report upload or report-reading in this launch version.</p>
 
     <h2>12. Automated Decisions</h2>
     <p>Ribbonside does not use automated decision-making to make decisions that have a legal, financial, health treatment, insurance, employment, or similarly significant effect on you. What does this mean? explanations are general information only and must not be used as medical advice.</p>
@@ -154,16 +155,17 @@
     <p>If we become aware that an under-18 user has created an account, we may suspend or delete the account and associated online records, subject to any legal, security, billing, or backup retention needs. A parent or guardian can contact support if they believe a child has provided personal information to Ribbonside.</p>
 
     <h2>15. Policy Version And Changes</h2>
-    <p>Current policy version: <strong>2.7</strong>. Last reviewed: <strong>23 August 2026</strong>.</p>
+    <p>Current policy version: <strong>2.8</strong>. Last reviewed: <strong>25 August 2026</strong>.</p>
     <ul>
+      <li><strong>Version 2.8 - 25 August 2026:</strong> clarified local-only storage, the absence of automatic backup and restore, export availability and subscription access, attachment export limits, and the one-way nature of current exports.</li>
       <li><strong>Version 2.7 - 23 August 2026:</strong> updated public Google Play availability, clarified iPhone and Android sign-in, and aligned health-record wording with the current app.</li>
       <li><strong>Version 2.6 - 22 August 2026:</strong> clarified platform-specific sign-in, prepared Google Play availability wording, and clarified Apple Health as an iPhone-only integration.</li>
       <li><strong>Version 2.5 - 15 August 2026:</strong> separated public website wording from nurse briefing material and removed unverified health-integration release claims.</li>
-      <li><strong>Version 2.4 - 30 July 2026:</strong> clarified Daily check-in wording, Ribbonside Plus access, AI daily and monthly limits, Android preparation, and public account and data deletion information.</li>
+      <li><strong>Version 2.4 - 30 July 2026:</strong> clarified Daily check-in wording, subscription access, AI daily and monthly limits, Android preparation, and public account and data deletion information.</li>
       <li><strong>Version 2.3 - 26 July 2026:</strong> clarified platform-neutral download, support, Android preparation, health access, subscription, and backup wording for launch preparation.</li>
       <li><strong>Version 2.2 - 26 July 2026:</strong> added Android, Google Play, and external account deletion request wording for Google Play launch preparation.</li>
       <li><strong>Version 2.1 - 23 July 2026:</strong> updated Sign in with Apple, device security, support wording, and retention wording so the website matches the current app and operational cleanup plan.</li>
-      <li><strong>Version 2.0 - 9 July 2026:</strong> added privacy-safe app activity analytics wording, clarified what is never included in app analytics, and updated subscription/AI limit wording for the paid Plus model.</li>
+      <li><strong>Version 2.0 - 9 July 2026:</strong> added privacy-safe app activity analytics wording, clarified what is never included in app analytics, and updated subscription and AI limit wording for the paid subscription model.</li>
       <li><strong>Version 1.9 - 14 June 2026:</strong> clarified website logs, cookies/analytics, AI retention, overseas processors, RevenueCat, Resend, support-message sensitivity, under-18 handling, accessibility, and Terms wording.</li>
       <li><strong>Version 1.8 - 7 June 2026:</strong> launch privacy, local-vault, security, HealthKit, TGA, refund, and ACL wording.</li>
     </ul>
@@ -177,7 +179,7 @@
   <!-- SECURITY PRACTICES -->
   <div id="security" class="doc">
     <h1 class="doc-title">Security Practices</h1>
-    <p class="doc-meta">Last updated: 23 August 2026 · Safeguards and incident response</p>
+    <p class="doc-meta">Last updated: 25 August 2026 · Safeguards and incident response</p>
 
     <h2>1. What This Covers</h2>
     <p>This page summarises how Ribbonside protects personal information and health information. The <a href="#privacy" onclick="show('privacy')">Privacy Policy</a> explains what information we collect, use, disclose, and delete. The <a href="#health" onclick="show('health')">Health Data Statement</a> lists the health data categories handled by the app.</p>
@@ -197,7 +199,7 @@
 
     <h2>4. User Controls</h2>
     <ul>
-      <li>Export your app data from the Account screen where available and keep exports secure.</li>
+      <li>Open Account, then Privacy &amp; Your Data. Export Data (JSON) is available to every signed-in Ribbonside account. Share Records PDF is available with an active Ribbonside subscription. Save exports securely outside your phone. Current exports cannot be imported back into Ribbonside.</li>
       <li>Erase the local health vault on this device from the Account screen.</li>
       <li>Request correction of inaccurate information by contacting support.</li>
       <li>Delete your account and have Ribbonside-controlled online account records removed or de-identified where reasonably possible, subject to limited legal, security, billing, dispute, backup, audit, or service-integrity retention needs.</li>
@@ -218,7 +220,7 @@
   <!-- TERMS OF USE -->
   <div id="terms" class="doc">
     <h1 class="doc-title">Terms of Use</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 23 August 2026 · Governing law: New South Wales, Australia</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 25 August 2026 · Governing law: New South Wales, Australia</p>
 
     <h2>1. Agreement</h2>
     <p>By using Ribbonside you agree to these Terms. Governed by the laws of New South Wales, Australia.</p>
@@ -246,8 +248,8 @@
 
     <h2>7. Subscriptions</h2>
     <ul>
-      <li><strong>Ribbonside Plus:</strong> pricing is shown in the app and store listing before purchase. Apple App Store or Google Play will show the final price and any eligible offer before purchase confirmation.</li>
-      <li><strong>What does this mean?:</strong> Ribbonside Plus includes up to 3 AI explanations per day and up to 10 per month. These limits help keep AI costs controlled and the feature available for genuine plain-English support.</li>
+      <li><strong>Ribbonside subscription:</strong> pricing is shown in the app and store listing before purchase. Apple App Store or Google Play will show the final price and any eligible offer before purchase confirmation.</li>
+      <li><strong>What does this mean?:</strong> Your Ribbonside subscription includes up to 3 What does this mean? explanations per day, capped at 10 explanations per month. These limits help keep AI costs controlled and the feature available for genuine plain-English support.</li>
       <li>Subscriptions and in-app purchases are billed and managed through Apple App Store or Google Play, depending on where you subscribe.</li>
       <li>Subscriptions auto-renew unless cancelled through the relevant store at least 24 hours before the renewal date.</li>
       <li>Plan features, limits, and prices may change over time. Apple App Store or Google Play will show the final price, renewal period, any eligible offer, and cancellation options before purchase confirmation or where the store requires notice. Existing subscriptions are managed through the subscription terms of the store where you subscribed.</li>
@@ -258,7 +260,7 @@
     <p>You give Ribbonside a limited permission to process your content only as needed to provide the app, keep local records available on your device, create exports you request, provide support, operate subscriptions and security controls, and process optional What does this mean? text you choose to send.</p>
 
     <h2>9. Service Availability, Local Storage, And Backups</h2>
-    <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Because core records are stored locally on your device in the launch version, Ribbonside may not be able to recover records if you delete the app, erase the vault, lose the device, forget access details, or do not maintain your own backups or exports.</p>
+    <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Core records are stored locally on your device, and Ribbonside does not currently provide automatic backup or restore. Signing in again restores account and subscription access, not the local health vault. Current PDF and JSON exports cannot be imported back into Ribbonside.</p>
 
     <h2>10. Australian Consumer Law Guarantees</h2>
     <div class="good">Nothing in these Terms excludes your non-excludable rights under the <strong>Australian Consumer Law</strong> (Competition and Consumer Act 2010 (Cth)). If the Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com.au or NSW Fair Trading on 13 32 20.</div>
@@ -294,12 +296,12 @@
     <p class="doc-meta">Effective date: March 2026 · Last updated: 23 August 2026</p>
 
     <h2>1. Paid Subscription</h2>
-    <p>Ribbonside Plus is a paid subscription. Before you confirm purchase, Apple App Store or Google Play will show the price, renewal period, billing terms, and cancellation options for the store where you subscribe.</p>
+    <p>Ribbonside is available through a paid subscription. Before you confirm purchase, Apple App Store or Google Play will show the price, renewal period, billing terms, and cancellation options for the store where you subscribe.</p>
 
     <h2>2. How To Cancel</h2>
     <p>On iPhone: <strong>Settings - Apple ID - Subscriptions - Ribbonside - Cancel Subscription.</strong></p>
     <p>On Android: open <strong>Google Play - Payments and subscriptions - Subscriptions - Ribbonside - Cancel subscription.</strong></p>
-    <p>Cancellation usually takes effect at the end of the current billing period. To stop the next renewal, cancel at least 24 hours before the renewal date. You retain Plus access until that date unless the relevant store or applicable law provides otherwise. Uninstalling the app or deleting your Ribbonside account does not automatically cancel your subscription.</p>
+    <p>Cancellation usually takes effect at the end of the current billing period. To stop the next renewal, cancel at least 24 hours before the renewal date. You retain subscription access until that date unless the relevant store or applicable law provides otherwise. Uninstalling the app or deleting your Ribbonside account does not automatically cancel your subscription.</p>
 
     <h2>3. Refund Requests</h2>
     <p>Refund requests for in-app purchases should be made through the store where you subscribed. Apple refund requests are handled through Apple App Store. Google Play refund requests are handled through Google Play. Refund decisions and processing times are handled by the relevant store.</p>
@@ -341,7 +343,7 @@
   <!-- HEALTH DATA STATEMENT -->
   <div id="health" class="doc">
     <h1 class="doc-title">Health Data Statement</h1>
-    <p class="doc-meta">Last updated: 23 August 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
+    <p class="doc-meta">Last updated: 25 August 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
 
     <div class="note">In this launch version, user-entered health records, documents, photos, appointments, medications, notes, questions, symptoms, results, and care notes are stored in the encrypted local vault on your device. Supabase is used for limited online account, consent, support, subscription, security, and AI usage-limit records.</div>
 
@@ -377,8 +379,8 @@
       <li><strong>Revocable any time.</strong> Use iPhone Settings - Privacy &amp; Security - Health - Ribbonside.</li>
     </ul>
 
-    <h2>Exports And Backups</h2>
-    <p>If you export records, save screenshots, back up your phone, share files, or move records outside Ribbonside, those copies may be protected by your device, cloud account, email, or storage provider rather than by Ribbonside's local vault. Depending on your device settings, phone or cloud backups, screenshots, exports, or shared files may be controlled by Apple, Google, your cloud account, email provider, or another storage provider rather than by Ribbonside. Keep exported health information somewhere private and secure.</p>
+    <h2>Exports And Separate Copies</h2>
+    <p>Ribbonside does not currently provide automatic backup or restore. Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save exported health information somewhere private and secure outside your phone. Neither format can currently be imported back into Ribbonside.</p>
 
     <h2>What We Never Do</h2>
     <ul>
@@ -390,7 +392,7 @@
     </ul>
 
     <h2>Deletion</h2>
-    <div class="good">Account - Privacy &amp; Your Data - Erase Health Vault removes local records from this device only. Account - Delete account erases the local vault on that device and removes Ribbonside-controlled online account records where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. If you no longer have access to the app, use the <a href="account-deletion.html">account deletion page</a>. Deleting the online account or app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
+    <div class="good">Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, then <strong>Erase Health Vault</strong> to remove local records from this device only. Open <strong>Account</strong>, then <strong>Delete account</strong> to erase the local vault on that device and remove Ribbonside-controlled online account records where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. If you no longer have access to the app, use the <a href="account-deletion.html">account deletion page</a>. Deleting the online account or app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
   </div>
 
   <!-- TGA & ACL -->

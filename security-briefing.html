@@ -208,7 +208,7 @@
 
   <section class="doc active">
     <h1 class="doc-title">Privacy and security overview</h1>
-    <p class="doc-meta">Public website overview · Last updated 23 August 2026</p>
+    <p class="doc-meta">Public website overview · Last updated 25 August 2026</p>
 
     <div class="note">
       Ribbonside is a private organiser and optional plain-English information tool. It is not a hospital system, electronic medical record, emergency service, diagnostic tool, or substitute for professional medical advice.
@@ -255,7 +255,7 @@
       <tr><td>Profile basics</td><td>Supabase-hosted account service</td><td>User ID, name or email where supplied, plan, and terms acceptance.</td></tr>
       <tr><td>Consent history</td><td>Supabase-hosted account service</td><td>Audit trail for privacy, health data, AI, subscriptions, and terms consent.</td></tr>
       <tr><td>Support tickets</td><td>Supabase-hosted account service</td><td>Only when the user contacts support. May include health information if the user chooses to type it into the message.</td></tr>
-      <tr><td>Subscription entitlement</td><td>App store provider, RevenueCat, and Ribbonside account records</td><td>To confirm Plus status, purchases, renewals, and restore-purchase state.</td></tr>
+      <tr><td>Subscription entitlement</td><td>App store provider, RevenueCat, and Ribbonside account records</td><td>To confirm subscription status, purchases, renewals, and restore-purchase state.</td></tr>
       <tr><td>AI usage limits</td><td>Supabase-hosted account service</td><td>Daily and monthly counts and technical usage metadata. Ribbonside does not store the user's AI prompt text in Supabase.</td></tr>
       <tr><td>Security and admin records</td><td>Supabase-hosted account service</td><td>Audit, rate-limit, service-integrity, and incident-response records.</td></tr>
     </table>
@@ -283,7 +283,7 @@
       <li>Service-role access is kept inside Supabase Edge Functions, not inside the mobile app.</li>
       <li>Family, Circle, or carer sharing is not part of the current local-first launch.</li>
       <li>Ask AI goes through a Supabase Edge Function. The Anthropic API key is not in the app.</li>
-      <li>AI requests are sign-in verified, size-limited, rate-limited, Plus-gated, and checked for obvious high-risk identifiers before sending.</li>
+      <li>AI requests are sign-in verified, size-limited, rate-limited, subscription-gated, and checked for obvious high-risk identifiers before sending.</li>
       <li>Support email alerts are minimal and do not include the private support ticket message body.</li>
     </ul>
 
@@ -294,8 +294,11 @@
     </div>
 
     <h2>If the phone is lost or replaced</h2>
-    <p>Because the current app is local-first, Ribbonside may not be able to recover the local health vault from the backend if the user deletes the app, erases the vault, loses the phone, or moves phones without their own backup or export.</p>
-    <div class="warn">This is the main privacy tradeoff: less central health-data exposure, but less cloud recovery. Users should export anything they need to keep outside the app.</div>
+    <p>Signing back into Ribbonside restores account and subscription access, but it does not currently restore health records stored in the local vault. Before changing, resetting or replacing a phone, use Export Data (JSON), which is available to every signed-in Ribbonside account. With an active Ribbonside subscription, you can also create a Share Records PDF. Save the files securely somewhere outside the phone.</p>
+    <div class="warn">Ribbonside does not currently provide automatic backup or restore. Current PDF and JSON exports cannot be imported back into Ribbonside.</div>
+
+    <h2>How to keep a separate copy of records</h2>
+    <p>In Ribbonside, open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save the files somewhere outside the phone. Neither export can currently be imported back into Ribbonside.</p>
 
     <h2>Account deletion and vault erase</h2>
     <ul>
@@ -312,6 +315,7 @@
       <div class="qa"><strong>Does Ribbonside sell data or use ads?</strong><p>No. Ribbonside says it does not sell health data, use advertising trackers, or share data with advertisers or data brokers.</p></div>
       <div class="qa"><strong>Does What does this mean? send information overseas?</strong><p>Yes, if the user chooses to use it. The text they type is sent to Anthropic's Claude API for processing after point-of-use consent.</p></div>
       <div class="qa"><strong>Does Apple Health data leave the device?</strong><p>Current verified app behaviour reads HealthKit values on-device on iPhone for display only and does not send them to Supabase, RevenueCat, Anthropic, support/admin tools, or analytics providers.</p></div>
+      <div class="qa"><strong>Is backup and restore planned?</strong><p>Yes. Ribbonside is planning a user-controlled encrypted backup and restore feature. Until it is released and confirmed available in the app, users should continue exporting their records regularly.</p></div>
       <div class="qa"><strong>What happens if there is a data breach?</strong><p>Ribbonside maintains a data breach response plan and states that suspected eligible breaches will be assessed within 30 days, with notification to affected users and the OAIC where required.</p></div>
     </div>
 
@@ -320,7 +324,7 @@
       <li>Ribbonside is not a medical service and does not replace a treating team.</li>
       <li>A user may still type sensitive information into support or What does this mean?, even though the app warns against it.</li>
       <li>A stolen, unlocked, rooted, jailbroken, or compromised device can still create risk.</li>
-      <li>Local-first storage means users need their own export or backup practices if they want recovery or transfer.</li>
+      <li>Local-first storage means signing in on another phone does not restore the local health vault. Current PDF and JSON exports are one-way files and cannot be imported back into Ribbonside.</li>
       <li>Independent mobile security review and Supabase access-control review remain sensible before any healthcare-partner rollout.</li>
     </ul>
 

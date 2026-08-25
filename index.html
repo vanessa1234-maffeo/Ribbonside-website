@@ -257,29 +257,6 @@ h1{
   outline:3px solid var(--pink);
   outline-offset:4px;
 }
-.intro-strip{
-  border-bottom:1px solid var(--line);
-  background:var(--surface);
-}
-.intro-inner{
-  width:min(1180px,100%);
-  margin:0 auto;
-  padding:46px 22px;
-  display:grid;
-  grid-template-columns:1fr 1.4fr;
-  gap:36px;
-  align-items:start;
-}
-.intro-title{
-  margin:0;
-  font-size:44px;
-  line-height:1;
-}
-.intro-copy{
-  margin:0;
-  color:var(--muted);
-  font-size:17px;
-}
 .phone-showcase{
   width:min(940px,100%);
   margin:0 auto;
@@ -289,6 +266,7 @@ h1{
   justify-content:center;
   align-items:start;
   gap:30px;
+  scroll-margin-top:110px;
 }
 .phone-card{
   display:grid;
@@ -400,12 +378,12 @@ h1{
   font-size:14px;
   line-height:1.55;
 }
-.plus-disclosure{
+.subscription-disclosure{
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   background:var(--surface);
 }
-.plus-disclosure p{
+.subscription-disclosure p{
   width:min(1180px,100%);
   margin:0 auto;
   padding:18px 22px;
@@ -504,7 +482,7 @@ h1{
 .social-card{
   display:flex;
   flex-direction:column;
-  min-height:310px;
+  min-height:210px;
   padding:26px;
   border:1px solid var(--line);
   border-radius:8px;
@@ -534,31 +512,25 @@ h1{
   text-decoration:none;
   white-space:nowrap;
 }
-.social-list{
-  margin:0;
-  padding-left:18px;
+.social-copy{
+  margin:0 0 24px;
   color:var(--muted);
   font-size:15px;
 }
-.social-list li+li{margin-top:10px}
-.hashtag-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:auto;
-  padding-top:24px;
-}
-.hashtag-row span{
+.social-link{
+  align-self:flex-start;
   display:inline-flex;
   align-items:center;
-  min-height:30px;
-  padding:0 11px;
-  border:1px solid var(--line);
+  justify-content:center;
+  min-height:44px;
+  margin-top:auto;
+  padding:0 20px;
   border-radius:999px;
-  color:var(--muted);
-  background:white;
-  font-size:12px;
+  background:var(--pink);
+  color:var(--ink);
+  font-size:14px;
   font-weight:800;
+  text-decoration:none;
 }
 .cta-section{
   padding:78px 22px;
@@ -719,31 +691,6 @@ footer a:hover{text-decoration:underline}
 .hero-note{
   color:var(--pink-mid);
 }
-.intro-strip{
-  border-top:0;
-  border-bottom:1px solid rgba(234,224,224,.18);
-  background:var(--ink);
-  color:var(--paper);
-}
-.intro-inner{
-  width:min(820px,100%);
-  padding-top:18px;
-  padding-bottom:18px;
-  grid-template-columns:1fr;
-  gap:12px;
-  text-align:center;
-}
-.intro-title{
-  color:var(--pink);
-  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:12px;
-  font-weight:800;
-  text-transform:uppercase;
-}
-.intro-copy{
-  color:rgba(253,250,248,.8);
-  font-size:18px;
-}
 .phone-showcase{
   padding-top:22px;
 }
@@ -824,7 +771,7 @@ footer a:hover{text-decoration:underline}
   }
   .nav-cta{grid-area:cta}
   h1{font-size:72px}
-  .intro-inner,.section-inner,.founder-inner{
+  .section-inner,.founder-inner{
     grid-template-columns:1fr;
   }
   .audience-grid{grid-template-columns:1fr}
@@ -856,7 +803,7 @@ footer a:hover{text-decoration:underline}
   .hero h1{font-size:46px;line-height:1}
   .hero-lead{font-size:17px}
   .button{width:100%;min-height:50px}
-  .intro-inner,.phone-showcase,.section-inner,.founder-inner,.trust-inner,.social-inner,.cta-section{
+  .phone-showcase,.section-inner,.founder-inner,.trust-inner,.social-inner,.cta-section{
     padding-left:18px;
     padding-right:18px;
   }
@@ -865,7 +812,6 @@ footer a:hover{text-decoration:underline}
   .phone-frame img{height:350px}
   .section-inner{padding-top:58px;padding-bottom:58px}
   .section-copy h2,.founder-copy h2,.social-header h2,.cta-inner h2,.audience-header h2{font-size:42px}
-  .intro-title{font-size:12px}
   .feature-card{grid-template-columns:40px 1fr;min-height:0;padding:18px}
   .feature-icon{width:40px;height:40px}
   .social-inner{padding-top:58px;padding-bottom:58px}
@@ -875,6 +821,7 @@ footer a:hover{text-decoration:underline}
     flex-direction:column;
     gap:10px;
   }
+  .social-link{width:100%}
   .cta-inner{padding:26px}
   .footer-inner{display:block}
   .footer-inner div+div{margin-top:10px}
@@ -915,14 +862,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </section>
 
-  <section class="intro-strip" id="how-it-works">
-    <div class="intro-inner">
-      <h2 class="intro-title">Your private records, kept together in one place.</h2>
-      <p class="intro-copy">Appointments, reminders and medications. Care team, treatments and surgeries. Notes, questions, photos and documents. Practical details together when you need them.</p>
-    </div>
-  </section>
-
-  <section class="phone-showcase" aria-label="Ribbonside app screenshots">
+  <section class="phone-showcase" id="how-it-works" aria-label="Ribbonside app screenshots">
     <h2 class="showcase-label">Inside the app</h2>
     <article class="phone-card">
       <div class="phone-frame"><img src="ribbonside-app-home-screen.jpg" width="600" height="1299" alt="Ribbonside home screen showing next appointment, medications and daily check-in"></div>
@@ -981,15 +921,15 @@ footer a:hover{text-decoration:underline}
   <section class="feature-section" id="plan">
     <div class="section-inner">
       <div class="section-copy">
-        <p class="eyebrow">Plan</p>
-        <h2>Plan the admin around care.</h2>
-        <p>Bring appointment prep, questions and care-team contacts together before the next visit.</p>
+        <p class="eyebrow">Appointments &amp; Notes</p>
+        <h2>Prepare for the next appointment.</h2>
+        <p>Keep dates, notes, questions and care-team contacts together before the next visit.</p>
       </div>
       <div class="card-grid">
         <article class="feature-card"><span class="feature-icon">01</span><div><h3>Appointments</h3><p>Save doctors, scans, pathology, follow-ups and the notes around them.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Doctor notes</h3><p>Keep what was said, next steps and things you want to remember from the visit.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Questions to ask</h3><p>Add questions inside Notes before you are in the room, so they are ready when the moment comes.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Care team</h3><p>Save specialists, nurses, clinics and contact notes manually in your records.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Notes &amp; questions</h3><p>Keep what was said, next steps and questions you want ready for the visit.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Care team</h3><p>Save specialists, nurses, clinics and contact notes manually in your records.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Plain-English terms</h3><p>Your Ribbonside subscription includes up to 3 What does this mean? explanations per day, capped at 10 explanations per month.</p></div></article>
       </div>
     </div>
   </section>
@@ -1026,22 +966,6 @@ footer a:hover{text-decoration:underline}
     </div>
   </section>
 
-  <section class="feature-section" id="notes">
-    <div class="section-inner">
-      <div class="section-copy">
-        <p class="eyebrow">Notes</p>
-        <h2>Notes for the things you need to remember.</h2>
-        <p>Keep appointment notes, questions and the things you want to bring up next time close to the rest of your records.</p>
-      </div>
-      <div class="card-grid">
-        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Appointment notes</h3><p>Save what was said, next steps and things you want to remember from the visit.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Questions to ask</h3><p>Keep questions ready before the appointment, alongside your other notes.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Treatment moments</h3><p>Keep short notes about changes, milestones or things you want to mention later.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Plain-English terms</h3><p>Use What does this mean? for short general explanations, up to 3 per day and 10 per month with Ribbonside Plus.</p></div></article>
-      </div>
-    </div>
-  </section>
-
   <section class="feature-section" id="share">
     <div class="section-inner">
       <div class="section-copy">
@@ -1050,9 +974,9 @@ footer a:hover{text-decoration:underline}
         <p>Ribbonside keeps records private by default. When you need to bring information somewhere else, use exports or the records you choose to send.</p>
       </div>
       <div class="card-grid">
-        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Records PDF</h3><p>Generate a PDF summary from selected saved records for your own use.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Data export</h3><p>Export your data so you can keep your own backup outside the app.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Choose where it goes</h3><p>PDF and JSON exports open through your phone's share options, so you decide where to save or send them.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Records PDF</h3><p>Create a readable PDF summary with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Data export</h3><p>Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Keep a separate copy</h3><p>Save exports securely somewhere outside your phone. Neither PDF nor JSON can currently be imported back into Ribbonside.</p></div></article>
         <article class="feature-card"><span class="feature-icon">04</span><div><h3>No background sharing</h3><p>Ribbonside does not automatically give carers or anyone else access to your records. Exports only happen when you choose.</p></div></article>
       </div>
     </div>
@@ -1074,8 +998,8 @@ footer a:hover{text-decoration:underline}
     </div>
   </section>
 
-  <aside class="plus-disclosure" aria-label="Ribbonside Plus subscription information">
-    <p>Ribbonside Plus subscription required for organiser tools. Your app store shows pricing before purchase.</p>
+  <aside class="subscription-disclosure" aria-label="Ribbonside subscription information">
+    <p>A Ribbonside subscription is required for organiser tools. Your app store shows pricing before purchase.</p>
   </aside>
 
   <section class="founder-section" id="my-story">
@@ -1094,7 +1018,7 @@ footer a:hover{text-decoration:underline}
 
   <section class="trust-band" id="privacy">
     <div class="trust-inner">
-      <div class="trust-item"><strong>Private by design</strong><p>Core records stay in the on-device vault. Limited online records support sign-in, consent, support, subscriptions and AI usage limits.</p></div>
+      <div class="trust-item"><strong>Private records on your device</strong><p>Core health records, photos and documents you add are stored only on your device in Ribbonside's encrypted local vault. Ribbonside does not currently provide automatic backup or restore. Export your records regularly and save them somewhere outside your phone.</p></div>
       <div class="trust-item"><strong>Plain-English help</strong><p>What does this mean? is limited to short typed questions and general explanations. It is not personalised medical advice.</p></div>
       <div class="trust-item"><strong>Clear user control</strong><p>Delete local records, export your data, manage subscriptions through your app store, and revoke Apple Health access on iPhone at any time.</p></div>
     </div>
@@ -1104,8 +1028,8 @@ footer a:hover{text-decoration:underline}
     <div class="social-inner">
       <div class="social-header">
         <p class="eyebrow">Facebook &amp; Instagram</p>
-        <h2>Follow along with Ribbonside.</h2>
-        <p>Ribbonside's social channels are for launch updates, simple feature explainers, founder notes and gentle reminders that breast cancer admin does not need to live everywhere at once.</p>
+        <h2>Follow Ribbonside.</h2>
+        <p>News, product updates and practical information from Ribbonside.</p>
       </div>
       <div class="social-grid">
         <article class="social-card">
@@ -1113,32 +1037,16 @@ footer a:hover{text-decoration:underline}
             <h3>Facebook</h3>
             <span class="social-status">Ribbonside</span>
           </div>
-          <ul class="social-list">
-            <li>Official Ribbonside page updates for App Store and Google Play availability and product news.</li>
-            <li>Founder posts about why the app was built and how it fits into real treatment life.</li>
-            <li>Plain-English posts people can save, revisit or send on if useful.</li>
-          </ul>
-          <div class="hashtag-row" aria-label="Suggested Facebook hashtags">
-            <span>#Ribbonside</span>
-            <span>#BreastCancerSupport</span>
-            <span>#BreastCancerAustralia</span>
-          </div>
+          <p class="social-copy">Follow the official Ribbonside Facebook page.</p>
+          <a class="social-link" href="https://www.facebook.com/ribbonside" target="_blank" rel="noopener noreferrer">Visit Facebook</a>
         </article>
         <article class="social-card">
           <div class="social-platform">
             <h3>Instagram</h3>
             <span class="social-status">@ribbonside</span>
           </div>
-          <ul class="social-list">
-            <li>Visual posts and reels about appointments, notes, documents, reminders and treatment admin.</li>
-            <li>Short feature spotlights showing how each section works.</li>
-            <li>Founder-led content built from lived experience, with careful wording around medical advice.</li>
-          </ul>
-          <div class="hashtag-row" aria-label="Suggested Instagram hashtags">
-            <span>#CancerSupportAustralia</span>
-            <span>#PatientBuilt</span>
-            <span>#HealthApp</span>
-          </div>
+          <p class="social-copy">Follow Ribbonside on Instagram.</p>
+          <a class="social-link" href="https://www.instagram.com/ribbonside/" target="_blank" rel="noopener noreferrer">Visit Instagram</a>
         </article>
       </div>
     </div>
