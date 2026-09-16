@@ -60,8 +60,8 @@
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="doc active">
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 25 August 2026</p>
-    <p class="doc-meta">Policy version 2.8 · Last reviewed 25 August 2026 · See "Policy Version And Changes" below.</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 17 September 2026</p>
+    <p class="doc-meta">Policy version 2.9 · Last reviewed 17 September 2026 · See "Policy Version And Changes" below.</p>
 
     <h2>1. Who We Are</h2>
     <p>Ribbonside is a trading name of <strong>Diesel Advocacy Pty Ltd</strong> ACN 690 643 853 | ABN 82 690 643 853. We operate the Ribbonside mobile application and website at <a href="https://ribbonside.com.au">ribbonside.com.au</a>. We handle personal information and health information in line with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).</p>
@@ -110,14 +110,15 @@
     <h2>7. Local Storage And Overseas Processing</h2>
     <p>Your core health records, documents, photos, notes, doctor questions, appointments, medications, and symptoms are stored in Ribbonside's encrypted local vault on your device. Ribbonside does not use Supabase as the primary storage location for those records in this launch version.</p>
     <p>Supabase stores limited online records needed for account sign-in, consent history, support, subscription entitlement, legal/security operations, and AI usage limits in <strong>Australia - Sydney (AWS ap-southeast-2)</strong>. Trusted providers may process limited data where needed for billing, subscriptions, support, optional AI features, website hosting, or legal and security purposes.</p>
-    <div class="warn">Ribbonside does not currently provide automatic backup or restore. Signing back into Ribbonside restores account and subscription access, but it does not restore health records stored in the local vault. Before changing, resetting or replacing your phone, export your records and save them securely somewhere outside your phone.</div>
-    <p>Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save exports securely outside your phone. Neither format can currently be imported back into Ribbonside.</p>
+    <div class="warn">Ribbonside does not create automatic cloud backups. Open <strong>Account</strong>, then <strong>Backup &amp; Restore</strong>, to create a backup manually. The backup is a readable, unencrypted ZIP. Anyone with access to the saved file can read it, so choose its save or share location carefully and keep it private.</div>
+    <p>A Ribbonside backup can contain valid records still stored in the vault, including retained inactive or completed history, a records PDF, and available validated photos and documents. Restore requires the same Ribbonside account, a valid complete ZIP and a completely empty health vault. Restore does not merge with or replace existing records. Keep the original ZIP until the restore has been checked. Reminder permissions and schedules may need review afterwards.</p>
+    <p>Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, for separate access copies. Export Data (JSON) includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. PDF and JSON cannot be imported back into Ribbonside; only a validated Ribbonside backup ZIP is restorable.</p>
     <p>Depending on your device settings, screenshots, exports, or files you share outside Ribbonside may be controlled by Apple, Google, your cloud account, email provider, or another storage provider rather than by Ribbonside.</p>
     <p>For safeguards, support access, app lock, and incident response, see <a href="#security" onclick="show('security')">Security Practices</a>.</p>
 
     <h2>8. Retention</h2>
     <ul>
-      <li><strong>Local vault records:</strong> kept on your device until you delete the item, erase the vault, delete the app, or delete your account on that device. Signing in again or changing devices does not restore them.</li>
+      <li><strong>Local vault records:</strong> kept on your device until you delete the item, erase the vault, delete the app, or delete your account on that device. Signing in again or changing devices does not restore them by itself. Restore requires your own valid saved Ribbonside backup, the same account and a completely empty health vault.</li>
       <li><strong>Online account and consent records:</strong> kept while your account is active. If you delete your account, Ribbonside removes or de-identifies Ribbonside-controlled online records where reasonably possible, unless limited retention is needed for legal, security, billing, dispute, backup, audit, or service-integrity reasons.</li>
       <li><strong>Support tickets:</strong> usually kept for up to 12 months after the issue is closed, unless longer retention is reasonably needed for legal, billing, dispute, security, abuse-prevention, or service-integrity reasons.</li>
       <li><strong>Security, audit, and rate-limit logs:</strong> usually kept for up to 12 months, unless longer retention is needed to investigate misuse, fraud, security incidents, legal obligations, or service integrity.</li>
@@ -126,7 +127,7 @@
     </ul>
 
     <h2>9. Account Deletion</h2>
-    <div class="good">You can delete your Ribbonside account by opening <strong>Account</strong>, then <strong>Delete account</strong>. When deletion succeeds, the app erases the local health vault on that device and removes Ribbonside-controlled online account records where reasonably possible. If you no longer have access to the app, you can request deletion from <a href="account-deletion.html">the account deletion page</a>. Limited online, support, subscription, security, AI usage-limit, backup, or provider log records may remain where needed for legal, security, billing, dispute, audit, or service-integrity reasons. To erase only the local health vault, open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, then <strong>Erase Health Vault</strong>. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
+    <div class="good">You can delete your Ribbonside account by opening <strong>Account</strong>, then <strong>Delete account</strong>. When deletion succeeds, the app erases the local health vault on that device, deletes the online Ribbonside account and removes active Ribbonside cloud files where reasonably possible. If you no longer have access to the app, you can request deletion from <a href="account-deletion.html">the account deletion page</a>. Limited records may remain where needed for legal, security, billing, dispute, backup, audit, or service-integrity reasons. To erase only the local health vault, use the local vault controls in the Account area. A saved Ribbonside backup cannot be restored after its original account is permanently deleted. Deleting your Ribbonside account or deleting the app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
 
     <h2>10. Your Rights</h2>
     <ul>
@@ -155,8 +156,9 @@
     <p>If we become aware that an under-18 user has created an account, we may suspend or delete the account and associated online records, subject to any legal, security, billing, or backup retention needs. A parent or guardian can contact support if they believe a child has provided personal information to Ribbonside.</p>
 
     <h2>15. Policy Version And Changes</h2>
-    <p>Current policy version: <strong>2.8</strong>. Last reviewed: <strong>25 August 2026</strong>.</p>
+    <p>Current policy version: <strong>2.9</strong>. Last reviewed: <strong>17 September 2026</strong>.</p>
     <ul>
+      <li><strong>Version 2.9 - 17 September 2026:</strong> added the released manual Backup &amp; Restore workflow, clarified the readable unencrypted backup ZIP, same-account and empty-vault restore requirements, and distinguished restorable backups from PDF and JSON access copies.</li>
       <li><strong>Version 2.8 - 25 August 2026:</strong> clarified local-only storage, the absence of automatic backup and restore, export availability and subscription access, attachment export limits, and the one-way nature of current exports.</li>
       <li><strong>Version 2.7 - 23 August 2026:</strong> updated public Google Play availability, clarified iPhone and Android sign-in, and aligned health-record wording with the current app.</li>
       <li><strong>Version 2.6 - 22 August 2026:</strong> clarified platform-specific sign-in, prepared Google Play availability wording, and clarified Apple Health as an iPhone-only integration.</li>
@@ -179,7 +181,7 @@
   <!-- SECURITY PRACTICES -->
   <div id="security" class="doc">
     <h1 class="doc-title">Security Practices</h1>
-    <p class="doc-meta">Last updated: 25 August 2026 · Safeguards and incident response</p>
+    <p class="doc-meta">Last updated: 17 September 2026 · Safeguards and incident response</p>
 
     <h2>1. What This Covers</h2>
     <p>This page summarises how Ribbonside protects personal information and health information. The <a href="#privacy" onclick="show('privacy')">Privacy Policy</a> explains what information we collect, use, disclose, and delete. The <a href="#health" onclick="show('health')">Health Data Statement</a> lists the health data categories handled by the app.</p>
@@ -199,7 +201,8 @@
 
     <h2>4. User Controls</h2>
     <ul>
-      <li>Open Account, then Privacy &amp; Your Data. Export Data (JSON) is available to every signed-in Ribbonside account. Share Records PDF is available with an active Ribbonside subscription. Save exports securely outside your phone. Current exports cannot be imported back into Ribbonside.</li>
+      <li>Open Account, then Backup &amp; Restore, to create or restore a validated Ribbonside backup ZIP. The ZIP is readable and unencrypted after it is saved outside the vault, so keep it private.</li>
+      <li>Open Account, then Privacy &amp; Your Data, for PDF and JSON access copies. These formats cannot be imported back into Ribbonside.</li>
       <li>Erase the local health vault on this device from the Account screen.</li>
       <li>Request correction of inaccurate information by contacting support.</li>
       <li>Delete your account and have Ribbonside-controlled online account records removed or de-identified where reasonably possible, subject to limited legal, security, billing, dispute, backup, audit, or service-integrity retention needs.</li>
@@ -220,7 +223,7 @@
   <!-- TERMS OF USE -->
   <div id="terms" class="doc">
     <h1 class="doc-title">Terms of Use</h1>
-    <p class="doc-meta">Effective date: March 2026 · Last updated: 25 August 2026 · Governing law: New South Wales, Australia</p>
+    <p class="doc-meta">Effective date: March 2026 · Last updated: 17 September 2026 · Governing law: New South Wales, Australia</p>
 
     <h2>1. Agreement</h2>
     <p>By using Ribbonside you agree to these Terms. Governed by the laws of New South Wales, Australia.</p>
@@ -260,7 +263,7 @@
     <p>You give Ribbonside a limited permission to process your content only as needed to provide the app, keep local records available on your device, create exports you request, provide support, operate subscriptions and security controls, and process optional What does this mean? text you choose to send.</p>
 
     <h2>9. Service Availability, Local Storage, And Backups</h2>
-    <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Core records are stored locally on your device, and Ribbonside does not currently provide automatic backup or restore. Signing in again restores account and subscription access, not the local health vault. Current PDF and JSON exports cannot be imported back into Ribbonside.</p>
+    <p>Ribbonside may change, pause, update, or discontinue features from time to time. We aim to keep the service reliable, but no app or online service is guaranteed to be uninterrupted or error-free. Core records are stored locally on your device. Ribbonside does not create automatic cloud backups. You can manually create a readable, unencrypted Ribbonside backup ZIP and save it to a location you choose. Anyone with access to that file can read it. Restore requires the same Ribbonside account, a valid complete ZIP and a completely empty health vault; it does not merge with existing records. PDF and JSON exports remain separate access copies and cannot be imported.</p>
 
     <h2>10. Australian Consumer Law Guarantees</h2>
     <div class="good">Nothing in these Terms excludes your non-excludable rights under the <strong>Australian Consumer Law</strong> (Competition and Consumer Act 2010 (Cth)). If the Service fails to meet a consumer guarantee, you may be entitled to a remedy. Contact support@ribbonside.com.au or NSW Fair Trading on 13 32 20.</div>
@@ -343,7 +346,7 @@
   <!-- HEALTH DATA STATEMENT -->
   <div id="health" class="doc">
     <h1 class="doc-title">Health Data Statement</h1>
-    <p class="doc-meta">Last updated: 25 August 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
+    <p class="doc-meta">Last updated: 17 September 2026 · Every category of health data we handle, where it is stored, and how you can delete or erase it - in plain English</p>
 
     <div class="note">In this launch version, user-entered health records, documents, photos, appointments, medications, notes, questions, symptoms, results, and care notes are stored in the encrypted local vault on your device. Supabase is used for limited online account, consent, support, subscription, security, and AI usage-limit records.</div>
 
@@ -380,7 +383,8 @@
     </ul>
 
     <h2>Exports And Separate Copies</h2>
-    <p>Ribbonside does not currently provide automatic backup or restore. Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save exported health information somewhere private and secure outside your phone. Neither format can currently be imported back into Ribbonside.</p>
+    <p>Open <strong>Account</strong>, then <strong>Backup &amp; Restore</strong>, to create a manual backup. The readable, unencrypted ZIP can contain valid records still stored in the vault, including retained inactive or completed history, a records PDF, and available validated photos and documents. You choose where to save or share it. Anyone with access can read it, so keep it private. Restore requires the same Ribbonside account, a valid complete ZIP and a completely empty health vault; it does not merge with existing records.</p>
+    <p>Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, for separate access copies. Export Data (JSON) includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. PDF and JSON cannot be imported back into Ribbonside.</p>
 
     <h2>What We Never Do</h2>
     <ul>
@@ -392,7 +396,7 @@
     </ul>
 
     <h2>Deletion</h2>
-    <div class="good">Open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>, then <strong>Erase Health Vault</strong> to remove local records from this device only. Open <strong>Account</strong>, then <strong>Delete account</strong> to erase the local vault on that device and remove Ribbonside-controlled online account records where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. If you no longer have access to the app, use the <a href="account-deletion.html">account deletion page</a>. Deleting the online account or app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
+    <div class="good">Use the local vault controls in the Account area to remove local records from this device while keeping the online account active. Open <strong>Account</strong>, then <strong>Delete account</strong> to erase the local vault, delete the online Ribbonside account and remove active Ribbonside cloud files where reasonably possible, unless limited records must be retained for legal, security, billing, dispute, backup, audit, or service-integrity reasons. A saved backup cannot be restored after its original Ribbonside account is permanently deleted. If you no longer have access to the app, use the <a href="account-deletion.html">account deletion page</a>. Deleting the online account or app does not automatically cancel an Apple App Store or Google Play subscription; subscriptions must be cancelled through the store where you subscribed.</div>
   </div>
 
   <!-- TGA & ACL -->

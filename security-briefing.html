@@ -294,11 +294,15 @@
     </div>
 
     <h2>If the phone is lost or replaced</h2>
-    <p>Signing back into Ribbonside restores account and subscription access, but it does not currently restore health records stored in the local vault. Before changing, resetting or replacing a phone, use Export Data (JSON), which is available to every signed-in Ribbonside account. With an active Ribbonside subscription, you can also create a Share Records PDF. Save the files securely somewhere outside the phone.</p>
-    <div class="warn">Ribbonside does not currently provide automatic backup or restore. Current PDF and JSON exports cannot be imported back into Ribbonside.</div>
+    <p>Signing back into Ribbonside restores account and subscription access, not the health vault from another phone. Before changing, resetting or replacing a phone, the user can open <strong>Account</strong>, then <strong>Backup &amp; Restore</strong>, create a complete backup and save it somewhere private. Ribbonside cannot recover the on-phone health vault without the user's own valid saved backup.</p>
+    <div class="warn">Ribbonside does not create automatic cloud backups. A user-created backup is a readable, unencrypted ZIP. Anyone with access to that file can read it.</div>
 
     <h2>How to keep a separate copy of records</h2>
-    <p>In Ribbonside, open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. Save the files somewhere outside the phone. Neither export can currently be imported back into Ribbonside.</p>
+    <p>In Ribbonside, open <strong>Account</strong>, then <strong>Privacy &amp; Your Data</strong>. Export Data (JSON) includes raw records and available photo and document attachment data, subject to safety and size limits. Share Records PDF is a readable summary available with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF. PDF and JSON are access copies and cannot be imported back into Ribbonside. The separate validated Ribbonside ZIP created in <strong>Backup &amp; Restore</strong> is the restorable format.</p>
+
+    <h2>How manual backup and restore work</h2>
+    <p>The user chooses when to create a backup and where to save or share it. The ZIP can contain valid records still stored in the vault, including retained inactive or completed history, a records PDF, and available validated photos and documents. Restore is owner-bound: the user must sign in to the same Ribbonside account, the health vault on that phone must be completely empty, and the ZIP must pass validation. Restore does not merge with or replace existing records.</p>
+    <p>Keep the original ZIP until the restore has been checked. Old phone notification identifiers are not imported, so reminder permissions and schedules may need review. A saved ZIP cannot be restored after the original Ribbonside account is permanently deleted.</p>
 
     <h2>Account deletion and vault erase</h2>
     <ul>
@@ -315,7 +319,7 @@
       <div class="qa"><strong>Does Ribbonside sell data or use ads?</strong><p>No. Ribbonside says it does not sell health data, use advertising trackers, or share data with advertisers or data brokers.</p></div>
       <div class="qa"><strong>Does What does this mean? send information overseas?</strong><p>Yes, if the user chooses to use it. The text they type is sent to Anthropic's Claude API for processing after point-of-use consent.</p></div>
       <div class="qa"><strong>Does Apple Health data leave the device?</strong><p>Current verified app behaviour reads HealthKit values on-device on iPhone for display only and does not send them to Supabase, RevenueCat, Anthropic, support/admin tools, or analytics providers.</p></div>
-      <div class="qa"><strong>Is backup and restore planned?</strong><p>Yes. Ribbonside is planning a user-controlled encrypted backup and restore feature. Until it is released and confirmed available in the app, users should continue exporting their records regularly.</p></div>
+      <div class="qa"><strong>Does Ribbonside back up records automatically?</strong><p>No. Backup &amp; Restore is manually started by the user. The user chooses where to save the readable, unencrypted ZIP and is responsible for keeping it private.</p></div>
       <div class="qa"><strong>What happens if there is a data breach?</strong><p>Ribbonside maintains a data breach response plan and states that suspected eligible breaches will be assessed within 30 days, with notification to affected users and the OAIC where required.</p></div>
     </div>
 
@@ -324,7 +328,7 @@
       <li>Ribbonside is not a medical service and does not replace a treating team.</li>
       <li>A user may still type sensitive information into support or What does this mean?, even though the app warns against it.</li>
       <li>A stolen, unlocked, rooted, jailbroken, or compromised device can still create risk.</li>
-      <li>Local-first storage means signing in on another phone does not restore the local health vault. Current PDF and JSON exports are one-way files and cannot be imported back into Ribbonside.</li>
+      <li>Local-first storage means signing in on another phone does not restore the local health vault by itself. PDF and JSON exports cannot be imported. Restore requires the validated Ribbonside ZIP, the same account and a completely empty health vault.</li>
       <li>Independent mobile security review and Supabase access-control review remain sensible before any healthcare-partner rollout.</li>
     </ul>
 

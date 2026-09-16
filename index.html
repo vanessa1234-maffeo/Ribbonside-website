@@ -308,6 +308,7 @@ h1{
 }
 .feature-section{
   border-top:1px solid var(--line);
+  scroll-margin-top:140px;
 }
 .feature-section:nth-of-type(odd){background:var(--surface-soft)}
 .section-inner{
@@ -749,6 +750,7 @@ footer a:hover{text-decoration:underline}
   font-size:15px;
 }
 @media(max-width:960px){
+  html{scroll-padding-top:140px}
   .site-nav{
     grid-template-columns:1fr auto;
     grid-template-areas:"brand cta" "links links";
@@ -869,12 +871,12 @@ footer a:hover{text-decoration:underline}
       <p class="phone-caption"><strong>A clearer today</strong><span>See what needs attention next without digging through notes.</span></p>
     </article>
     <article class="phone-card">
-      <div class="phone-frame"><img src="ribbonside-app-records-screen.jpg" width="600" height="1235" alt="Ribbonside records screen with treatment journey, care team, appointments and medical records"></div>
-      <p class="phone-caption"><strong>Records in plain sections</strong><span>Find treatment history, appointments and contacts later.</span></p>
+      <div class="phone-frame"><img src="ribbonside-app-records-screen-2026-09-17.jpg" width="600" height="1244" alt="Ribbonside Records screen showing treatment, appointment and medical record sections"></div>
+      <p class="phone-caption"><strong>Records in one place</strong><span>Keep treatment, appointments and medical records organised in clear sections.</span></p>
     </article>
     <article class="phone-card">
-      <div class="phone-frame"><img src="ribbonside-app-surgery-recovery-screen-2026-08-23.jpg" width="600" height="1239" alt="Ribbonside Surgery and Recovery screen showing surgery details, pre-op questions, drain tracking and recovery milestones"></div>
-      <p class="phone-caption"><strong>Surgery &amp; recovery</strong><span>Keep surgery details, pre-op questions, drain updates and recovery milestones together.</span></p>
+      <div class="phone-frame"><img src="ribbonside-app-surgery-recovery-screen-2026-08-23.jpg" width="600" height="1239" alt="Ribbonside Surgery and Recovery screen showing surgery, questions, drain tracking and recovery milestones"></div>
+      <p class="phone-caption"><strong>Surgery &amp; recovery</strong><span>Keep surgery details, questions, drain updates and recovery milestones together.</span></p>
     </article>
   </section>
 
@@ -939,13 +941,13 @@ footer a:hover{text-decoration:underline}
       <div class="section-copy">
         <p class="eyebrow">Check-in</p>
         <h2>Notice the day-to-day patterns.</h2>
-        <p>Track the patterns that are easy to forget later, then bring them back when they help a conversation with your care team.</p>
+        <p>Track patterns that are easy to forget, then review them when preparing for appointments.</p>
       </div>
       <div class="card-grid">
-        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Daily check-ins</h3><p>Log how you&rsquo;re feeling, symptoms, scores and notes for yourself or your care team.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Daily check-ins</h3><p>Log how you&rsquo;re feeling, symptoms, 0&ndash;10 scores and notes saved on your device.</p></div></article>
         <article class="feature-card"><span class="feature-icon">02</span><div><h3>How you're feeling</h3><p>Record fatigue, nausea, pain or aches, mood, appetite and sleep quality.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Symptom tags</h3><p>Add the symptoms and side effects you choose to track that day.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Notes to remember</h3><p>Use the free-text field for notes for yourself or your care team.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Symptom tags</h3><p>Choose the symptoms or side effects you want to record that day.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Notes to remember</h3><p>Add a private note to remember or discuss with your care team.</p></div></article>
       </div>
     </div>
   </section>
@@ -966,18 +968,18 @@ footer a:hover{text-decoration:underline}
     </div>
   </section>
 
-  <section class="feature-section" id="share">
+  <section class="feature-section" id="backup-restore">
     <div class="section-inner">
       <div class="section-copy">
-        <p class="eyebrow">Share</p>
-        <h2>Share only what you choose.</h2>
-        <p>Ribbonside keeps records private by default. When you need to bring information somewhere else, use exports or the records you choose to send.</p>
+        <p class="eyebrow">Backup &amp; Restore</p>
+        <h2>Keep a copy you can restore.</h2>
+        <p>Your backup is created only when you choose. Ribbonside does not automatically upload your health vault or create cloud backups.</p>
       </div>
       <div class="card-grid">
-        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Records PDF</h3><p>Create a readable PDF summary with an active Ribbonside subscription. Photo and document files are listed but are not embedded in the PDF.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Data export</h3><p>Export Data (JSON) is available to every signed-in Ribbonside account and includes raw records and available photo and document attachment data, subject to safety and size limits.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Keep a separate copy</h3><p>Save exports securely somewhere outside your phone. Neither PDF nor JSON can currently be imported back into Ribbonside.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">04</span><div><h3>No background sharing</h3><p>Ribbonside does not automatically give carers or anyone else access to your records. Exports only happen when you choose.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">01</span><div><h3>Create your copy</h3><p>Ribbonside packages valid records still stored in your vault, including retained inactive or completed history, a records PDF, and available photos and documents.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">02</span><div><h3>Save it privately</h3><p>You choose where to save or share the readable, unencrypted ZIP. Anyone with access to the file can read it.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">03</span><div><h3>Restore carefully</h3><p>Sign in to the same Ribbonside account and restore only into a completely empty health vault. Restore does not merge with or replace existing records.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Check the result</h3><p>Keep the original ZIP until you have checked the restore. Reminder permissions and schedules may need review afterwards.</p></div></article>
       </div>
     </div>
   </section>
@@ -993,7 +995,7 @@ footer a:hover{text-decoration:underline}
         <article class="feature-card"><span class="feature-icon">01</span><div><h3>Local vault</h3><p>Core health records, photos and documents are stored on your device.</p></div></article>
         <article class="feature-card"><span class="feature-icon">02</span><div><h3>Privacy and consent</h3><p>Review legal notices, consent choices, exports and deletion controls.</p></div></article>
         <article class="feature-card"><span class="feature-icon">03</span><div><h3>Apple Health on iPhone</h3><p>Connect optional read-only Apple Health activity signals on iPhone, then revoke access at any time in iPhone settings.</p></div></article>
-        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Store subscriptions</h3><p>Manage paid access, cancellations and refunds through the store where you subscribed.</p></div></article>
+        <article class="feature-card"><span class="feature-icon">04</span><div><h3>Store subscriptions</h3><p>Manage or cancel your subscription through the store where you subscribed. Refund requests are handled under that store's policies.</p></div></article>
       </div>
     </div>
   </section>
@@ -1018,9 +1020,9 @@ footer a:hover{text-decoration:underline}
 
   <section class="trust-band" id="privacy">
     <div class="trust-inner">
-      <div class="trust-item"><strong>Private records on your device</strong><p>Core health records, photos and documents you add are stored only on your device in Ribbonside's encrypted local vault. Ribbonside does not currently provide automatic backup or restore. Export your records regularly and save them somewhere outside your phone.</p></div>
+      <div class="trust-item"><strong>Private records on your device</strong><p>Core health records, photos and documents are normally stored in Ribbonside's encrypted local vault on your device. Ribbonside does not create automatic cloud backups. A readable backup ZIP leaves the vault only when you choose to create and save it.</p></div>
       <div class="trust-item"><strong>Plain-English help</strong><p>What does this mean? is limited to short typed questions and general explanations. It is not personalised medical advice.</p></div>
-      <div class="trust-item"><strong>Clear user control</strong><p>Delete local records, export your data, manage subscriptions through your app store, and revoke Apple Health access on iPhone at any time.</p></div>
+      <div class="trust-item"><strong>Clear user control</strong><p>Create or restore a backup, delete local records, export your data, manage subscriptions through your app store, and revoke Apple Health access on iPhone.</p></div>
     </div>
   </section>
 
