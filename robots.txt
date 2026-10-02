@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /mission-control/
 
 Sitemap: https://ribbonside.com.au/sitemap.xml
