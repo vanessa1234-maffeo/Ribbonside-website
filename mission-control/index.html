@@ -253,6 +253,8 @@ const AGENTS = [
    prompt:"You are the Reviewer. Before anything ships — ads, marketing copy, blog posts, App Store / Play text, outreach — you red-line it against: Apple App Store & Google Play policies, Australian Consumer Law and TGA expectations, and the hard rule that Ribbonside makes NO medical, diagnostic, treatment or outcome claims. You also check brand voice, accuracy and tone for a sensitive audience. Output a clear verdict — PASS or CHANGES NEEDED — then the specific risky lines and a safer rewrite for each."}
 ];
 const AGENT_BY_ID = Object.fromEntries(AGENTS.map(a=>[a.id,a]));
+const CORE_AGENTS=["chief","growth","ads","analytics","outreach","blog","reviewer"];
+function activeAgents(){ return state.simple===false ? AGENTS : AGENTS.filter(a=>CORE_AGENTS.includes(a.id)); }
 
 let state = load();
 let current = "chief";
@@ -264,6 +266,7 @@ function normalize(s){
   s.chats=s.chats||{}; AGENTS.forEach(a=>{ if(!Array.isArray(s.chats[a.id])) s.chats[a.id]=[]; });
   s.comms=Array.isArray(s.comms)?s.comms:[]; s.blog=Array.isArray(s.blog)?s.blog:[]; s.metrics=Array.isArray(s.metrics)?s.metrics:[];
   s.webSearch=(s.webSearch===undefined)?true:s.webSearch;
+  s.simple=(s.simple===undefined)?true:s.simple;
   s.lastBackup=s.lastBackup||0; s.changesSinceBackup=s.changesSinceBackup||0; return s;
 }
 let saveTimer=null;
@@ -323,7 +326,7 @@ async function relay(fromId,toId,text){ const from=AGENT_BY_ID[fromId],to=AGENT_
 
 function renderSidebar(){
   const nav=document.getElementById("agentNav"); nav.innerHTML="";
-  AGENTS.forEach(a=>{ const n=state.chats[a.id].length; const b=el(`<button class="navitem" data-view="${a.id}"><span class="em">${a.emoji}</span>${a.name}${n?`<span class="meta">${n}</span>`:""}</button>`); b.onclick=()=>selectView(a.id); if(current===a.id)b.classList.add("active"); nav.appendChild(b); });
+  activeAgents().forEach(a=>{ const n=state.chats[a.id].length; const b=el(`<button class="navitem" data-view="${a.id}"><span class="em">${a.emoji}</span>${a.name}${n?`<span class="meta">${n}</span>`:""}</button>`); b.onclick=()=>selectView(a.id); if(current===a.id)b.classList.add("active"); nav.appendChild(b); });
   document.querySelectorAll('.navitem[data-view]').forEach(b=>{ const v=b.getAttribute("data-view"); b.classList.toggle("active",v===current); if(["tracker","comms","blog","backup","settings"].includes(v)) b.onclick=()=>selectView(v); });
   document.getElementById("trackerCount").textContent=state.metrics.length;
   document.getElementById("commsCount").textContent=state.comms.length;
@@ -359,7 +362,7 @@ function msgNode(agentId,m){
   const who=isUser?(m.from?`You <span class="frm">· via ${esc(m.from)}</span>`:"You"):a.name; const av=isUser?"🧑‍💼":a.emoji;
   const node=el(`<div class="msg ${isUser?"user":""}"><div class="av">${av}</div><div class="bub"><div class="who">${who}</div><div class="txt">${isUser?esc(m.content).replace(/\n/g,"<br>"):mdToHtml(m.content)}</div></div></div>`);
   if(!isUser&&m.content&&!m.streaming){
-    const others=AGENTS.filter(x=>x.id!==agentId); const mentioned=others.filter(x=>new RegExp("@"+x.tag+"\\b","i").test(m.content));
+    const others=activeAgents().filter(x=>x.id!==agentId); const mentioned=others.filter(x=>new RegExp("@"+x.tag+"\\b","i").test(m.content));
     const bar=el(`<div class="relaybar"></div>`);
     const listen=el(`<button class="chip">🔊 Listen</button>`); listen.onclick=()=>toggleSpeak(m.content,listen); bar.appendChild(listen);
     bar.appendChild(el(`<span class="lbl">· Relay to →</span>`)); const shown=mentioned.length?mentioned:others;
@@ -384,7 +387,7 @@ async function sendMessage(agentId){ const ta=document.getElementById("composer"
 function clearChat(agentId){ if(!confirm("Clear this conversation with "+AGENT_BY_ID[agentId].name+"?"))return; state.chats[agentId]=[]; save(); renderSidebar(); renderMain(); }
 
 function openBroadcast(){
-  const opts=AGENTS.filter(a=>a.id!=="chief").map(a=>`<label class="check"><input type="checkbox" class="bc" value="${a.id}" checked> ${a.emoji} ${a.name}</label>`).join("");
+  const opts=activeAgents().filter(a=>a.id!=="chief").map(a=>`<label class="check"><input type="checkbox" class="bc" value="${a.id}" checked> ${a.emoji} ${a.name}</label>`).join("");
   openModal(`<h3>📢 Broadcast a task to the team</h3><p class="d" style="color:var(--muted);font-size:13px;margin-bottom:12px">Each selected agent responds in their own chat, and every reply is logged to Team Comms so you can compare and synthesise.</p>
     <div class="field"><label>Task / question</label><textarea id="bcText" rows="3" placeholder="e.g. One idea each to grow Ribbonside installs this month, within a small budget."></textarea></div><div>${opts}</div>
     <div class="foot"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn pri" id="bcRun">Send broadcast</button></div>`);
@@ -512,11 +515,13 @@ function renderSettings(){
       <div class="row"><button class="btn pri" onclick="saveKey()">Save key</button>${PREVIEW?"":`<button class="btn" onclick="testKey()">Test connection</button>`}<a class="btn" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" style="text-decoration:none">Get a key ↗</a></div></div>
     <div class="panel"><h3>🧠 Model</h3><p class="d">Which Claude model powers your agents. Sonnet 5 balances quality, speed and cost; Opus 4.8 is most capable; Haiku 4.5 is fastest and cheapest.</p><div class="field"><select id="setModel" onchange="saveModel()">${MODELS.map(m=>`<option value="${m.id}" ${state.model===m.id?"selected":""}>${m.name}</option>`).join("")}</select></div></div>
     <div class="panel"><h3>🌐 Web search</h3><p class="d">Let agents look things up on the internet when it helps (e.g. current ad costs, competitor apps, trends). Agents only search when it's useful, and it costs a little more per answer.</p><label class="check"><input type="checkbox" id="setSearch" ${state.webSearch!==false?"checked":""} onchange="toggleSearch()"> Allow agents to search the web</label></div>
+    <div class="panel"><h3>🎚️ Simple mode</h3><p class="d">Show only your core team (Chief of Staff, Growth &amp; ASO, Ads, Downloads &amp; Analytics, Outreach, Blog Editor, Reviewer). Turn this off to also show Marketing and Product Improvement. Nothing is ever deleted — this just tidies the list.</p><label class="check"><input type="checkbox" id="setSimple" ${state.simple!==false?"checked":""} onchange="toggleSimple()"> Simple mode (hide the two extra agents)</label></div>
     <div class="panel"><h3>ℹ️ About</h3><p class="d">A private ops cockpit for Ribbonside: nine Claude-powered teammates for ads, marketing, growth, downloads, improvement, outreach, blogging, review and coordination.</p><div class="note">On your own site this page is <b>noindex</b> and blocked in robots.txt. It holds no secrets of its own — your API key lives only in your browser. Keep the URL private and set a device PIN for casual protection.</div></div></div>`;
 }
 function saveKey(){ state.apiKey=document.getElementById("setKey").value.trim(); save(false); renderSidebar(); toast(state.apiKey?"API key saved":"API key cleared"); }
 function saveModel(){ state.model=document.getElementById("setModel").value; save(false); renderSidebar(); toast("Model set to "+state.model.replace("claude-","")); }
 function toggleSearch(){ state.webSearch=document.getElementById("setSearch").checked; save(false); toast(state.webSearch?"🌐 Web search on":"Web search off"); }
+function toggleSimple(){ state.simple=document.getElementById("setSimple").checked; if(state.simple && AGENT_BY_ID[current] && !CORE_AGENTS.includes(current)) current="chief"; save(false); renderSidebar(); renderMain(); toast(state.simple?"Simple mode on — core team only":"Showing all 9 agents"); }
 async function testKey(){ const k=document.getElementById("setKey").value.trim(); if(!k){toast("Enter a key first");return;} state.apiKey=k; save(false); toast("Testing…"); try{ await callClaude({system:"Reply with just: ok",messages:[{role:"user",content:"ping"}],maxTokens:16}); toast("✅ Connection works"); }catch(e){ toast("❌ "+e.message.slice(0,120)); } }
 
 function openModal(html){ document.getElementById("modal").innerHTML=html; document.getElementById("overlay").classList.add("on"); }
