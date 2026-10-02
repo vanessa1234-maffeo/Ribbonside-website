@@ -263,6 +263,7 @@ function normalize(s){
   s.apiKey=s.apiKey||""; s.model=MODELS.some(m=>m.id===s.model)?s.model:"claude-sonnet-5"; s.pinHash=s.pinHash||"";
   s.chats=s.chats||{}; AGENTS.forEach(a=>{ if(!Array.isArray(s.chats[a.id])) s.chats[a.id]=[]; });
   s.comms=Array.isArray(s.comms)?s.comms:[]; s.blog=Array.isArray(s.blog)?s.blog:[]; s.metrics=Array.isArray(s.metrics)?s.metrics:[];
+  s.webSearch=(s.webSearch===undefined)?true:s.webSearch;
   s.lastBackup=s.lastBackup||0; s.changesSinceBackup=s.changesSinceBackup||0; return s;
 }
 let saveTimer=null;
@@ -290,9 +291,11 @@ function mdToHtml(src){
 }
 const PREVIEW_REPLY = "🔍 **This is a live preview** so you can explore Mission Control — every agent, the relay, the Growth Tracker, the blog board and the backup tools are all clickable here.\n\nMy real replies switch on when this page runs on your own site at **ribbonside.com.au/mission-control/**, where it can reach Claude with your API key. (A published preview like this can't make that call, for security reasons.)\n\nIn the meantime, Vanessa, you can also just ask me — Claude, in your chat — to act as any of these agents and I'll produce the real work there.";
 
-async function callClaude({system, messages, maxTokens=4096, onDelta}){
+async function callClaude({system, messages, maxTokens=4096, onDelta, search}){
   if(!state.apiKey) throw new Error("No API key set. Open Settings and add your Anthropic API key.");
-  const res=await fetch(API_URL,{method:"POST",headers:{"content-type":"application/json","x-api-key":state.apiKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:state.model,max_tokens:maxTokens,system,messages,stream:true})});
+  const payload={model:state.model,max_tokens:maxTokens,system,messages,stream:true};
+  if(search && state.webSearch!==false) payload.tools=[{type:"web_search_20250305",name:"web_search",max_uses:5}];
+  const res=await fetch(API_URL,{method:"POST",headers:{"content-type":"application/json","x-api-key":state.apiKey,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify(payload)});
   if(!res.ok){ let d=""; try{ const j=await res.json(); d=j.error?.message||JSON.stringify(j); }catch(e){ d=await res.text(); } throw new Error(`API ${res.status}: ${d}`); }
   const reader=res.body.getReader(),dec=new TextDecoder(); let buf="",full="";
   while(true){ const {done,value}=await reader.read(); if(done)break; buf+=dec.decode(value,{stream:true}); let i;
@@ -308,7 +311,7 @@ async function runAgent(agentId,{maxTokens=4096,commsFrom=null}={}){
   if(PREVIEW){ chat.push({role:"assistant",content:PREVIEW_REPLY,ts:Date.now(),streaming:false}); save(); busy[agentId]=false; if(current===agentId)renderMain(); renderSidebar();
     if(commsFrom) logComms({from:AGENT_BY_ID[agentId].name,to:AGENT_BY_ID[commsFrom]?.name||"Team",text:"(preview) "+AGENT_BY_ID[agentId].name+" acknowledged the hand-off.",kind:"reply"}); return; }
   const msg={role:"assistant",content:"",ts:Date.now(),streaming:true}; chat.push(msg); if(current===agentId)renderMain();
-  try{ const full=await callClaude({system:agentSystem(agentId),messages:agentMessages(agentId).filter(m=>!m.streaming),maxTokens,onDelta:(txt)=>{ msg.content=txt; if(current===agentId)updateStreaming(agentId,txt); }});
+  try{ const full=await callClaude({system:agentSystem(agentId),messages:agentMessages(agentId).filter(m=>!m.streaming),maxTokens,search:true,onDelta:(txt)=>{ msg.content=txt; if(current===agentId)updateStreaming(agentId,txt); }});
     msg.content=full; msg.streaming=false; save(); if(commsFrom) logComms({from:AGENT_BY_ID[agentId].name,to:AGENT_BY_ID[commsFrom]?.name||"Team",text:full,kind:"reply"});
   }catch(e){ msg.content=(/Failed to fetch|NetworkError/i.test(e.message)?"⚠️ Couldn't reach Claude from here. Live replies run on your own site (ribbonside.com.au/mission-control) with your API key.":"⚠️ "+e.message); msg.streaming=false; msg.error=true; save(); toast(e.message.slice(0,120)); }
   finally{ busy[agentId]=false; if(current===agentId)renderMain(); renderSidebar(); }
@@ -357,13 +360,26 @@ function msgNode(agentId,m){
   const node=el(`<div class="msg ${isUser?"user":""}"><div class="av">${av}</div><div class="bub"><div class="who">${who}</div><div class="txt">${isUser?esc(m.content).replace(/\n/g,"<br>"):mdToHtml(m.content)}</div></div></div>`);
   if(!isUser&&m.content&&!m.streaming){
     const others=AGENTS.filter(x=>x.id!==agentId); const mentioned=others.filter(x=>new RegExp("@"+x.tag+"\\b","i").test(m.content));
-    const bar=el(`<div class="relaybar"><span class="lbl">Relay this to →</span></div>`); const shown=mentioned.length?mentioned:others;
+    const bar=el(`<div class="relaybar"></div>`);
+    const listen=el(`<button class="chip">🔊 Listen</button>`); listen.onclick=()=>toggleSpeak(m.content,listen); bar.appendChild(listen);
+    bar.appendChild(el(`<span class="lbl">· Relay to →</span>`)); const shown=mentioned.length?mentioned:others;
     shown.slice(0,mentioned.length?mentioned.length:7).forEach(x=>{ const c=el(`<button class="chip ${mentioned.includes(x)?"suggest":""}">${x.emoji} ${x.name}</button>`); c.onclick=()=>relay(agentId,x.id,m.content); bar.appendChild(c); });
     node.querySelector(".bub").appendChild(bar);
   } return node;
 }
 function updateStreaming(agentId,txt){ const inner=document.getElementById("msgsInner"); if(!inner)return; const last=inner.querySelector(".msg:last-child .txt"); if(last){ last.innerHTML=mdToHtml(txt); scrollMsgs(); } }
 function scrollMsgs(){ const m=document.getElementById("msgs"); if(m)m.scrollTop=m.scrollHeight; }
+function stripMd(t){ return (t||"").replace(/\[([^\]]+)\]\([^)]+\)/g,"$1").replace(/[#*`_>]/g,"").replace(/\n{2,}/g,". ").replace(/\n/g,". ").trim(); }
+let speakingBtn=null;
+function toggleSpeak(text,btn){
+  if(!("speechSynthesis" in window)){ toast("This browser can't read aloud"); return; }
+  const synth=window.speechSynthesis;
+  if(synth.speaking||synth.pending){ synth.cancel(); if(speakingBtn)speakingBtn.textContent="🔊 Listen"; const was=speakingBtn; speakingBtn=null; if(was===btn)return; }
+  const u=new SpeechSynthesisUtterance(stripMd(text)); u.rate=1; u.pitch=1;
+  u.onend=()=>{ btn.textContent="🔊 Listen"; speakingBtn=null; };
+  u.onerror=()=>{ btn.textContent="🔊 Listen"; speakingBtn=null; };
+  speakingBtn=btn; btn.textContent="⏹ Stop"; synth.speak(u);
+}
 async function sendMessage(agentId){ const ta=document.getElementById("composer"); const text=ta.value.trim(); if(!text)return; ta.value=""; ta.style.height="auto"; state.chats[agentId].push({role:"user",content:text,ts:Date.now()}); save(); renderMessages(agentId); await runAgent(agentId); }
 function clearChat(agentId){ if(!confirm("Clear this conversation with "+AGENT_BY_ID[agentId].name+"?"))return; state.chats[agentId]=[]; save(); renderSidebar(); renderMain(); }
 
@@ -448,7 +464,7 @@ async function draftPost(id){
   if(!state.apiKey){toast("Add your API key in Settings first");return;} const data=readPostForm(); if(!data.title){toast("Add a title or a rough idea first");return;}
   const btn=document.getElementById("pDraft"); btn.disabled=true; btn.textContent="Drafting…"; const bodyTa=document.getElementById("pBody");
   const prompt=`Draft a full Ribbonside blog post.\nWorking title / idea: "${data.title}"\n${data.body?"Existing notes:\n"+data.body+"\n":""}${data.tags?"Preferred tags: "+data.tags+"\n":""}\nReturn ONLY the post body in Markdown with clear headings (no title line, no meta line). Then on the very last two lines:\nMETA: <one–two sentence meta description>\nTAGS: <3–5 comma separated tags>`;
-  try{ let full=""; await callClaude({system:agentSystem("blog"),messages:[{role:"user",content:prompt}],maxTokens:8000,onDelta:(t)=>{ full=t; bodyTa.value=t; }});
+  try{ let full=""; await callClaude({system:agentSystem("blog"),messages:[{role:"user",content:prompt}],maxTokens:8000,search:true,onDelta:(t)=>{ full=t; bodyTa.value=t; }});
     const mm=full.match(/^META:\s*(.+)$/mi),tm=full.match(/^TAGS:\s*(.+)$/mi); if(mm)document.getElementById("pMeta").value=mm[1].trim(); if(tm)document.getElementById("pTags").value=tm[1].trim(); bodyTa.value=full.replace(/^META:.*$/mi,"").replace(/^TAGS:.*$/mi,"").trim(); toast("Draft ready — review & edit before publishing");
   }catch(e){ toast(e.message.slice(0,120)); } finally{ btn.disabled=false; btn.textContent="✨ Draft with Blog Editor"; }
 }
@@ -495,10 +511,12 @@ function renderSettings(){
       <div class="field"><label>API key</label><input id="setKey" type="password" placeholder="sk-ant-…" value="${esc(state.apiKey)}"></div>
       <div class="row"><button class="btn pri" onclick="saveKey()">Save key</button>${PREVIEW?"":`<button class="btn" onclick="testKey()">Test connection</button>`}<a class="btn" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" style="text-decoration:none">Get a key ↗</a></div></div>
     <div class="panel"><h3>🧠 Model</h3><p class="d">Which Claude model powers your agents. Sonnet 5 balances quality, speed and cost; Opus 4.8 is most capable; Haiku 4.5 is fastest and cheapest.</p><div class="field"><select id="setModel" onchange="saveModel()">${MODELS.map(m=>`<option value="${m.id}" ${state.model===m.id?"selected":""}>${m.name}</option>`).join("")}</select></div></div>
+    <div class="panel"><h3>🌐 Web search</h3><p class="d">Let agents look things up on the internet when it helps (e.g. current ad costs, competitor apps, trends). Agents only search when it's useful, and it costs a little more per answer.</p><label class="check"><input type="checkbox" id="setSearch" ${state.webSearch!==false?"checked":""} onchange="toggleSearch()"> Allow agents to search the web</label></div>
     <div class="panel"><h3>ℹ️ About</h3><p class="d">A private ops cockpit for Ribbonside: nine Claude-powered teammates for ads, marketing, growth, downloads, improvement, outreach, blogging, review and coordination.</p><div class="note">On your own site this page is <b>noindex</b> and blocked in robots.txt. It holds no secrets of its own — your API key lives only in your browser. Keep the URL private and set a device PIN for casual protection.</div></div></div>`;
 }
 function saveKey(){ state.apiKey=document.getElementById("setKey").value.trim(); save(false); renderSidebar(); toast(state.apiKey?"API key saved":"API key cleared"); }
 function saveModel(){ state.model=document.getElementById("setModel").value; save(false); renderSidebar(); toast("Model set to "+state.model.replace("claude-","")); }
+function toggleSearch(){ state.webSearch=document.getElementById("setSearch").checked; save(false); toast(state.webSearch?"🌐 Web search on":"Web search off"); }
 async function testKey(){ const k=document.getElementById("setKey").value.trim(); if(!k){toast("Enter a key first");return;} state.apiKey=k; save(false); toast("Testing…"); try{ await callClaude({system:"Reply with just: ok",messages:[{role:"user",content:"ping"}],maxTokens:16}); toast("✅ Connection works"); }catch(e){ toast("❌ "+e.message.slice(0,120)); } }
 
 function openModal(html){ document.getElementById("modal").innerHTML=html; document.getElementById("overlay").classList.add("on"); }
