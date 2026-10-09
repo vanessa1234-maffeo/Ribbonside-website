@@ -5,13 +5,13 @@
   <meta name="facebook-domain-verification" content="vb8xb7mcfr9ccrt4k5yd4tlt8liqgf" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1E1414">
-<title>Ribbonside - Private support organiser</title>
+<title>Ribbonside | Breast Cancer Organiser App</title>
 <meta name="description" content="Ribbonside is a private organiser for the practical side of breast cancer. Keep appointments, medications, notes, photos and documents together on your phone.">
 <link rel="canonical" href="https://ribbonside.com.au/">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
-<meta property="og:title" content="Ribbonside - Private support organiser">
+<meta property="og:title" content="Ribbonside | Breast Cancer Organiser App">
 <meta property="og:description" content="A calm private organiser for the practical side of breast cancer.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ribbonside.com.au/">
@@ -957,6 +957,46 @@ footer a:hover{text-decoration:underline}
   .footer-inner{display:block}
   .footer-inner div+div{margin-top:10px}
 }
+
+/* Local marketing review refinements */
+.hero{padding-top:32px;padding-bottom:24px}
+.hero-layout{align-items:start}
+@media(max-width:680px){.hero{padding-top:30px}}
+.eyebrow{color:#9B3D5C}
+.hero-layout{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.6fr 1fr;align-items:start;gap:48px;text-align:left}
+.hero h1{font-size:clamp(48px,6vw,76px)}
+.hero-lead{margin-left:0}
+.hero-actions{justify-content:flex-start}
+.hero-availability{justify-content:start}
+.hero-note{max-width:560px}
+.hero-screen{margin:0;text-align:center}
+.hero-screen img{width:auto;max-width:100%;height:420px;object-fit:contain;margin:auto;border-radius:20px}
+.hero-screen figcaption{font-size:13px;color:var(--pink-mid);margin-top:12px}
+.nav-links a{font-size:14px;min-height:44px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-left:22px}
+.steps-grid h3{font-size:18px;margin:0}
+.steps-grid p{color:var(--muted);font-size:15px}
+.download-repeat{margin-top:30px;padding:26px;border-radius:8px;background:var(--surface-soft);text-align:center}
+.download-repeat h3{margin:0;font-size:23px}
+.download-repeat p{color:var(--muted);font-size:14px}
+.social-inner{padding-top:36px;padding-bottom:36px}
+.social-card{min-height:0;padding:20px}
+.social-platform{margin-bottom:12px}
+.social-copy{margin-bottom:14px}
+a:focus-visible{outline:3px solid #9B3D5C;outline-offset:4px}
+@media(max-width:680px){
+.hero-layout{grid-template-columns:1fr;gap:26px;text-align:center}
+.hero-actions{justify-content:center}
+.hero-availability{justify-content:center}
+.hero-screen img{width:auto;height:330px}
+.nav-links{grid-template-columns:repeat(2,1fr)}
+.nav-links a{font-size:13px;min-height:44px}
+.site-nav{border-radius:24px;gap:8px}
+.steps-grid{grid-template-columns:1fr;gap:16px}
+.audience-inner,.journey-inner,.founder-inner,.faq-inner{padding-top:42px;padding-bottom:42px}
+.journey-inner{gap:24px}
+.social-header h2{font-size:36px}
+}
 </style>
 </head>
 <body>
@@ -977,19 +1017,18 @@ footer a:hover{text-decoration:underline}
 
 <main id="main">
   <section class="hero" aria-label="Ribbonside introduction">
-    <div class="hero-inner">
+    <div class="hero-layout"><div class="hero-inner">
       <h1>Ribbonside, for the practical side of breast cancer.</h1>
       <p class="hero-lead">A private phone organiser for appointments, medications, questions, photos, documents and treatment information that is too important to lose.</p>
-      <div class="hero-actions">
-        <a class="button text-link" href="#how-it-works">See how it works</a>
-      </div>
       <div class="hero-availability" id="download">
-        <p class="hero-note">Available on the App Store and Google Play.</p>
+        <p class="hero-note">Available on iPhone and Android. Paid subscription required; your app store shows the price and billing terms before purchase.</p>
         <div class="store-badges" aria-label="Download Ribbonside">
           <a class="store-badge apple" href="https://apps.apple.com/au/app/ribbonside/id6773605047" aria-label="Download Ribbonside on the App Store"><img src="app-store-badge.svg" alt="Download on the App Store"></a>
           <a class="store-badge google" href="https://play.google.com/store/apps/details?id=com.ribbonside.app" aria-label="Get Ribbonside on Google Play"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
         </div>
       </div>
+    </div>
+      <figure class="hero-screen"><img src="ribbonside-app-records-screen-2026-09-17.jpg" width="600" height="1244" alt="Ribbonside Records screen with sections for appointments, treatments and personal records"><figcaption>See your information in clear sections.</figcaption></figure>
     </div>
   </section>
 
@@ -997,6 +1036,17 @@ footer a:hover{text-decoration:underline}
     <div class="founder-intro-inner">
       <img src="vanessa-chemo-chair-srgb.jpg" width="1400" height="1050" decoding="async" alt="Vanessa during chemotherapy treatment">
       <p><strong>Built from lived experience.</strong> Vanessa was diagnosed with breast cancer in September 2025, and the idea for Ribbonside began during chemotherapy. <a href="#my-story">Read her full story.</a></p>
+    </div>
+  </section>
+
+  <section class="audience-section" id="who-its-for">
+    <div class="audience-inner">
+      <div class="audience-header"><p class="eyebrow">Who it’s for</p><h2>For the details you want to keep together.</h2><p>For people managing the practical side of breast cancer, from appointments and treatment to recovery and follow-ups.</p></div>
+      <ol class="steps-grid">
+        <li><h3>Download Ribbonside</h3><p>Choose your app store and review the subscription terms before purchase.</p></li>
+        <li><h3>Add your information</h3><p>Save appointments, questions, medications and the records you want close by.</p></li>
+        <li><h3>Prepare for your next visit</h3><p>Find your questions and notes together when you need them.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -1088,7 +1138,13 @@ footer a:hover{text-decoration:underline}
         <article class="faq-item"><h3>Where do my records live?</h3><p>Core health records, photos and documents are normally kept in the encrypted local vault on your device.</p></article>
         <article class="faq-item"><h3>Is Ribbonside medical advice?</h3><p>No. It is a private organiser for your own information and does not replace your care team.</p></article>
         <article class="faq-item"><h3>How does the subscription work?</h3><p>Ribbonside is a subscription service. Your app store shows the price before purchase and manages cancellation or refunds.</p></article>
+        <article class="faq-item"><h3>What if I replace or lose my phone?</h3><p>Signing in on another phone does not restore your health records. Before replacing or resetting your phone, create a backup in Account → Backup &amp; Restore and save it somewhere private. Without your own valid saved backup, Ribbonside cannot recover the vault. <a href="support.html">Read the backup and restore guide.</a></p></article>
+        <article class="faq-item"><h3>Does the explanation feature use AI?</h3><p>What does this mean? provides general plain-English information using AI. It is not personalised medical advice. <a href="legal.html#privacy">Read what is sent and how it is handled in the Privacy Policy.</a></p></article>
       </div>
+      <div class="download-repeat"><h3>Keep your practical information together.</h3><p>Paid subscription. Review the price and billing terms in your app store.</p><div class="store-badges" aria-label="Download Ribbonside">
+          <a class="store-badge apple" href="https://apps.apple.com/au/app/ribbonside/id6773605047" aria-label="Download Ribbonside on the App Store"><img src="app-store-badge.svg" alt="Download on the App Store"></a>
+          <a class="store-badge google" href="https://play.google.com/store/apps/details?id=com.ribbonside.app" aria-label="Get Ribbonside on Google Play"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
+        </div></div>
     </div>
   </section>
 
@@ -1145,7 +1201,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <div class="footer-inner">
     <div>&copy; 2026 Diesel Advocacy Pty Ltd. Ribbonside&trade;. All rights reserved.</div>
-    <div><a href="support.html">Support</a> · <a href="security-briefing.html">Security briefing</a> · <a href="account-deletion.html">Delete account or data</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
+    <div><a href="support.html">Support</a> · <a href="security-briefing.html">Security briefing</a> · <a href="account-deletion.html">Delete account or data</a> · <a href="legal.html#privacy">Privacy Policy</a> · <a href="legal.html#terms">Terms</a> · <a href="legal.html#refund">Refunds</a> · <a href="legal.html#medical">Medical disclaimer</a> · <a href="legal.html#tga">Regulatory &amp; ACL</a> · <a href="legal.html#accessibility">Accessibility</a></div>
   </div>
 </footer>
 </body>
